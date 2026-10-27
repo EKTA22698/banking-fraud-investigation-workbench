@@ -11,6 +11,8 @@ add_executable(fraud_workbench
     src/core/dataset.c
     src/core/fraud.c
     src/cli/cli.c
+    src/algorithms/sorting/merge_sort.c
+    src/algorithms/sorting/quick_sort.c
 )
 
 target_include_directories(fraud_workbench PRIVATE

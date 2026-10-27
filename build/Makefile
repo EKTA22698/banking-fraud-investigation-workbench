@@ -128,6 +128,54 @@ fraud_workbench/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/build
 .PHONY : fraud_workbench/fast
 
+src/algorithms/sorting/merge_sort.obj: src/algorithms/sorting/merge_sort.c.obj
+.PHONY : src/algorithms/sorting/merge_sort.obj
+
+# target to build an object file
+src/algorithms/sorting/merge_sort.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/merge_sort.c.obj
+.PHONY : src/algorithms/sorting/merge_sort.c.obj
+
+src/algorithms/sorting/merge_sort.i: src/algorithms/sorting/merge_sort.c.i
+.PHONY : src/algorithms/sorting/merge_sort.i
+
+# target to preprocess a source file
+src/algorithms/sorting/merge_sort.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/merge_sort.c.i
+.PHONY : src/algorithms/sorting/merge_sort.c.i
+
+src/algorithms/sorting/merge_sort.s: src/algorithms/sorting/merge_sort.c.s
+.PHONY : src/algorithms/sorting/merge_sort.s
+
+# target to generate assembly for a file
+src/algorithms/sorting/merge_sort.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/merge_sort.c.s
+.PHONY : src/algorithms/sorting/merge_sort.c.s
+
+src/algorithms/sorting/quick_sort.obj: src/algorithms/sorting/quick_sort.c.obj
+.PHONY : src/algorithms/sorting/quick_sort.obj
+
+# target to build an object file
+src/algorithms/sorting/quick_sort.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/quick_sort.c.obj
+.PHONY : src/algorithms/sorting/quick_sort.c.obj
+
+src/algorithms/sorting/quick_sort.i: src/algorithms/sorting/quick_sort.c.i
+.PHONY : src/algorithms/sorting/quick_sort.i
+
+# target to preprocess a source file
+src/algorithms/sorting/quick_sort.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/quick_sort.c.i
+.PHONY : src/algorithms/sorting/quick_sort.c.i
+
+src/algorithms/sorting/quick_sort.s: src/algorithms/sorting/quick_sort.c.s
+.PHONY : src/algorithms/sorting/quick_sort.s
+
+# target to generate assembly for a file
+src/algorithms/sorting/quick_sort.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/quick_sort.c.s
+.PHONY : src/algorithms/sorting/quick_sort.c.s
+
 src/cli/cli.obj: src/cli/cli.c.obj
 .PHONY : src/cli/cli.obj
 
@@ -257,6 +305,12 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... fraud_workbench
+	@echo ... src/algorithms/sorting/merge_sort.obj
+	@echo ... src/algorithms/sorting/merge_sort.i
+	@echo ... src/algorithms/sorting/merge_sort.s
+	@echo ... src/algorithms/sorting/quick_sort.obj
+	@echo ... src/algorithms/sorting/quick_sort.i
+	@echo ... src/algorithms/sorting/quick_sort.s
 	@echo ... src/cli/cli.obj
 	@echo ... src/cli/cli.i
 	@echo ... src/cli/cli.s

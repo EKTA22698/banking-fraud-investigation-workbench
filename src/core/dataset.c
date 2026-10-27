@@ -12,7 +12,7 @@ int load_transactions_csv(
 
     int count = 0;
     int invalid_count = 0;
-    printf("DEBUG: Opening file: %s\n", filename);
+
     file = fopen(filename, "r");
 
 if (file == NULL)
@@ -21,9 +21,6 @@ if (file == NULL)
     printf("File: %s\n", filename);
     return -1;
 }
-
-printf("DEBUG: File opened successfully.\n");
-
 
     /* Read and skip CSV header */
     if (fgets(line, sizeof(line), file) == NULL)

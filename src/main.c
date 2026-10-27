@@ -5,6 +5,7 @@
 #include "dataset.h"
 #include "transaction.h"
 #include "fraud.h"
+#include "sorting.h"
 
 int main(void)
 {
@@ -75,9 +76,73 @@ int main(void)
         transaction_count
     );
     break;
-            case 4:
-                printf("Transaction Search and Sort - Coming Soon\n");
-                break;
+    case 4:
+{
+    int sort_choice;
+
+    if (transaction_count <= 0)
+    {
+        printf("No dataset is currently loaded.\n");
+        printf("Please load a dataset first.\n");
+        break;
+    }
+
+    printf("\n============================================\n");
+    printf("           TRANSACTION SORTING\n");
+    printf("============================================\n");
+    printf("1. Merge Sort by Amount\n");
+    printf("2. Quick Sort by Amount\n");
+    printf("0. Back\n");
+    printf("============================================\n");
+    printf("Select sorting algorithm: ");
+
+    if (scanf("%d", &sort_choice) != 1)
+    {
+        printf("Invalid input.\n");
+
+        while (getchar() != '\n')
+        {
+            /* Clear invalid input */
+        }
+
+        break;
+    }
+
+    if (sort_choice == 1)
+    {
+        merge_sort_transactions(
+            transactions,
+            transaction_count
+        );
+
+        printf("\nTransactions sorted using Merge Sort.\n");
+
+        print_all_transactions(
+            transactions,
+            transaction_count
+        );
+    }
+    else if (sort_choice == 2)
+    {
+        quick_sort_transactions(
+            transactions,
+            transaction_count
+        );
+
+        printf("\nTransactions sorted using Quick Sort.\n");
+
+        print_all_transactions(
+            transactions,
+            transaction_count
+        );
+    }
+    else if (sort_choice != 0)
+    {
+        printf("Invalid sorting choice.\n");
+    }
+
+    break;
+}
 
             case 5:
                 printf("Pattern Search - Coming Soon\n");

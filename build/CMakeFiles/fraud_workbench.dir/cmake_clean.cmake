@@ -1,4 +1,8 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/merge_sort.c.obj"
+  "CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/merge_sort.c.obj.d"
+  "CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/quick_sort.c.obj"
+  "CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/quick_sort.c.obj.d"
   "CMakeFiles/fraud_workbench.dir/src/cli/cli.c.obj"
   "CMakeFiles/fraud_workbench.dir/src/cli/cli.c.obj.d"
   "CMakeFiles/fraud_workbench.dir/src/core/dataset.c.obj"

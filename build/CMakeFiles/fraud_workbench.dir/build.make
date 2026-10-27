@@ -146,13 +146,45 @@ CMakeFiles/fraud_workbench.dir/src/cli/cli.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/fraud_workbench.dir/src/cli/cli.c.s"
 	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\cli\cli.c" -o CMakeFiles\fraud_workbench.dir\src\cli\cli.c.s
 
+CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/merge_sort.c.obj: CMakeFiles/fraud_workbench.dir/flags.make
+CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/merge_sort.c.obj: CMakeFiles/fraud_workbench.dir/includes_C.rsp
+CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/merge_sort.c.obj: C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/sorting/merge_sort.c
+CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/merge_sort.c.obj: CMakeFiles/fraud_workbench.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/merge_sort.c.obj"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/merge_sort.c.obj -MF CMakeFiles\fraud_workbench.dir\src\algorithms\sorting\merge_sort.c.obj.d -o CMakeFiles\fraud_workbench.dir\src\algorithms\sorting\merge_sort.c.obj -c "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\sorting\merge_sort.c"
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/merge_sort.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/merge_sort.c.i"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\sorting\merge_sort.c" > CMakeFiles\fraud_workbench.dir\src\algorithms\sorting\merge_sort.c.i
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/merge_sort.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/merge_sort.c.s"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\sorting\merge_sort.c" -o CMakeFiles\fraud_workbench.dir\src\algorithms\sorting\merge_sort.c.s
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/quick_sort.c.obj: CMakeFiles/fraud_workbench.dir/flags.make
+CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/quick_sort.c.obj: CMakeFiles/fraud_workbench.dir/includes_C.rsp
+CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/quick_sort.c.obj: C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/sorting/quick_sort.c
+CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/quick_sort.c.obj: CMakeFiles/fraud_workbench.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/quick_sort.c.obj"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/quick_sort.c.obj -MF CMakeFiles\fraud_workbench.dir\src\algorithms\sorting\quick_sort.c.obj.d -o CMakeFiles\fraud_workbench.dir\src\algorithms\sorting\quick_sort.c.obj -c "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\sorting\quick_sort.c"
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/quick_sort.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/quick_sort.c.i"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\sorting\quick_sort.c" > CMakeFiles\fraud_workbench.dir\src\algorithms\sorting\quick_sort.c.i
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/quick_sort.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/quick_sort.c.s"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\sorting\quick_sort.c" -o CMakeFiles\fraud_workbench.dir\src\algorithms\sorting\quick_sort.c.s
+
 # Object files for target fraud_workbench
 fraud_workbench_OBJECTS = \
 "CMakeFiles/fraud_workbench.dir/src/main.c.obj" \
 "CMakeFiles/fraud_workbench.dir/src/core/transaction.c.obj" \
 "CMakeFiles/fraud_workbench.dir/src/core/dataset.c.obj" \
 "CMakeFiles/fraud_workbench.dir/src/core/fraud.c.obj" \
-"CMakeFiles/fraud_workbench.dir/src/cli/cli.c.obj"
+"CMakeFiles/fraud_workbench.dir/src/cli/cli.c.obj" \
+"CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/merge_sort.c.obj" \
+"CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/quick_sort.c.obj"
 
 # External object files for target fraud_workbench
 fraud_workbench_EXTERNAL_OBJECTS =
@@ -162,11 +194,13 @@ fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/src/core/transaction.c.obj
 fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/src/core/dataset.c.obj
 fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/src/core/fraud.c.obj
 fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/src/cli/cli.c.obj
+fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/merge_sort.c.obj
+fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/quick_sort.c.obj
 fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/build.make
 fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/linkLibs.rsp
 fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/objects1.rsp
 fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable fraud_workbench.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Linking C executable fraud_workbench.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\fraud_workbench.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
