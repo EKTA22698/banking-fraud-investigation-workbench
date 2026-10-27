@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/fraud_workbench.dir/src/algorithms/searching/binary_search.c.obj"
+  "CMakeFiles/fraud_workbench.dir/src/algorithms/searching/binary_search.c.obj.d"
   "CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/merge_sort.c.obj"
   "CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/merge_sort.c.obj.d"
   "CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/quick_sort.c.obj"

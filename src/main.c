@@ -6,6 +6,7 @@
 #include "transaction.h"
 #include "fraud.h"
 #include "sorting.h"
+#include "searching.h"
 
 int main(void)
 {
@@ -78,7 +79,7 @@ int main(void)
     break;
     case 4:
 {
-    int sort_choice;
+    int operation_choice;
 
     if (transaction_count <= 0)
     {
@@ -88,27 +89,28 @@ int main(void)
     }
 
     printf("\n============================================\n");
-    printf("           TRANSACTION SORTING\n");
+    printf("       TRANSACTION SEARCH AND SORT\n");
     printf("============================================\n");
     printf("1. Merge Sort by Amount\n");
     printf("2. Quick Sort by Amount\n");
+    printf("3. Iterative Binary Search by Transaction ID\n");
+    printf("4. Recursive Binary Search by Transaction ID\n");
     printf("0. Back\n");
     printf("============================================\n");
-    printf("Select sorting algorithm: ");
+    printf("Select operation: ");
 
-    if (scanf("%d", &sort_choice) != 1)
+    if (scanf("%d", &operation_choice) != 1)
     {
         printf("Invalid input.\n");
 
         while (getchar() != '\n')
         {
-            /* Clear invalid input */
         }
 
         break;
     }
 
-    if (sort_choice == 1)
+    if (operation_choice == 1)
     {
         merge_sort_transactions(
             transactions,
@@ -122,7 +124,7 @@ int main(void)
             transaction_count
         );
     }
-    else if (sort_choice == 2)
+    else if (operation_choice == 2)
     {
         quick_sort_transactions(
             transactions,
@@ -136,15 +138,67 @@ int main(void)
             transaction_count
         );
     }
-    else if (sort_choice != 0)
+    else if (
+        operation_choice == 3 ||
+        operation_choice == 4
+    )
     {
-        printf("Invalid sorting choice.\n");
+        char search_id[ID_LENGTH];
+        int result;
+
+        printf("Enter Transaction ID: ");
+        scanf("%19s", search_id);
+
+        /*
+         * Binary search requires sorted input.
+         */
+        sort_transactions_by_id(
+            transactions,
+            transaction_count
+        );
+
+        if (operation_choice == 3)
+        {
+            result = binary_search_iterative(
+                transactions,
+                transaction_count,
+                search_id
+            );
+
+            printf("\nAlgorithm: Iterative Binary Search\n");
+        }
+        else
+        {
+            result = binary_search_recursive(
+                transactions,
+                transaction_count,
+                search_id
+            );
+
+            printf("\nAlgorithm: Recursive Binary Search\n");
+        }
+
+        if (result >= 0)
+        {
+            printf("Transaction found at index %d.\n", result);
+
+            print_transaction(
+                &transactions[result]
+            );
+        }
+        else
+        {
+            printf("Transaction '%s' was not found.\n", search_id);
+        }
+    }
+    else if (operation_choice != 0)
+    {
+        printf("Invalid operation.\n");
     }
 
     break;
-}
-
-            case 5:
+}     
+    case 5:
                 printf("Pattern Search - Coming Soon\n");
                 break;
 

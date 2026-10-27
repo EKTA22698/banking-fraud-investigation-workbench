@@ -128,6 +128,30 @@ fraud_workbench/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/build
 .PHONY : fraud_workbench/fast
 
+src/algorithms/searching/binary_search.obj: src/algorithms/searching/binary_search.c.obj
+.PHONY : src/algorithms/searching/binary_search.obj
+
+# target to build an object file
+src/algorithms/searching/binary_search.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/searching/binary_search.c.obj
+.PHONY : src/algorithms/searching/binary_search.c.obj
+
+src/algorithms/searching/binary_search.i: src/algorithms/searching/binary_search.c.i
+.PHONY : src/algorithms/searching/binary_search.i
+
+# target to preprocess a source file
+src/algorithms/searching/binary_search.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/searching/binary_search.c.i
+.PHONY : src/algorithms/searching/binary_search.c.i
+
+src/algorithms/searching/binary_search.s: src/algorithms/searching/binary_search.c.s
+.PHONY : src/algorithms/searching/binary_search.s
+
+# target to generate assembly for a file
+src/algorithms/searching/binary_search.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/searching/binary_search.c.s
+.PHONY : src/algorithms/searching/binary_search.c.s
+
 src/algorithms/sorting/merge_sort.obj: src/algorithms/sorting/merge_sort.c.obj
 .PHONY : src/algorithms/sorting/merge_sort.obj
 
@@ -305,6 +329,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... fraud_workbench
+	@echo ... src/algorithms/searching/binary_search.obj
+	@echo ... src/algorithms/searching/binary_search.i
+	@echo ... src/algorithms/searching/binary_search.s
 	@echo ... src/algorithms/sorting/merge_sort.obj
 	@echo ... src/algorithms/sorting/merge_sort.i
 	@echo ... src/algorithms/sorting/merge_sort.s

@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/Users/Ekta Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/searching/binary_search.c" "CMakeFiles/fraud_workbench.dir/src/algorithms/searching/binary_search.c.obj" "gcc" "CMakeFiles/fraud_workbench.dir/src/algorithms/searching/binary_search.c.obj.d"
   "C:/Users/Ekta Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/sorting/merge_sort.c" "CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/merge_sort.c.obj" "gcc" "CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/merge_sort.c.obj.d"
   "C:/Users/Ekta Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/sorting/quick_sort.c" "CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/quick_sort.c.obj" "gcc" "CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/quick_sort.c.obj.d"
   "C:/Users/Ekta Bhardwaj/banking-fraud-investigation-workbench/src/cli/cli.c" "CMakeFiles/fraud_workbench.dir/src/cli/cli.c.obj" "gcc" "CMakeFiles/fraud_workbench.dir/src/cli/cli.c.obj.d"

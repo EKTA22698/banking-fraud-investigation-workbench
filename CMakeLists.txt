@@ -13,6 +13,7 @@ add_executable(fraud_workbench
     src/cli/cli.c
     src/algorithms/sorting/merge_sort.c
     src/algorithms/sorting/quick_sort.c
+    src/algorithms/searching/binary_search.c
 )
 
 target_include_directories(fraud_workbench PRIVATE
