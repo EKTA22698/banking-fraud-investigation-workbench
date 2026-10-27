@@ -14,6 +14,9 @@ add_executable(fraud_workbench
     src/algorithms/sorting/merge_sort.c
     src/algorithms/sorting/quick_sort.c
     src/algorithms/searching/binary_search.c
+    src/algorithms/divide_conquer/maximum_subarray.c
+src/algorithms/divide_conquer/fast_power.c
+src/algorithms/divide_conquer/celebrity.c
 )
 
 target_include_directories(fraud_workbench PRIVATE

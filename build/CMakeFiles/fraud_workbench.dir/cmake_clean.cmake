@@ -1,4 +1,10 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/celebrity.c.obj"
+  "CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/celebrity.c.obj.d"
+  "CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/fast_power.c.obj"
+  "CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/fast_power.c.obj.d"
+  "CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/maximum_subarray.c.obj"
+  "CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/maximum_subarray.c.obj.d"
   "CMakeFiles/fraud_workbench.dir/src/algorithms/searching/binary_search.c.obj"
   "CMakeFiles/fraud_workbench.dir/src/algorithms/searching/binary_search.c.obj.d"
   "CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/merge_sort.c.obj"

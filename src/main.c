@@ -7,6 +7,7 @@
 #include "fraud.h"
 #include "sorting.h"
 #include "searching.h"
+#include "divide_conquer.h"
 
 int main(void)
 {
@@ -211,8 +212,103 @@ int main(void)
                 break;
 
             case 8:
-                printf("Algorithm Laboratory - Coming Soon\n");
-                break;
+{
+    int algorithm_choice;
+
+    printf("\n============================================\n");
+    printf("          DAA ALGORITHM LABORATORY\n");
+    printf("============================================\n");
+    printf("1. Maximum Subarray\n");
+    printf("2. Fast Power\n");
+    printf("3. Celebrity Problem\n");
+    printf("0. Back\n");
+    printf("============================================\n");
+    printf("Select algorithm: ");
+
+    if (scanf("%d", &algorithm_choice) != 1)
+    {
+        printf("Invalid input.\n");
+
+        while (getchar() != '\n')
+        {
+        }
+
+        break;
+    }
+
+    if (algorithm_choice == 1)
+    {
+        double values[] = {
+            -2.0, 5.0, -1.0, 8.0,
+            12.0, -3.0, 4.0
+        };
+
+        int count =
+            sizeof(values) / sizeof(values[0]);
+
+        MaxSubarrayResult result =
+            maximum_subarray(values, count);
+
+        printf("\nMaximum Subarray Result\n");
+        printf("Start index : %d\n", result.left);
+        printf("End index   : %d\n", result.right);
+        printf("Maximum sum : %.2f\n", result.sum);
+    }
+    else if (algorithm_choice == 2)
+    {
+        long long base;
+        unsigned int exponent;
+
+        printf("Enter base: ");
+        scanf("%lld", &base);
+
+        printf("Enter exponent: ");
+        scanf("%u", &exponent);
+
+        printf(
+            "\nResult: %lld\n",
+            fast_power(base, exponent)
+        );
+    }
+    else if (algorithm_choice == 3)
+    {
+        int relationships[10][10] = {0};
+
+        int people = 4;
+
+        /*
+         * Person 2 is the celebrity.
+         */
+
+        relationships[0][2] = 1;
+        relationships[1][2] = 1;
+        relationships[3][2] = 1;
+
+        relationships[0][1] = 1;
+        relationships[1][3] = 1;
+
+        int celebrity =
+            find_celebrity(relationships, people);
+
+        if (celebrity >= 0)
+        {
+            printf(
+                "\nCelebrity found: Person %d\n",
+                celebrity
+            );
+        }
+        else
+        {
+            printf("\nNo celebrity found.\n");
+        }
+    }
+    else if (algorithm_choice != 0)
+    {
+        printf("Invalid algorithm choice.\n");
+    }
+
+    break;
+}
 
             case 9:
                 printf("Benchmark Runner - Coming Soon\n");

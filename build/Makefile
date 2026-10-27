@@ -128,6 +128,78 @@ fraud_workbench/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/build
 .PHONY : fraud_workbench/fast
 
+src/algorithms/divide_conquer/celebrity.obj: src/algorithms/divide_conquer/celebrity.c.obj
+.PHONY : src/algorithms/divide_conquer/celebrity.obj
+
+# target to build an object file
+src/algorithms/divide_conquer/celebrity.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/celebrity.c.obj
+.PHONY : src/algorithms/divide_conquer/celebrity.c.obj
+
+src/algorithms/divide_conquer/celebrity.i: src/algorithms/divide_conquer/celebrity.c.i
+.PHONY : src/algorithms/divide_conquer/celebrity.i
+
+# target to preprocess a source file
+src/algorithms/divide_conquer/celebrity.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/celebrity.c.i
+.PHONY : src/algorithms/divide_conquer/celebrity.c.i
+
+src/algorithms/divide_conquer/celebrity.s: src/algorithms/divide_conquer/celebrity.c.s
+.PHONY : src/algorithms/divide_conquer/celebrity.s
+
+# target to generate assembly for a file
+src/algorithms/divide_conquer/celebrity.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/celebrity.c.s
+.PHONY : src/algorithms/divide_conquer/celebrity.c.s
+
+src/algorithms/divide_conquer/fast_power.obj: src/algorithms/divide_conquer/fast_power.c.obj
+.PHONY : src/algorithms/divide_conquer/fast_power.obj
+
+# target to build an object file
+src/algorithms/divide_conquer/fast_power.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/fast_power.c.obj
+.PHONY : src/algorithms/divide_conquer/fast_power.c.obj
+
+src/algorithms/divide_conquer/fast_power.i: src/algorithms/divide_conquer/fast_power.c.i
+.PHONY : src/algorithms/divide_conquer/fast_power.i
+
+# target to preprocess a source file
+src/algorithms/divide_conquer/fast_power.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/fast_power.c.i
+.PHONY : src/algorithms/divide_conquer/fast_power.c.i
+
+src/algorithms/divide_conquer/fast_power.s: src/algorithms/divide_conquer/fast_power.c.s
+.PHONY : src/algorithms/divide_conquer/fast_power.s
+
+# target to generate assembly for a file
+src/algorithms/divide_conquer/fast_power.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/fast_power.c.s
+.PHONY : src/algorithms/divide_conquer/fast_power.c.s
+
+src/algorithms/divide_conquer/maximum_subarray.obj: src/algorithms/divide_conquer/maximum_subarray.c.obj
+.PHONY : src/algorithms/divide_conquer/maximum_subarray.obj
+
+# target to build an object file
+src/algorithms/divide_conquer/maximum_subarray.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/maximum_subarray.c.obj
+.PHONY : src/algorithms/divide_conquer/maximum_subarray.c.obj
+
+src/algorithms/divide_conquer/maximum_subarray.i: src/algorithms/divide_conquer/maximum_subarray.c.i
+.PHONY : src/algorithms/divide_conquer/maximum_subarray.i
+
+# target to preprocess a source file
+src/algorithms/divide_conquer/maximum_subarray.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/maximum_subarray.c.i
+.PHONY : src/algorithms/divide_conquer/maximum_subarray.c.i
+
+src/algorithms/divide_conquer/maximum_subarray.s: src/algorithms/divide_conquer/maximum_subarray.c.s
+.PHONY : src/algorithms/divide_conquer/maximum_subarray.s
+
+# target to generate assembly for a file
+src/algorithms/divide_conquer/maximum_subarray.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/maximum_subarray.c.s
+.PHONY : src/algorithms/divide_conquer/maximum_subarray.c.s
+
 src/algorithms/searching/binary_search.obj: src/algorithms/searching/binary_search.c.obj
 .PHONY : src/algorithms/searching/binary_search.obj
 
@@ -329,6 +401,15 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... fraud_workbench
+	@echo ... src/algorithms/divide_conquer/celebrity.obj
+	@echo ... src/algorithms/divide_conquer/celebrity.i
+	@echo ... src/algorithms/divide_conquer/celebrity.s
+	@echo ... src/algorithms/divide_conquer/fast_power.obj
+	@echo ... src/algorithms/divide_conquer/fast_power.i
+	@echo ... src/algorithms/divide_conquer/fast_power.s
+	@echo ... src/algorithms/divide_conquer/maximum_subarray.obj
+	@echo ... src/algorithms/divide_conquer/maximum_subarray.i
+	@echo ... src/algorithms/divide_conquer/maximum_subarray.s
 	@echo ... src/algorithms/searching/binary_search.obj
 	@echo ... src/algorithms/searching/binary_search.i
 	@echo ... src/algorithms/searching/binary_search.s
