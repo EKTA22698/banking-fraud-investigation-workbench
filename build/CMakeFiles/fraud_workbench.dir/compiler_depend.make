@@ -22,6 +22,24 @@ CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/matrix_multiplicati
 CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/maximum_subarray.c.obj: C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/divide_conquer/maximum_subarray.c \
   C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/include/divide_conquer.h
 
+CMakeFiles/fraud_workbench.dir/src/algorithms/graph/dijkstra.c.obj: C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/graph/dijkstra.c \
+  C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/include/graph_algorithms.h \
+  C:/msys64/ucrt64/include/_mingw.h \
+  C:/msys64/ucrt64/include/_mingw_mac.h \
+  C:/msys64/ucrt64/include/_mingw_off_t.h \
+  C:/msys64/ucrt64/include/_mingw_secapi.h \
+  C:/msys64/ucrt64/include/corecrt.h \
+  C:/msys64/ucrt64/include/corecrt_stdio_config.h \
+  C:/msys64/ucrt64/include/corecrt_wstdio.h \
+  C:/msys64/ucrt64/include/stdio.h \
+  C:/msys64/ucrt64/include/vadefs.h
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/graph/kruskal.c.obj: C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/graph/kruskal.c \
+  C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/include/graph_algorithms.h
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/graph/prim.c.obj: C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/graph/prim.c \
+  C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/include/graph_algorithms.h
+
 CMakeFiles/fraud_workbench.dir/src/algorithms/greedy/activity_selection.c.obj: C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/greedy/activity_selection.c \
   C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/include/greedy.h
 
@@ -158,6 +176,7 @@ CMakeFiles/fraud_workbench.dir/src/main.c.obj: C:/Users/Ekta\ Bhardwaj/banking-f
   C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/include/dataset.h \
   C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/include/divide_conquer.h \
   C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/include/fraud.h \
+  C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/include/graph_algorithms.h \
   C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/include/greedy.h \
   C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/include/matrix_algorithms.h \
   C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/include/searching.h \
@@ -195,6 +214,8 @@ C:/msys64/ucrt64/include/corecrt_wstdlib.h:
 C:/msys64/ucrt64/include/_mingw_off_t.h:
 
 C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/searching/binary_search.c:
+
+C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/graph/prim.c:
 
 C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/divide_conquer/celebrity.c:
 
@@ -240,6 +261,14 @@ C:/msys64/ucrt64/include/corecrt_wstdio.h:
 
 C:/msys64/ucrt64/include/vadefs.h:
 
+C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/core/fraud.c:
+
+C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/graph/dijkstra.c:
+
+C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/include/graph_algorithms.h:
+
+C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/graph/kruskal.c:
+
 C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/greedy/activity_selection.c:
 
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/16.2.0/include/mm_malloc.h:
@@ -273,8 +302,6 @@ C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/sor
 C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/include/cli.h:
 
 C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/core/dataset.c:
-
-C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/core/fraud.c:
 
 C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/include/fraud.h:
 

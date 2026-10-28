@@ -224,6 +224,30 @@ src/algorithms/divide_conquer/maximum_subarray.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/maximum_subarray.c.s
 .PHONY : src/algorithms/divide_conquer/maximum_subarray.c.s
 
+src/algorithms/dynamic_programming/knapsack.obj: src/algorithms/dynamic_programming/knapsack.c.obj
+.PHONY : src/algorithms/dynamic_programming/knapsack.obj
+
+# target to build an object file
+src/algorithms/dynamic_programming/knapsack.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/knapsack.c.obj
+.PHONY : src/algorithms/dynamic_programming/knapsack.c.obj
+
+src/algorithms/dynamic_programming/knapsack.i: src/algorithms/dynamic_programming/knapsack.c.i
+.PHONY : src/algorithms/dynamic_programming/knapsack.i
+
+# target to preprocess a source file
+src/algorithms/dynamic_programming/knapsack.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/knapsack.c.i
+.PHONY : src/algorithms/dynamic_programming/knapsack.c.i
+
+src/algorithms/dynamic_programming/knapsack.s: src/algorithms/dynamic_programming/knapsack.c.s
+.PHONY : src/algorithms/dynamic_programming/knapsack.s
+
+# target to generate assembly for a file
+src/algorithms/dynamic_programming/knapsack.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/knapsack.c.s
+.PHONY : src/algorithms/dynamic_programming/knapsack.c.s
+
 src/algorithms/graph/dijkstra.obj: src/algorithms/graph/dijkstra.c.obj
 .PHONY : src/algorithms/graph/dijkstra.obj
 
@@ -581,6 +605,9 @@ help:
 	@echo ... src/algorithms/divide_conquer/maximum_subarray.obj
 	@echo ... src/algorithms/divide_conquer/maximum_subarray.i
 	@echo ... src/algorithms/divide_conquer/maximum_subarray.s
+	@echo ... src/algorithms/dynamic_programming/knapsack.obj
+	@echo ... src/algorithms/dynamic_programming/knapsack.i
+	@echo ... src/algorithms/dynamic_programming/knapsack.s
 	@echo ... src/algorithms/graph/dijkstra.obj
 	@echo ... src/algorithms/graph/dijkstra.i
 	@echo ... src/algorithms/graph/dijkstra.s

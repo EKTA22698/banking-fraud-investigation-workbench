@@ -24,6 +24,7 @@ src/algorithms/greedy/huffman.c
 src/algorithms/graph/dijkstra.c
 src/algorithms/graph/prim.c
 src/algorithms/graph/kruskal.c
+src/algorithms/dynamic_programming/knapsack.c
 )
 
 target_include_directories(fraud_workbench PRIVATE

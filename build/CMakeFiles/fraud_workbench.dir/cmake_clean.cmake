@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/matrix_multiplication.c.obj.d"
   "CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/maximum_subarray.c.obj"
   "CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/maximum_subarray.c.obj.d"
+  "CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/knapsack.c.obj"
+  "CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/knapsack.c.obj.d"
   "CMakeFiles/fraud_workbench.dir/src/algorithms/graph/dijkstra.c.obj"
   "CMakeFiles/fraud_workbench.dir/src/algorithms/graph/dijkstra.c.obj.d"
   "CMakeFiles/fraud_workbench.dir/src/algorithms/graph/kruskal.c.obj"
