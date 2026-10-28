@@ -25,6 +25,23 @@ src/algorithms/graph/dijkstra.c
 src/algorithms/graph/prim.c
 src/algorithms/graph/kruskal.c
 src/algorithms/dynamic_programming/knapsack.c
+src/algorithms/dynamic_programming/matrix_chain.c
+src/algorithms/dynamic_programming/lcs.c
+src/algorithms/dynamic_programming/optimal_bst.c
+src/algorithms/graph/bellman_ford.c
+src/algorithms/graph/floyd_warshall.c
+src/algorithms/dynamic_programming/tsp.c
+src/algorithms/backtracking/n_queens.c
+src/algorithms/backtracking/subset_sum.c
+src/algorithms/branch_bound/branch_bound.c
+src/algorithms/network_flow/ford_fulkerson.c
+src/algorithms/network_flow/bipartite_matching.c
+src/algorithms/number_theory/crt.c
+src/algorithms/string_matching/naive.c
+src/algorithms/string_matching/rabin_karp.c
+src/algorithms/string_matching/finite_automaton.c
+src/algorithms/string_matching/kmp.c
+src/benchmark/benchmark.c
 )
 
 target_include_directories(fraud_workbench PRIVATE

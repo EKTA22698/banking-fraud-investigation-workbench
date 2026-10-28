@@ -356,6 +356,261 @@ CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/knapsack.c.s: 
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/knapsack.c.s"
 	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\dynamic_programming\knapsack.c" -o CMakeFiles\fraud_workbench.dir\src\algorithms\dynamic_programming\knapsack.c.s
 
+CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/matrix_chain.c.obj: CMakeFiles/fraud_workbench.dir/flags.make
+CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/matrix_chain.c.obj: CMakeFiles/fraud_workbench.dir/includes_C.rsp
+CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/matrix_chain.c.obj: C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/dynamic_programming/matrix_chain.c
+CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/matrix_chain.c.obj: CMakeFiles/fraud_workbench.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/matrix_chain.c.obj"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/matrix_chain.c.obj -MF CMakeFiles\fraud_workbench.dir\src\algorithms\dynamic_programming\matrix_chain.c.obj.d -o CMakeFiles\fraud_workbench.dir\src\algorithms\dynamic_programming\matrix_chain.c.obj -c "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\dynamic_programming\matrix_chain.c"
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/matrix_chain.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/matrix_chain.c.i"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\dynamic_programming\matrix_chain.c" > CMakeFiles\fraud_workbench.dir\src\algorithms\dynamic_programming\matrix_chain.c.i
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/matrix_chain.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/matrix_chain.c.s"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\dynamic_programming\matrix_chain.c" -o CMakeFiles\fraud_workbench.dir\src\algorithms\dynamic_programming\matrix_chain.c.s
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/lcs.c.obj: CMakeFiles/fraud_workbench.dir/flags.make
+CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/lcs.c.obj: CMakeFiles/fraud_workbench.dir/includes_C.rsp
+CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/lcs.c.obj: C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/dynamic_programming/lcs.c
+CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/lcs.c.obj: CMakeFiles/fraud_workbench.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/lcs.c.obj"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/lcs.c.obj -MF CMakeFiles\fraud_workbench.dir\src\algorithms\dynamic_programming\lcs.c.obj.d -o CMakeFiles\fraud_workbench.dir\src\algorithms\dynamic_programming\lcs.c.obj -c "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\dynamic_programming\lcs.c"
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/lcs.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/lcs.c.i"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\dynamic_programming\lcs.c" > CMakeFiles\fraud_workbench.dir\src\algorithms\dynamic_programming\lcs.c.i
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/lcs.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/lcs.c.s"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\dynamic_programming\lcs.c" -o CMakeFiles\fraud_workbench.dir\src\algorithms\dynamic_programming\lcs.c.s
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/optimal_bst.c.obj: CMakeFiles/fraud_workbench.dir/flags.make
+CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/optimal_bst.c.obj: CMakeFiles/fraud_workbench.dir/includes_C.rsp
+CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/optimal_bst.c.obj: C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/dynamic_programming/optimal_bst.c
+CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/optimal_bst.c.obj: CMakeFiles/fraud_workbench.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/optimal_bst.c.obj"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/optimal_bst.c.obj -MF CMakeFiles\fraud_workbench.dir\src\algorithms\dynamic_programming\optimal_bst.c.obj.d -o CMakeFiles\fraud_workbench.dir\src\algorithms\dynamic_programming\optimal_bst.c.obj -c "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\dynamic_programming\optimal_bst.c"
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/optimal_bst.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/optimal_bst.c.i"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\dynamic_programming\optimal_bst.c" > CMakeFiles\fraud_workbench.dir\src\algorithms\dynamic_programming\optimal_bst.c.i
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/optimal_bst.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/optimal_bst.c.s"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\dynamic_programming\optimal_bst.c" -o CMakeFiles\fraud_workbench.dir\src\algorithms\dynamic_programming\optimal_bst.c.s
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/graph/bellman_ford.c.obj: CMakeFiles/fraud_workbench.dir/flags.make
+CMakeFiles/fraud_workbench.dir/src/algorithms/graph/bellman_ford.c.obj: CMakeFiles/fraud_workbench.dir/includes_C.rsp
+CMakeFiles/fraud_workbench.dir/src/algorithms/graph/bellman_ford.c.obj: C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/graph/bellman_ford.c
+CMakeFiles/fraud_workbench.dir/src/algorithms/graph/bellman_ford.c.obj: CMakeFiles/fraud_workbench.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/fraud_workbench.dir/src/algorithms/graph/bellman_ford.c.obj"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/fraud_workbench.dir/src/algorithms/graph/bellman_ford.c.obj -MF CMakeFiles\fraud_workbench.dir\src\algorithms\graph\bellman_ford.c.obj.d -o CMakeFiles\fraud_workbench.dir\src\algorithms\graph\bellman_ford.c.obj -c "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\graph\bellman_ford.c"
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/graph/bellman_ford.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/fraud_workbench.dir/src/algorithms/graph/bellman_ford.c.i"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\graph\bellman_ford.c" > CMakeFiles\fraud_workbench.dir\src\algorithms\graph\bellman_ford.c.i
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/graph/bellman_ford.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/fraud_workbench.dir/src/algorithms/graph/bellman_ford.c.s"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\graph\bellman_ford.c" -o CMakeFiles\fraud_workbench.dir\src\algorithms\graph\bellman_ford.c.s
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/graph/floyd_warshall.c.obj: CMakeFiles/fraud_workbench.dir/flags.make
+CMakeFiles/fraud_workbench.dir/src/algorithms/graph/floyd_warshall.c.obj: CMakeFiles/fraud_workbench.dir/includes_C.rsp
+CMakeFiles/fraud_workbench.dir/src/algorithms/graph/floyd_warshall.c.obj: C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/graph/floyd_warshall.c
+CMakeFiles/fraud_workbench.dir/src/algorithms/graph/floyd_warshall.c.obj: CMakeFiles/fraud_workbench.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/fraud_workbench.dir/src/algorithms/graph/floyd_warshall.c.obj"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/fraud_workbench.dir/src/algorithms/graph/floyd_warshall.c.obj -MF CMakeFiles\fraud_workbench.dir\src\algorithms\graph\floyd_warshall.c.obj.d -o CMakeFiles\fraud_workbench.dir\src\algorithms\graph\floyd_warshall.c.obj -c "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\graph\floyd_warshall.c"
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/graph/floyd_warshall.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/fraud_workbench.dir/src/algorithms/graph/floyd_warshall.c.i"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\graph\floyd_warshall.c" > CMakeFiles\fraud_workbench.dir\src\algorithms\graph\floyd_warshall.c.i
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/graph/floyd_warshall.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/fraud_workbench.dir/src/algorithms/graph/floyd_warshall.c.s"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\graph\floyd_warshall.c" -o CMakeFiles\fraud_workbench.dir\src\algorithms\graph\floyd_warshall.c.s
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/tsp.c.obj: CMakeFiles/fraud_workbench.dir/flags.make
+CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/tsp.c.obj: CMakeFiles/fraud_workbench.dir/includes_C.rsp
+CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/tsp.c.obj: C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/dynamic_programming/tsp.c
+CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/tsp.c.obj: CMakeFiles/fraud_workbench.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/tsp.c.obj"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/tsp.c.obj -MF CMakeFiles\fraud_workbench.dir\src\algorithms\dynamic_programming\tsp.c.obj.d -o CMakeFiles\fraud_workbench.dir\src\algorithms\dynamic_programming\tsp.c.obj -c "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\dynamic_programming\tsp.c"
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/tsp.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/tsp.c.i"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\dynamic_programming\tsp.c" > CMakeFiles\fraud_workbench.dir\src\algorithms\dynamic_programming\tsp.c.i
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/tsp.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/tsp.c.s"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\dynamic_programming\tsp.c" -o CMakeFiles\fraud_workbench.dir\src\algorithms\dynamic_programming\tsp.c.s
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/backtracking/n_queens.c.obj: CMakeFiles/fraud_workbench.dir/flags.make
+CMakeFiles/fraud_workbench.dir/src/algorithms/backtracking/n_queens.c.obj: CMakeFiles/fraud_workbench.dir/includes_C.rsp
+CMakeFiles/fraud_workbench.dir/src/algorithms/backtracking/n_queens.c.obj: C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/backtracking/n_queens.c
+CMakeFiles/fraud_workbench.dir/src/algorithms/backtracking/n_queens.c.obj: CMakeFiles/fraud_workbench.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/fraud_workbench.dir/src/algorithms/backtracking/n_queens.c.obj"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/fraud_workbench.dir/src/algorithms/backtracking/n_queens.c.obj -MF CMakeFiles\fraud_workbench.dir\src\algorithms\backtracking\n_queens.c.obj.d -o CMakeFiles\fraud_workbench.dir\src\algorithms\backtracking\n_queens.c.obj -c "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\backtracking\n_queens.c"
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/backtracking/n_queens.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/fraud_workbench.dir/src/algorithms/backtracking/n_queens.c.i"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\backtracking\n_queens.c" > CMakeFiles\fraud_workbench.dir\src\algorithms\backtracking\n_queens.c.i
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/backtracking/n_queens.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/fraud_workbench.dir/src/algorithms/backtracking/n_queens.c.s"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\backtracking\n_queens.c" -o CMakeFiles\fraud_workbench.dir\src\algorithms\backtracking\n_queens.c.s
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/backtracking/subset_sum.c.obj: CMakeFiles/fraud_workbench.dir/flags.make
+CMakeFiles/fraud_workbench.dir/src/algorithms/backtracking/subset_sum.c.obj: CMakeFiles/fraud_workbench.dir/includes_C.rsp
+CMakeFiles/fraud_workbench.dir/src/algorithms/backtracking/subset_sum.c.obj: C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/backtracking/subset_sum.c
+CMakeFiles/fraud_workbench.dir/src/algorithms/backtracking/subset_sum.c.obj: CMakeFiles/fraud_workbench.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/fraud_workbench.dir/src/algorithms/backtracking/subset_sum.c.obj"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/fraud_workbench.dir/src/algorithms/backtracking/subset_sum.c.obj -MF CMakeFiles\fraud_workbench.dir\src\algorithms\backtracking\subset_sum.c.obj.d -o CMakeFiles\fraud_workbench.dir\src\algorithms\backtracking\subset_sum.c.obj -c "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\backtracking\subset_sum.c"
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/backtracking/subset_sum.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/fraud_workbench.dir/src/algorithms/backtracking/subset_sum.c.i"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\backtracking\subset_sum.c" > CMakeFiles\fraud_workbench.dir\src\algorithms\backtracking\subset_sum.c.i
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/backtracking/subset_sum.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/fraud_workbench.dir/src/algorithms/backtracking/subset_sum.c.s"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\backtracking\subset_sum.c" -o CMakeFiles\fraud_workbench.dir\src\algorithms\backtracking\subset_sum.c.s
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/branch_bound/branch_bound.c.obj: CMakeFiles/fraud_workbench.dir/flags.make
+CMakeFiles/fraud_workbench.dir/src/algorithms/branch_bound/branch_bound.c.obj: CMakeFiles/fraud_workbench.dir/includes_C.rsp
+CMakeFiles/fraud_workbench.dir/src/algorithms/branch_bound/branch_bound.c.obj: C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/branch_bound/branch_bound.c
+CMakeFiles/fraud_workbench.dir/src/algorithms/branch_bound/branch_bound.c.obj: CMakeFiles/fraud_workbench.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/fraud_workbench.dir/src/algorithms/branch_bound/branch_bound.c.obj"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/fraud_workbench.dir/src/algorithms/branch_bound/branch_bound.c.obj -MF CMakeFiles\fraud_workbench.dir\src\algorithms\branch_bound\branch_bound.c.obj.d -o CMakeFiles\fraud_workbench.dir\src\algorithms\branch_bound\branch_bound.c.obj -c "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\branch_bound\branch_bound.c"
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/branch_bound/branch_bound.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/fraud_workbench.dir/src/algorithms/branch_bound/branch_bound.c.i"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\branch_bound\branch_bound.c" > CMakeFiles\fraud_workbench.dir\src\algorithms\branch_bound\branch_bound.c.i
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/branch_bound/branch_bound.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/fraud_workbench.dir/src/algorithms/branch_bound/branch_bound.c.s"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\branch_bound\branch_bound.c" -o CMakeFiles\fraud_workbench.dir\src\algorithms\branch_bound\branch_bound.c.s
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/network_flow/ford_fulkerson.c.obj: CMakeFiles/fraud_workbench.dir/flags.make
+CMakeFiles/fraud_workbench.dir/src/algorithms/network_flow/ford_fulkerson.c.obj: CMakeFiles/fraud_workbench.dir/includes_C.rsp
+CMakeFiles/fraud_workbench.dir/src/algorithms/network_flow/ford_fulkerson.c.obj: C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/network_flow/ford_fulkerson.c
+CMakeFiles/fraud_workbench.dir/src/algorithms/network_flow/ford_fulkerson.c.obj: CMakeFiles/fraud_workbench.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/fraud_workbench.dir/src/algorithms/network_flow/ford_fulkerson.c.obj"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/fraud_workbench.dir/src/algorithms/network_flow/ford_fulkerson.c.obj -MF CMakeFiles\fraud_workbench.dir\src\algorithms\network_flow\ford_fulkerson.c.obj.d -o CMakeFiles\fraud_workbench.dir\src\algorithms\network_flow\ford_fulkerson.c.obj -c "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\network_flow\ford_fulkerson.c"
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/network_flow/ford_fulkerson.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/fraud_workbench.dir/src/algorithms/network_flow/ford_fulkerson.c.i"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\network_flow\ford_fulkerson.c" > CMakeFiles\fraud_workbench.dir\src\algorithms\network_flow\ford_fulkerson.c.i
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/network_flow/ford_fulkerson.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/fraud_workbench.dir/src/algorithms/network_flow/ford_fulkerson.c.s"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\network_flow\ford_fulkerson.c" -o CMakeFiles\fraud_workbench.dir\src\algorithms\network_flow\ford_fulkerson.c.s
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/network_flow/bipartite_matching.c.obj: CMakeFiles/fraud_workbench.dir/flags.make
+CMakeFiles/fraud_workbench.dir/src/algorithms/network_flow/bipartite_matching.c.obj: CMakeFiles/fraud_workbench.dir/includes_C.rsp
+CMakeFiles/fraud_workbench.dir/src/algorithms/network_flow/bipartite_matching.c.obj: C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/network_flow/bipartite_matching.c
+CMakeFiles/fraud_workbench.dir/src/algorithms/network_flow/bipartite_matching.c.obj: CMakeFiles/fraud_workbench.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/fraud_workbench.dir/src/algorithms/network_flow/bipartite_matching.c.obj"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/fraud_workbench.dir/src/algorithms/network_flow/bipartite_matching.c.obj -MF CMakeFiles\fraud_workbench.dir\src\algorithms\network_flow\bipartite_matching.c.obj.d -o CMakeFiles\fraud_workbench.dir\src\algorithms\network_flow\bipartite_matching.c.obj -c "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\network_flow\bipartite_matching.c"
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/network_flow/bipartite_matching.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/fraud_workbench.dir/src/algorithms/network_flow/bipartite_matching.c.i"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\network_flow\bipartite_matching.c" > CMakeFiles\fraud_workbench.dir\src\algorithms\network_flow\bipartite_matching.c.i
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/network_flow/bipartite_matching.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/fraud_workbench.dir/src/algorithms/network_flow/bipartite_matching.c.s"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\network_flow\bipartite_matching.c" -o CMakeFiles\fraud_workbench.dir\src\algorithms\network_flow\bipartite_matching.c.s
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/number_theory/crt.c.obj: CMakeFiles/fraud_workbench.dir/flags.make
+CMakeFiles/fraud_workbench.dir/src/algorithms/number_theory/crt.c.obj: CMakeFiles/fraud_workbench.dir/includes_C.rsp
+CMakeFiles/fraud_workbench.dir/src/algorithms/number_theory/crt.c.obj: C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/number_theory/crt.c
+CMakeFiles/fraud_workbench.dir/src/algorithms/number_theory/crt.c.obj: CMakeFiles/fraud_workbench.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/fraud_workbench.dir/src/algorithms/number_theory/crt.c.obj"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/fraud_workbench.dir/src/algorithms/number_theory/crt.c.obj -MF CMakeFiles\fraud_workbench.dir\src\algorithms\number_theory\crt.c.obj.d -o CMakeFiles\fraud_workbench.dir\src\algorithms\number_theory\crt.c.obj -c "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\number_theory\crt.c"
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/number_theory/crt.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/fraud_workbench.dir/src/algorithms/number_theory/crt.c.i"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\number_theory\crt.c" > CMakeFiles\fraud_workbench.dir\src\algorithms\number_theory\crt.c.i
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/number_theory/crt.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/fraud_workbench.dir/src/algorithms/number_theory/crt.c.s"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\number_theory\crt.c" -o CMakeFiles\fraud_workbench.dir\src\algorithms\number_theory\crt.c.s
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/naive.c.obj: CMakeFiles/fraud_workbench.dir/flags.make
+CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/naive.c.obj: CMakeFiles/fraud_workbench.dir/includes_C.rsp
+CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/naive.c.obj: C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/string_matching/naive.c
+CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/naive.c.obj: CMakeFiles/fraud_workbench.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/naive.c.obj"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/naive.c.obj -MF CMakeFiles\fraud_workbench.dir\src\algorithms\string_matching\naive.c.obj.d -o CMakeFiles\fraud_workbench.dir\src\algorithms\string_matching\naive.c.obj -c "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\string_matching\naive.c"
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/naive.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/naive.c.i"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\string_matching\naive.c" > CMakeFiles\fraud_workbench.dir\src\algorithms\string_matching\naive.c.i
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/naive.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/naive.c.s"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\string_matching\naive.c" -o CMakeFiles\fraud_workbench.dir\src\algorithms\string_matching\naive.c.s
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/rabin_karp.c.obj: CMakeFiles/fraud_workbench.dir/flags.make
+CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/rabin_karp.c.obj: CMakeFiles/fraud_workbench.dir/includes_C.rsp
+CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/rabin_karp.c.obj: C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/string_matching/rabin_karp.c
+CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/rabin_karp.c.obj: CMakeFiles/fraud_workbench.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/rabin_karp.c.obj"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/rabin_karp.c.obj -MF CMakeFiles\fraud_workbench.dir\src\algorithms\string_matching\rabin_karp.c.obj.d -o CMakeFiles\fraud_workbench.dir\src\algorithms\string_matching\rabin_karp.c.obj -c "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\string_matching\rabin_karp.c"
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/rabin_karp.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/rabin_karp.c.i"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\string_matching\rabin_karp.c" > CMakeFiles\fraud_workbench.dir\src\algorithms\string_matching\rabin_karp.c.i
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/rabin_karp.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/rabin_karp.c.s"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\string_matching\rabin_karp.c" -o CMakeFiles\fraud_workbench.dir\src\algorithms\string_matching\rabin_karp.c.s
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/finite_automaton.c.obj: CMakeFiles/fraud_workbench.dir/flags.make
+CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/finite_automaton.c.obj: CMakeFiles/fraud_workbench.dir/includes_C.rsp
+CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/finite_automaton.c.obj: C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/string_matching/finite_automaton.c
+CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/finite_automaton.c.obj: CMakeFiles/fraud_workbench.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/finite_automaton.c.obj"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/finite_automaton.c.obj -MF CMakeFiles\fraud_workbench.dir\src\algorithms\string_matching\finite_automaton.c.obj.d -o CMakeFiles\fraud_workbench.dir\src\algorithms\string_matching\finite_automaton.c.obj -c "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\string_matching\finite_automaton.c"
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/finite_automaton.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/finite_automaton.c.i"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\string_matching\finite_automaton.c" > CMakeFiles\fraud_workbench.dir\src\algorithms\string_matching\finite_automaton.c.i
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/finite_automaton.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/finite_automaton.c.s"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\string_matching\finite_automaton.c" -o CMakeFiles\fraud_workbench.dir\src\algorithms\string_matching\finite_automaton.c.s
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/kmp.c.obj: CMakeFiles/fraud_workbench.dir/flags.make
+CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/kmp.c.obj: CMakeFiles/fraud_workbench.dir/includes_C.rsp
+CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/kmp.c.obj: C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/string_matching/kmp.c
+CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/kmp.c.obj: CMakeFiles/fraud_workbench.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/kmp.c.obj"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/kmp.c.obj -MF CMakeFiles\fraud_workbench.dir\src\algorithms\string_matching\kmp.c.obj.d -o CMakeFiles\fraud_workbench.dir\src\algorithms\string_matching\kmp.c.obj -c "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\string_matching\kmp.c"
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/kmp.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/kmp.c.i"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\string_matching\kmp.c" > CMakeFiles\fraud_workbench.dir\src\algorithms\string_matching\kmp.c.i
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/kmp.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/kmp.c.s"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\string_matching\kmp.c" -o CMakeFiles\fraud_workbench.dir\src\algorithms\string_matching\kmp.c.s
+
+CMakeFiles/fraud_workbench.dir/src/benchmark/benchmark.c.obj: CMakeFiles/fraud_workbench.dir/flags.make
+CMakeFiles/fraud_workbench.dir/src/benchmark/benchmark.c.obj: CMakeFiles/fraud_workbench.dir/includes_C.rsp
+CMakeFiles/fraud_workbench.dir/src/benchmark/benchmark.c.obj: C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/benchmark/benchmark.c
+CMakeFiles/fraud_workbench.dir/src/benchmark/benchmark.c.obj: CMakeFiles/fraud_workbench.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/fraud_workbench.dir/src/benchmark/benchmark.c.obj"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/fraud_workbench.dir/src/benchmark/benchmark.c.obj -MF CMakeFiles\fraud_workbench.dir\src\benchmark\benchmark.c.obj.d -o CMakeFiles\fraud_workbench.dir\src\benchmark\benchmark.c.obj -c "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\benchmark\benchmark.c"
+
+CMakeFiles/fraud_workbench.dir/src/benchmark/benchmark.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/fraud_workbench.dir/src/benchmark/benchmark.c.i"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\benchmark\benchmark.c" > CMakeFiles\fraud_workbench.dir\src\benchmark\benchmark.c.i
+
+CMakeFiles/fraud_workbench.dir/src/benchmark/benchmark.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/fraud_workbench.dir/src/benchmark/benchmark.c.s"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\benchmark\benchmark.c" -o CMakeFiles\fraud_workbench.dir\src\benchmark\benchmark.c.s
+
 # Object files for target fraud_workbench
 fraud_workbench_OBJECTS = \
 "CMakeFiles/fraud_workbench.dir/src/main.c.obj" \
@@ -376,7 +631,24 @@ fraud_workbench_OBJECTS = \
 "CMakeFiles/fraud_workbench.dir/src/algorithms/graph/dijkstra.c.obj" \
 "CMakeFiles/fraud_workbench.dir/src/algorithms/graph/prim.c.obj" \
 "CMakeFiles/fraud_workbench.dir/src/algorithms/graph/kruskal.c.obj" \
-"CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/knapsack.c.obj"
+"CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/knapsack.c.obj" \
+"CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/matrix_chain.c.obj" \
+"CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/lcs.c.obj" \
+"CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/optimal_bst.c.obj" \
+"CMakeFiles/fraud_workbench.dir/src/algorithms/graph/bellman_ford.c.obj" \
+"CMakeFiles/fraud_workbench.dir/src/algorithms/graph/floyd_warshall.c.obj" \
+"CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/tsp.c.obj" \
+"CMakeFiles/fraud_workbench.dir/src/algorithms/backtracking/n_queens.c.obj" \
+"CMakeFiles/fraud_workbench.dir/src/algorithms/backtracking/subset_sum.c.obj" \
+"CMakeFiles/fraud_workbench.dir/src/algorithms/branch_bound/branch_bound.c.obj" \
+"CMakeFiles/fraud_workbench.dir/src/algorithms/network_flow/ford_fulkerson.c.obj" \
+"CMakeFiles/fraud_workbench.dir/src/algorithms/network_flow/bipartite_matching.c.obj" \
+"CMakeFiles/fraud_workbench.dir/src/algorithms/number_theory/crt.c.obj" \
+"CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/naive.c.obj" \
+"CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/rabin_karp.c.obj" \
+"CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/finite_automaton.c.obj" \
+"CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/kmp.c.obj" \
+"CMakeFiles/fraud_workbench.dir/src/benchmark/benchmark.c.obj"
 
 # External object files for target fraud_workbench
 fraud_workbench_EXTERNAL_OBJECTS =
@@ -400,11 +672,28 @@ fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/src/algorithms/graph/dijkstr
 fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/src/algorithms/graph/prim.c.obj
 fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/src/algorithms/graph/kruskal.c.obj
 fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/knapsack.c.obj
+fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/matrix_chain.c.obj
+fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/lcs.c.obj
+fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/optimal_bst.c.obj
+fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/src/algorithms/graph/bellman_ford.c.obj
+fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/src/algorithms/graph/floyd_warshall.c.obj
+fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/tsp.c.obj
+fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/src/algorithms/backtracking/n_queens.c.obj
+fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/src/algorithms/backtracking/subset_sum.c.obj
+fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/src/algorithms/branch_bound/branch_bound.c.obj
+fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/src/algorithms/network_flow/ford_fulkerson.c.obj
+fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/src/algorithms/network_flow/bipartite_matching.c.obj
+fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/src/algorithms/number_theory/crt.c.obj
+fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/naive.c.obj
+fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/rabin_karp.c.obj
+fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/finite_automaton.c.obj
+fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/kmp.c.obj
+fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/src/benchmark/benchmark.c.obj
 fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/build.make
 fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/linkLibs.rsp
 fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/objects1.rsp
 fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_20) "Linking C executable fraud_workbench.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_37) "Linking C executable fraud_workbench.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\fraud_workbench.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

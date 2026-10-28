@@ -12,7 +12,63 @@
 #include "greedy.h"
 #include "graph_algorithms.h"
 #include "dynamic_programming.h"
+#include "backtracking.h"
+#include "branch_bound.h"
+#include "network_flow.h"
+#include "number_theory.h"
+#include "string_matching.h"
+#include "benchmark.h"
 
+
+static void print_bb_result(
+    const char *name,
+    const BBResult *result
+)
+{
+    printf("\n%s\n", name);
+    printf("----------------------------------------\n");
+
+    printf(
+        "Maximum Risk Value : %d\n",
+        result->maximum_value
+    );
+
+    printf(
+        "Total Time Used    : %d\n",
+        result->total_cost
+    );
+
+    printf(
+        "Selected Cases     : "
+    );
+
+    for (
+        int i = 0;
+        i < result->selected_count;
+        i++
+    )
+    {
+        printf(
+            "F%d",
+            result->selected_ids[i]
+        );
+
+        if (
+            i <
+            result->selected_count - 1
+        )
+        {
+            printf(", ");
+        }
+    }
+
+    printf("\n");
+
+    printf(
+        "Nodes Explored     : %d\n",
+        result->nodes_explored
+    );
+}
 int main(void)
 {
     Transaction *transactions = malloc(
@@ -276,10 +332,369 @@ int main(void)
              * Pattern matching module
              */
             case 5:
-            {
-                printf("Pattern Search - Coming Soon\n");
-                break;
-            }
+{
+    char text[STRING_MAX_LENGTH + 1];
+    char pattern[PATTERN_MAX_LENGTH + 1];
+
+    int pattern_choice;
+
+    printf("\n");
+    printf("============================================================\n");
+    printf("                 FRAUD PATTERN SEARCH\n");
+    printf("============================================================\n");
+
+    /*
+     * scanf leaves a newline in stdin.
+     */
+    int ch;
+
+    while (
+        (ch = getchar()) != '\n' &&
+        ch != EOF
+    )
+    {
+    }
+
+
+    printf(
+        "Enter transaction/event text:\n"
+    );
+
+    if (
+        fgets(
+            text,
+            sizeof(text),
+            stdin
+        ) == NULL
+    )
+    {
+        printf("Unable to read text.\n");
+        break;
+    }
+
+
+    /*
+     * Remove trailing newline.
+     */
+    for (
+        int i = 0;
+        text[i] != '\0';
+        i++
+    )
+    {
+        if (text[i] == '\n')
+        {
+            text[i] = '\0';
+            break;
+        }
+    }
+
+
+    printf(
+        "Enter suspicious pattern: "
+    );
+
+    if (
+        fgets(
+            pattern,
+            sizeof(pattern),
+            stdin
+        ) == NULL
+    )
+    {
+        printf(
+            "Unable to read pattern.\n"
+        );
+
+        break;
+    }
+
+
+    for (
+        int i = 0;
+        pattern[i] != '\0';
+        i++
+    )
+    {
+        if (pattern[i] == '\n')
+        {
+            pattern[i] = '\0';
+            break;
+        }
+    }
+
+
+    printf("\n");
+    printf("1. Naive Pattern Matching\n");
+    printf("2. Rabin-Karp\n");
+    printf("3. Finite Automaton\n");
+    printf("4. KMP\n");
+    printf("5. Compare All Algorithms\n");
+    printf("0. Back\n");
+
+    printf(
+        "Select pattern algorithm: "
+    );
+
+    if (
+        scanf(
+            "%d",
+            &pattern_choice
+        ) != 1
+    )
+    {
+        printf("Invalid input.\n");
+
+        while (getchar() != '\n')
+        {
+        }
+
+        break;
+    }
+
+
+    MatchResult result;
+
+
+    if (pattern_choice == 1)
+    {
+        result =
+            naive_pattern_search(
+                text,
+                pattern
+            );
+
+        printf(
+            "\nAlgorithm: Naive Pattern Matching\n"
+        );
+    }
+
+    else if (pattern_choice == 2)
+    {
+        result =
+            rabin_karp_search(
+                text,
+                pattern
+            );
+
+        printf(
+            "\nAlgorithm: Rabin-Karp\n"
+        );
+    }
+
+    else if (pattern_choice == 3)
+    {
+        result =
+            finite_automaton_search(
+                text,
+                pattern
+            );
+
+        printf(
+            "\nAlgorithm: Finite Automaton\n"
+        );
+    }
+
+    else if (pattern_choice == 4)
+    {
+        result =
+            kmp_search(
+                text,
+                pattern
+            );
+
+        printf(
+            "\nAlgorithm: KMP\n"
+        );
+    }
+
+    else if (pattern_choice == 5)
+    {
+        MatchResult naive =
+            naive_pattern_search(
+                text,
+                pattern
+            );
+
+        MatchResult rabin =
+            rabin_karp_search(
+                text,
+                pattern
+            );
+
+        MatchResult automaton =
+            finite_automaton_search(
+                text,
+                pattern
+            );
+
+        MatchResult kmp =
+            kmp_search(
+                text,
+                pattern
+            );
+
+
+        printf("\n");
+        printf("============================================================\n");
+        printf("             STRING MATCHING COMPARISON\n");
+        printf("============================================================\n");
+
+
+        printf("Naive            : ");
+
+        for (int i = 0;
+             i < naive.count;
+             i++)
+        {
+            printf(
+                "%d ",
+                naive.positions[i]
+            );
+        }
+
+        printf("\n");
+
+
+        printf("Rabin-Karp       : ");
+
+        for (int i = 0;
+             i < rabin.count;
+             i++)
+        {
+            printf(
+                "%d ",
+                rabin.positions[i]
+            );
+        }
+
+        printf("\n");
+
+
+        printf("Finite Automaton : ");
+
+        for (int i = 0;
+             i < automaton.count;
+             i++)
+        {
+            printf(
+                "%d ",
+                automaton.positions[i]
+            );
+        }
+
+        printf("\n");
+
+
+        printf("KMP              : ");
+
+        for (int i = 0;
+             i < kmp.count;
+             i++)
+        {
+            printf(
+                "%d ",
+                kmp.positions[i]
+            );
+        }
+
+        printf("\n");
+
+
+        int correct =
+            match_results_equal(
+                &naive,
+                &rabin
+            ) &&
+            match_results_equal(
+                &naive,
+                &automaton
+            ) &&
+            match_results_equal(
+                &naive,
+                &kmp
+            );
+
+
+        printf("\nCorrectness Check: ");
+
+        if (correct)
+        {
+            printf("PASS\n");
+
+            printf(
+                "All four algorithms found "
+                "identical match positions.\n"
+            );
+        }
+        else
+        {
+            printf("FAIL\n");
+        }
+
+
+        printf("\nComplexity Summary\n");
+        printf("----------------------------------------\n");
+        printf("Naive            : O(n*m) worst case\n");
+        printf("Rabin-Karp       : O(n+m) average, O(n*m) worst\n");
+        printf("Finite Automaton : O(n) search after preprocessing\n");
+        printf("KMP              : O(n+m)\n");
+
+        break;
+    }
+
+    else if (pattern_choice == 0)
+    {
+        break;
+    }
+
+    else
+    {
+        printf(
+            "Invalid pattern algorithm.\n"
+        );
+
+        break;
+    }
+
+
+    /*
+     * Individual algorithm output.
+     */
+    if (result.count == 0)
+    {
+        printf(
+            "Pattern not found.\n"
+        );
+    }
+    else
+    {
+        printf(
+            "Matches found: %d\n",
+            result.count
+        );
+
+        printf(
+            "Match positions: "
+        );
+
+        for (
+            int i = 0;
+            i < result.count;
+            i++
+        )
+        {
+            printf(
+                "%d ",
+                result.positions[i]
+            );
+        }
+
+        printf("\n");
+    }
+
+    break;
+}
 
             /*
              * OPTION 6
@@ -346,7 +761,9 @@ int main(void)
     printf("\n1. Dijkstra Evidence Path\n");
     printf("2. Prim Minimum Evidence Network\n");
     printf("3. Kruskal Minimum Evidence Network\n");
-    printf("0. Back\n");
+    printf("4. Bellman-Ford Evidence Path\n");
+printf("5. Floyd-Warshall All-Pairs Analysis\n");
+printf("0. Back\n");
 
     printf("Select graph algorithm: ");
 
@@ -551,7 +968,160 @@ int main(void)
             total_cost
         );
     }
+    else if (graph_choice == 4)
+{
+    int source;
+    int destination;
 
+    int distances[GRAPH_MAX_VERTICES];
+    int previous[GRAPH_MAX_VERTICES];
+
+    printf("Enter source vertex: ");
+    scanf("%d", &source);
+
+    printf("Enter destination vertex: ");
+    scanf("%d", &destination);
+
+    if (
+        source < 0 ||
+        source >= graph.vertices ||
+        destination < 0 ||
+        destination >= graph.vertices
+    )
+    {
+        printf("Invalid vertex.\n");
+        break;
+    }
+
+    int valid =
+        bellman_ford(
+            &graph,
+            source,
+            distances,
+            previous
+        );
+
+    if (!valid)
+    {
+        printf(
+            "\nNegative-weight cycle detected.\n"
+        );
+    }
+    else if (
+        distances[destination] ==
+        GRAPH_INF
+    )
+    {
+        printf(
+            "\nNo evidence path exists.\n"
+        );
+    }
+    else
+    {
+        printf(
+            "\nBellman-Ford shortest evidence cost: %d\n",
+            distances[destination]
+        );
+
+        int path[GRAPH_MAX_VERTICES];
+        int path_length = 0;
+
+        int current = destination;
+
+        while (current != -1)
+        {
+            path[path_length++] =
+                current;
+
+            current =
+                previous[current];
+        }
+
+        printf("Evidence path: ");
+
+        for (
+            int i = path_length - 1;
+            i >= 0;
+            i--
+        )
+        {
+            printf(
+                "%s",
+                labels[path[i]]
+            );
+
+            if (i > 0)
+            {
+                printf(" -> ");
+            }
+        }
+
+        printf("\n");
+    }
+}
+else if (graph_choice == 5)
+{
+    int distances
+        [GRAPH_MAX_VERTICES]
+        [GRAPH_MAX_VERTICES];
+
+    floyd_warshall(
+        &graph,
+        distances
+    );
+
+    printf("\n");
+    printf("============================================================\n");
+    printf("          ALL-PAIRS EVIDENCE DISTANCES\n");
+    printf("============================================================\n");
+
+    printf("%12s", "");
+
+    for (int j = 0; j < graph.vertices; j++)
+    {
+        printf(
+            "%8d",
+            j
+        );
+    }
+
+    printf("\n");
+
+    for (int i = 0; i < graph.vertices; i++)
+    {
+        printf(
+            "Vertex %-5d",
+            i
+        );
+
+        for (int j = 0; j < graph.vertices; j++)
+        {
+            if (
+                distances[i][j] ==
+                GRAPH_INF
+            )
+            {
+                printf(
+                    "%8s",
+                    "INF"
+                );
+            }
+            else
+            {
+                printf(
+                    "%8d",
+                    distances[i][j]
+                );
+            }
+        }
+
+        printf("\n");
+    }
+
+    printf(
+        "============================================================\n"
+    );
+}
     else if (graph_choice != 0)
     {
         printf(
@@ -739,6 +1309,19 @@ int main(void)
                 printf("5. Activity Selection\n");
                 printf("6. Interval Partitioning\n");
                 printf("7. Huffman Coding\n"); 
+                printf("8. Matrix Chain Multiplication\n");
+printf("9. Longest Common Subsequence\n");
+printf("10. Optimal Binary Search Tree\n");
+printf("11. Bounded TSP (Investigation Route)\n");
+printf("12. N-Queens Backtracking\n");
+printf("13. Subset Sum Backtracking\n");
+printf("14. FIFO Branch and Bound\n");
+printf("15. LIFO Branch and Bound\n");
+printf("16. Least-Cost Branch and Bound\n");
+printf("17. Compare All Branch and Bound Strategies\n");
+printf("18. Ford-Fulkerson Maximum Flow\n");
+printf("19. Maximum Bipartite Matching\n");
+printf("20. Chinese Remainder Theorem\n");
                 printf("0. Back\n");
                 printf("============================================================\n");
                 printf("Select algorithm: ");
@@ -1251,7 +1834,851 @@ else if (algorithm_choice == 7)
         run_huffman_demo(text);
     }
 }
-                else if (algorithm_choice != 0)
+else if (algorithm_choice == 8)
+{
+    int dimensions[] = {
+        10,
+        30,
+        5,
+        60
+    };
+
+    int matrix_count = 3;
+
+    printf("\nMatrix Chain\n");
+    printf("----------------------------------------\n");
+    printf("A1 = 10 x 30\n");
+    printf("A2 = 30 x 5\n");
+    printf("A3 = 5 x 60\n");
+
+    long long minimum_cost =
+        matrix_chain_min_cost(
+            dimensions,
+            matrix_count
+        );
+
+    printf(
+        "\nMinimum scalar multiplications: %lld\n",
+        minimum_cost
+    );
+}
+else if (algorithm_choice == 9)
+{
+    char first[
+        MAX_SEQUENCE_LENGTH + 1
+    ];
+
+    char second[
+        MAX_SEQUENCE_LENGTH + 1
+    ];
+
+    char result[
+        MAX_SEQUENCE_LENGTH + 1
+    ];
+
+    printf(
+        "\nEnter first event sequence "
+        "(no spaces): "
+    );
+
+    scanf(
+        "%100s",
+        first
+    );
+
+    printf(
+        "Enter second event sequence "
+        "(no spaces): "
+    );
+
+    scanf(
+        "%100s",
+        second
+    );
+
+    int length =
+        longest_common_subsequence(
+            first,
+            second,
+            result
+        );
+
+    printf("\nLCS Result\n");
+    printf("----------------------------------------\n");
+
+    printf(
+        "Sequence 1 : %s\n",
+        first
+    );
+
+    printf(
+        "Sequence 2 : %s\n",
+        second
+    );
+
+    printf(
+        "LCS        : %s\n",
+        result
+    );
+
+    printf(
+        "LCS Length : %d\n",
+        length
+    );
+}
+else if (algorithm_choice == 10)
+{
+    int frequencies[] = {
+        34,
+        8,
+        50
+    };
+
+    int key_count = 3;
+
+    printf("\nOptimal BST Input\n");
+    printf("----------------------------------------\n");
+
+    printf("Account Index K1 frequency: 34\n");
+    printf("Account Index K2 frequency: 8\n");
+    printf("Account Index K3 frequency: 50\n");
+
+    int cost =
+        optimal_bst_cost(
+            frequencies,
+            key_count
+        );
+
+    printf(
+        "\nMinimum weighted search cost: %d\n",
+        cost
+    );
+}     
+else if (algorithm_choice == 11)
+{
+    int graph
+        [TSP_MAX_VERTICES]
+        [TSP_MAX_VERTICES] = {0};
+
+    /*
+     * Four investigation locations:
+     *
+     * 0 = Bank Branch
+     * 1 = Merchant Site
+     * 2 = ATM Location
+     * 3 = Investigation Office
+     */
+
+    int vertex_count = 4;
+
+    const char *location_names[] = {
+        "Bank Branch",
+        "Merchant Site",
+        "ATM Location",
+        "Investigation Office"
+    };
+
+    int costs[4][4] = {
+        {0, 10, 15, 20},
+        {10, 0, 35, 25},
+        {15, 35, 0, 30},
+        {20, 25, 30, 0}
+    };
+
+    for (int i = 0; i < vertex_count; i++)
+    {
+        for (int j = 0; j < vertex_count; j++)
+        {
+            graph[i][j] = costs[i][j];
+        }
+    }
+
+    printf("\n");
+    printf("============================================================\n");
+    printf("             BOUNDED TSP INVESTIGATION ROUTE\n");
+    printf("============================================================\n");
+
+    printf("Locations:\n");
+
+    for (int i = 0; i < vertex_count; i++)
+    {
+        printf(
+            "%d = %s\n",
+            i,
+            location_names[i]
+        );
+    }
+
+    printf("\nTravel / Evidence Cost Matrix\n");
+    printf("----------------------------------------\n");
+
+    for (int i = 0; i < vertex_count; i++)
+    {
+        for (int j = 0; j < vertex_count; j++)
+        {
+            printf(
+                "%6d",
+                graph[i][j]
+            );
+        }
+
+        printf("\n");
+    }
+
+    TSPResult result =
+        solve_bounded_tsp(
+            vertex_count,
+            graph
+        );
+
+    if (result.minimum_cost >= TSP_INF)
+    {
+        printf(
+            "\nNo complete investigation route exists.\n"
+        );
+    }
+    else
+    {
+        printf(
+            "\nMinimum Route Cost: %d\n",
+            result.minimum_cost
+        );
+
+        printf("Optimal Route: ");
+
+        for (
+            int i = 0;
+            i < result.path_length;
+            i++
+        )
+        {
+            printf(
+                "%s",
+                location_names[result.path[i]]
+            );
+
+            if (i < result.path_length - 1)
+            {
+                printf(" -> ");
+            }
+        }
+
+        printf("\n");
+    }
+
+    printf("\nComplexity\n");
+    printf("Time  : O(n^2 * 2^n)\n");
+    printf("Space : O(n * 2^n)\n");
+    printf(
+        "Bound  : maximum %d vertices\n",
+        TSP_MAX_VERTICES
+    );
+}
+else if (algorithm_choice == 12)
+{
+    int board_size;
+
+    printf("\n");
+    printf("============================================\n");
+    printf("              N-QUEENS PROBLEM\n");
+    printf("============================================\n");
+
+    printf(
+        "Enter board size "
+        "(1-%d): ",
+        NQUEENS_MAX_SIZE
+    );
+
+    if (
+        scanf(
+            "%d",
+            &board_size
+        ) != 1
+    )
+    {
+        printf("Invalid input.\n");
+
+        while (getchar() != '\n')
+        {
+        }
+
+        break;
+    }
+
+    if (
+        board_size <= 0 ||
+        board_size >
+        NQUEENS_MAX_SIZE
+    )
+    {
+        printf(
+            "Invalid board size.\n"
+        );
+
+        break;
+    }
+
+    NQueensResult result =
+        solve_n_queens(
+            board_size
+        );
+
+    print_n_queens_solution(
+        &result
+    );
+
+    printf("\nComplexity\n");
+    printf(
+        "Worst-case search is "
+        "exponential / combinatorial.\n"
+    );
+}
+else if (algorithm_choice == 13)
+{
+    int values[] = {
+        3,
+        34,
+        4,
+        12,
+        5,
+        2
+    };
+
+    int count =
+        sizeof(values) /
+        sizeof(values[0]);
+
+    int target;
+
+    printf("\n");
+    printf("============================================\n");
+    printf("              SUBSET SUM\n");
+    printf("============================================\n");
+
+    printf("Available values: ");
+
+    for (int i = 0;
+         i < count;
+         i++)
+    {
+        printf(
+            "%d ",
+            values[i]
+        );
+    }
+
+    printf("\n");
+
+    printf(
+        "Enter target sum: "
+    );
+
+    if (
+        scanf(
+            "%d",
+            &target
+        ) != 1
+    )
+    {
+        printf("Invalid input.\n");
+
+        while (getchar() != '\n')
+        {
+        }
+
+        break;
+    }
+
+    SubsetResult result =
+        solve_subset_sum(
+            values,
+            count,
+            target
+        );
+
+    if (result.found)
+    {
+        printf(
+            "\nSubset found: "
+        );
+
+        for (
+            int i = 0;
+            i < result.selected_count;
+            i++
+        )
+        {
+            printf(
+                "%d",
+                result.selected[i]
+            );
+
+            if (
+                i <
+                result.selected_count - 1
+            )
+            {
+                printf(" + ");
+            }
+        }
+
+        printf(
+            " = %d\n",
+            result.sum
+        );
+    }
+    else
+    {
+        printf(
+            "\nNo subset produces "
+            "target %d.\n",
+            target
+        );
+    }
+
+    printf(
+        "Worst-case complexity: O(2^n)\n"
+    );
+}
+else if (
+    algorithm_choice >= 14 &&
+    algorithm_choice <= 17
+)
+{
+    BBItem items[] = {
+        {1, 2, 40},
+        {2, 3, 50},
+        {3, 4, 65},
+        {4, 5, 75}
+    };
+
+    int item_count =
+        sizeof(items) /
+        sizeof(items[0]);
+
+    int capacity = 7;
+
+    printf("\n");
+    printf("============================================================\n");
+    printf("          BRANCH AND BOUND CASE SELECTION\n");
+    printf("============================================================\n");
+
+    printf(
+        "%-8s %-12s %-12s\n",
+        "CASE",
+        "TIME",
+        "RISK"
+    );
+
+    printf(
+        "----------------------------------------\n"
+    );
+
+    for (int i = 0; i < item_count; i++)
+    {
+        printf(
+            "F%-7d %-12d %-12d\n",
+            items[i].id,
+            items[i].cost,
+            items[i].value
+        );
+    }
+
+    printf(
+        "----------------------------------------\n"
+    );
+
+    printf(
+        "Available investigation time: %d\n",
+        capacity
+    );
+
+
+    if (algorithm_choice == 14)
+    {
+        BBResult result =
+            branch_bound_fifo(
+                items,
+                item_count,
+                capacity
+            );
+
+        print_bb_result(
+            "FIFO Branch and Bound",
+            &result
+        );
+    }
+
+    else if (algorithm_choice == 15)
+    {
+        BBResult result =
+            branch_bound_lifo(
+                items,
+                item_count,
+                capacity
+            );
+
+        print_bb_result(
+            "LIFO Branch and Bound",
+            &result
+        );
+    }
+
+    else if (algorithm_choice == 16)
+    {
+        BBResult result =
+            branch_bound_least_cost(
+                items,
+                item_count,
+                capacity
+            );
+
+        print_bb_result(
+            "Least-Cost / Best-Bound",
+            &result
+        );
+    }
+
+    else
+    {
+        BBResult fifo =
+            branch_bound_fifo(
+                items,
+                item_count,
+                capacity
+            );
+
+        BBResult lifo =
+            branch_bound_lifo(
+                items,
+                item_count,
+                capacity
+            );
+
+        BBResult least_cost =
+            branch_bound_least_cost(
+                items,
+                item_count,
+                capacity
+            );
+
+        print_bb_result(
+            "FIFO Branch and Bound",
+            &fifo
+        );
+
+        print_bb_result(
+            "LIFO Branch and Bound",
+            &lifo
+        );
+
+        print_bb_result(
+            "Least-Cost / Best-Bound",
+            &least_cost
+        );
+
+
+        printf("\n");
+        printf("============================================================\n");
+        printf("             STRATEGY COMPARISON\n");
+        printf("============================================================\n");
+
+        printf(
+            "%-20s %-12s %-12s\n",
+            "STRATEGY",
+            "BEST RISK",
+            "NODES"
+        );
+
+        printf(
+            "%-20s %-12d %-12d\n",
+            "FIFO",
+            fifo.maximum_value,
+            fifo.nodes_explored
+        );
+
+        printf(
+            "%-20s %-12d %-12d\n",
+            "LIFO",
+            lifo.maximum_value,
+            lifo.nodes_explored
+        );
+
+        printf(
+            "%-20s %-12d %-12d\n",
+            "Least-Cost",
+            least_cost.maximum_value,
+            least_cost.nodes_explored
+        );
+
+
+        if (
+            fifo.maximum_value ==
+            lifo.maximum_value &&
+            fifo.maximum_value ==
+            least_cost.maximum_value
+        )
+        {
+            printf(
+                "\nCorrectness Check: PASS\n"
+            );
+
+            printf(
+                "All strategies found the "
+                "same optimal value.\n"
+            );
+        }
+        else
+        {
+            printf(
+                "\nCorrectness Check: FAIL\n"
+            );
+        }
+    }
+}
+else if (algorithm_choice == 18)
+{
+    int capacity
+        [FLOW_MAX_VERTICES]
+        [FLOW_MAX_VERTICES] = {0};
+
+    /*
+     * Investigation capacity network:
+     *
+     * 0 = Fraud Alerts
+     * 1 = Team A
+     * 2 = Team B
+     * 3 = Review Unit
+     * 4 = Completed Cases
+     */
+
+    int vertex_count = 5;
+
+    capacity[0][1] = 10;
+    capacity[0][2] = 8;
+
+    capacity[1][3] = 5;
+    capacity[1][4] = 5;
+
+    capacity[2][3] = 6;
+    capacity[2][4] = 4;
+
+    capacity[3][4] = 8;
+
+
+    printf("\n");
+    printf("============================================================\n");
+    printf("          INVESTIGATION CAPACITY NETWORK\n");
+    printf("============================================================\n");
+
+    printf("Source          : Fraud Alerts\n");
+    printf("Intermediate    : Team A, Team B, Review Unit\n");
+    printf("Sink            : Completed Cases\n");
+
+
+    int maximum_flow =
+        ford_fulkerson(
+            vertex_count,
+            capacity,
+            0,
+            4
+        );
+
+
+    printf(
+        "\nMaximum investigation flow: %d cases\n",
+        maximum_flow
+    );
+
+    printf(
+        "\nInterpretation:\n"
+    );
+
+    printf(
+        "At most %d cases can pass through "
+        "the current investigation capacity "
+        "network simultaneously.\n",
+        maximum_flow
+    );
+}
+else if (algorithm_choice == 19)
+{
+    int compatibility
+        [MATCH_MAX_LEFT]
+        [MATCH_MAX_RIGHT] = {0};
+
+    /*
+     * Four fraud cases.
+     */
+    int case_count = 4;
+
+    /*
+     * Four investigators.
+     */
+    int investigator_count = 4;
+
+
+    const char *case_names[] = {
+        "Fraud Case F1",
+        "Fraud Case F2",
+        "Fraud Case F3",
+        "Fraud Case F4"
+    };
+
+    const char *investigator_names[] = {
+        "Analyst A",
+        "Analyst B",
+        "Analyst C",
+        "Analyst D"
+    };
+
+
+    /*
+     * Compatibility matrix:
+     *
+     *          A B C D
+     * F1       1 1 0 0
+     * F2       0 1 1 0
+     * F3       1 0 1 0
+     * F4       0 0 1 1
+     */
+
+    compatibility[0][0] = 1;
+    compatibility[0][1] = 1;
+
+    compatibility[1][1] = 1;
+    compatibility[1][2] = 1;
+
+    compatibility[2][0] = 1;
+    compatibility[2][2] = 1;
+
+    compatibility[3][2] = 1;
+    compatibility[3][3] = 1;
+
+
+    int right_matches[
+        MATCH_MAX_RIGHT
+    ];
+
+
+    int maximum_matches =
+        maximum_bipartite_matching(
+            case_count,
+            investigator_count,
+            compatibility,
+            right_matches
+        );
+
+
+    printf("\n");
+    printf("============================================================\n");
+    printf("           INVESTIGATOR CASE ASSIGNMENT\n");
+    printf("============================================================\n");
+
+    for (
+        int investigator = 0;
+        investigator < investigator_count;
+        investigator++
+    )
+    {
+        if (
+            right_matches[investigator] != -1
+        )
+        {
+            int case_index =
+                right_matches[investigator];
+
+            printf(
+                "%s -> %s\n",
+                case_names[case_index],
+                investigator_names[investigator]
+            );
+        }
+        else
+        {
+            printf(
+                "%s -> Unassigned\n",
+                investigator_names[investigator]
+            );
+        }
+    }
+
+
+    printf(
+        "------------------------------------------------------------\n"
+    );
+
+    printf(
+        "Maximum cases assigned: %d\n",
+        maximum_matches
+    );
+}
+else if (algorithm_choice == 20)
+{
+    long long remainders[] = {
+        2,
+        3,
+        2
+    };
+
+    long long moduli[] = {
+        3,
+        5,
+        7
+    };
+
+    int count = 3;
+
+    printf("\n");
+    printf("============================================================\n");
+    printf("          CHINESE REMAINDER THEOREM\n");
+    printf("============================================================\n");
+
+    for (int i = 0; i < count; i++)
+    {
+        printf(
+            "x = %lld (mod %lld)\n",
+            remainders[i],
+            moduli[i]
+        );
+    }
+
+
+    CRTResult result =
+        chinese_remainder_theorem(
+            remainders,
+            moduli,
+            count
+        );
+
+
+    if (result.valid)
+    {
+        printf(
+            "\nSmallest non-negative solution: %lld\n",
+            result.solution
+        );
+
+        printf(
+            "General solution: x = %lld (mod %lld)\n",
+            result.solution,
+            result.modulus_product
+        );
+    }
+    else
+    {
+        printf(
+            "\nCRT could not solve "
+            "the supplied system.\n"
+        );
+
+        printf(
+            "This implementation requires "
+            "pairwise coprime moduli.\n"
+        );
+    }
+}
+else if (algorithm_choice != 0)
                 {
                     printf(
                         "Invalid algorithm choice.\n"
@@ -1266,13 +2693,10 @@ else if (algorithm_choice == 7)
              * Benchmark runner
              */
             case 9:
-            {
-                printf(
-                    "Benchmark Runner - Coming Soon\n"
-                );
-
-                break;
-            }
+{
+    run_sorting_benchmark();
+    break;
+}
 
             /*
              * OPTION 10

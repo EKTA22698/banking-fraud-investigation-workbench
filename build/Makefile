@@ -128,6 +128,78 @@ fraud_workbench/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/build
 .PHONY : fraud_workbench/fast
 
+src/algorithms/backtracking/n_queens.obj: src/algorithms/backtracking/n_queens.c.obj
+.PHONY : src/algorithms/backtracking/n_queens.obj
+
+# target to build an object file
+src/algorithms/backtracking/n_queens.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/backtracking/n_queens.c.obj
+.PHONY : src/algorithms/backtracking/n_queens.c.obj
+
+src/algorithms/backtracking/n_queens.i: src/algorithms/backtracking/n_queens.c.i
+.PHONY : src/algorithms/backtracking/n_queens.i
+
+# target to preprocess a source file
+src/algorithms/backtracking/n_queens.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/backtracking/n_queens.c.i
+.PHONY : src/algorithms/backtracking/n_queens.c.i
+
+src/algorithms/backtracking/n_queens.s: src/algorithms/backtracking/n_queens.c.s
+.PHONY : src/algorithms/backtracking/n_queens.s
+
+# target to generate assembly for a file
+src/algorithms/backtracking/n_queens.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/backtracking/n_queens.c.s
+.PHONY : src/algorithms/backtracking/n_queens.c.s
+
+src/algorithms/backtracking/subset_sum.obj: src/algorithms/backtracking/subset_sum.c.obj
+.PHONY : src/algorithms/backtracking/subset_sum.obj
+
+# target to build an object file
+src/algorithms/backtracking/subset_sum.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/backtracking/subset_sum.c.obj
+.PHONY : src/algorithms/backtracking/subset_sum.c.obj
+
+src/algorithms/backtracking/subset_sum.i: src/algorithms/backtracking/subset_sum.c.i
+.PHONY : src/algorithms/backtracking/subset_sum.i
+
+# target to preprocess a source file
+src/algorithms/backtracking/subset_sum.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/backtracking/subset_sum.c.i
+.PHONY : src/algorithms/backtracking/subset_sum.c.i
+
+src/algorithms/backtracking/subset_sum.s: src/algorithms/backtracking/subset_sum.c.s
+.PHONY : src/algorithms/backtracking/subset_sum.s
+
+# target to generate assembly for a file
+src/algorithms/backtracking/subset_sum.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/backtracking/subset_sum.c.s
+.PHONY : src/algorithms/backtracking/subset_sum.c.s
+
+src/algorithms/branch_bound/branch_bound.obj: src/algorithms/branch_bound/branch_bound.c.obj
+.PHONY : src/algorithms/branch_bound/branch_bound.obj
+
+# target to build an object file
+src/algorithms/branch_bound/branch_bound.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/branch_bound/branch_bound.c.obj
+.PHONY : src/algorithms/branch_bound/branch_bound.c.obj
+
+src/algorithms/branch_bound/branch_bound.i: src/algorithms/branch_bound/branch_bound.c.i
+.PHONY : src/algorithms/branch_bound/branch_bound.i
+
+# target to preprocess a source file
+src/algorithms/branch_bound/branch_bound.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/branch_bound/branch_bound.c.i
+.PHONY : src/algorithms/branch_bound/branch_bound.c.i
+
+src/algorithms/branch_bound/branch_bound.s: src/algorithms/branch_bound/branch_bound.c.s
+.PHONY : src/algorithms/branch_bound/branch_bound.s
+
+# target to generate assembly for a file
+src/algorithms/branch_bound/branch_bound.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/branch_bound/branch_bound.c.s
+.PHONY : src/algorithms/branch_bound/branch_bound.c.s
+
 src/algorithms/divide_conquer/celebrity.obj: src/algorithms/divide_conquer/celebrity.c.obj
 .PHONY : src/algorithms/divide_conquer/celebrity.obj
 
@@ -248,6 +320,126 @@ src/algorithms/dynamic_programming/knapsack.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/knapsack.c.s
 .PHONY : src/algorithms/dynamic_programming/knapsack.c.s
 
+src/algorithms/dynamic_programming/lcs.obj: src/algorithms/dynamic_programming/lcs.c.obj
+.PHONY : src/algorithms/dynamic_programming/lcs.obj
+
+# target to build an object file
+src/algorithms/dynamic_programming/lcs.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/lcs.c.obj
+.PHONY : src/algorithms/dynamic_programming/lcs.c.obj
+
+src/algorithms/dynamic_programming/lcs.i: src/algorithms/dynamic_programming/lcs.c.i
+.PHONY : src/algorithms/dynamic_programming/lcs.i
+
+# target to preprocess a source file
+src/algorithms/dynamic_programming/lcs.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/lcs.c.i
+.PHONY : src/algorithms/dynamic_programming/lcs.c.i
+
+src/algorithms/dynamic_programming/lcs.s: src/algorithms/dynamic_programming/lcs.c.s
+.PHONY : src/algorithms/dynamic_programming/lcs.s
+
+# target to generate assembly for a file
+src/algorithms/dynamic_programming/lcs.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/lcs.c.s
+.PHONY : src/algorithms/dynamic_programming/lcs.c.s
+
+src/algorithms/dynamic_programming/matrix_chain.obj: src/algorithms/dynamic_programming/matrix_chain.c.obj
+.PHONY : src/algorithms/dynamic_programming/matrix_chain.obj
+
+# target to build an object file
+src/algorithms/dynamic_programming/matrix_chain.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/matrix_chain.c.obj
+.PHONY : src/algorithms/dynamic_programming/matrix_chain.c.obj
+
+src/algorithms/dynamic_programming/matrix_chain.i: src/algorithms/dynamic_programming/matrix_chain.c.i
+.PHONY : src/algorithms/dynamic_programming/matrix_chain.i
+
+# target to preprocess a source file
+src/algorithms/dynamic_programming/matrix_chain.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/matrix_chain.c.i
+.PHONY : src/algorithms/dynamic_programming/matrix_chain.c.i
+
+src/algorithms/dynamic_programming/matrix_chain.s: src/algorithms/dynamic_programming/matrix_chain.c.s
+.PHONY : src/algorithms/dynamic_programming/matrix_chain.s
+
+# target to generate assembly for a file
+src/algorithms/dynamic_programming/matrix_chain.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/matrix_chain.c.s
+.PHONY : src/algorithms/dynamic_programming/matrix_chain.c.s
+
+src/algorithms/dynamic_programming/optimal_bst.obj: src/algorithms/dynamic_programming/optimal_bst.c.obj
+.PHONY : src/algorithms/dynamic_programming/optimal_bst.obj
+
+# target to build an object file
+src/algorithms/dynamic_programming/optimal_bst.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/optimal_bst.c.obj
+.PHONY : src/algorithms/dynamic_programming/optimal_bst.c.obj
+
+src/algorithms/dynamic_programming/optimal_bst.i: src/algorithms/dynamic_programming/optimal_bst.c.i
+.PHONY : src/algorithms/dynamic_programming/optimal_bst.i
+
+# target to preprocess a source file
+src/algorithms/dynamic_programming/optimal_bst.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/optimal_bst.c.i
+.PHONY : src/algorithms/dynamic_programming/optimal_bst.c.i
+
+src/algorithms/dynamic_programming/optimal_bst.s: src/algorithms/dynamic_programming/optimal_bst.c.s
+.PHONY : src/algorithms/dynamic_programming/optimal_bst.s
+
+# target to generate assembly for a file
+src/algorithms/dynamic_programming/optimal_bst.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/optimal_bst.c.s
+.PHONY : src/algorithms/dynamic_programming/optimal_bst.c.s
+
+src/algorithms/dynamic_programming/tsp.obj: src/algorithms/dynamic_programming/tsp.c.obj
+.PHONY : src/algorithms/dynamic_programming/tsp.obj
+
+# target to build an object file
+src/algorithms/dynamic_programming/tsp.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/tsp.c.obj
+.PHONY : src/algorithms/dynamic_programming/tsp.c.obj
+
+src/algorithms/dynamic_programming/tsp.i: src/algorithms/dynamic_programming/tsp.c.i
+.PHONY : src/algorithms/dynamic_programming/tsp.i
+
+# target to preprocess a source file
+src/algorithms/dynamic_programming/tsp.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/tsp.c.i
+.PHONY : src/algorithms/dynamic_programming/tsp.c.i
+
+src/algorithms/dynamic_programming/tsp.s: src/algorithms/dynamic_programming/tsp.c.s
+.PHONY : src/algorithms/dynamic_programming/tsp.s
+
+# target to generate assembly for a file
+src/algorithms/dynamic_programming/tsp.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/dynamic_programming/tsp.c.s
+.PHONY : src/algorithms/dynamic_programming/tsp.c.s
+
+src/algorithms/graph/bellman_ford.obj: src/algorithms/graph/bellman_ford.c.obj
+.PHONY : src/algorithms/graph/bellman_ford.obj
+
+# target to build an object file
+src/algorithms/graph/bellman_ford.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/graph/bellman_ford.c.obj
+.PHONY : src/algorithms/graph/bellman_ford.c.obj
+
+src/algorithms/graph/bellman_ford.i: src/algorithms/graph/bellman_ford.c.i
+.PHONY : src/algorithms/graph/bellman_ford.i
+
+# target to preprocess a source file
+src/algorithms/graph/bellman_ford.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/graph/bellman_ford.c.i
+.PHONY : src/algorithms/graph/bellman_ford.c.i
+
+src/algorithms/graph/bellman_ford.s: src/algorithms/graph/bellman_ford.c.s
+.PHONY : src/algorithms/graph/bellman_ford.s
+
+# target to generate assembly for a file
+src/algorithms/graph/bellman_ford.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/graph/bellman_ford.c.s
+.PHONY : src/algorithms/graph/bellman_ford.c.s
+
 src/algorithms/graph/dijkstra.obj: src/algorithms/graph/dijkstra.c.obj
 .PHONY : src/algorithms/graph/dijkstra.obj
 
@@ -271,6 +463,30 @@ src/algorithms/graph/dijkstra.s: src/algorithms/graph/dijkstra.c.s
 src/algorithms/graph/dijkstra.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/graph/dijkstra.c.s
 .PHONY : src/algorithms/graph/dijkstra.c.s
+
+src/algorithms/graph/floyd_warshall.obj: src/algorithms/graph/floyd_warshall.c.obj
+.PHONY : src/algorithms/graph/floyd_warshall.obj
+
+# target to build an object file
+src/algorithms/graph/floyd_warshall.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/graph/floyd_warshall.c.obj
+.PHONY : src/algorithms/graph/floyd_warshall.c.obj
+
+src/algorithms/graph/floyd_warshall.i: src/algorithms/graph/floyd_warshall.c.i
+.PHONY : src/algorithms/graph/floyd_warshall.i
+
+# target to preprocess a source file
+src/algorithms/graph/floyd_warshall.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/graph/floyd_warshall.c.i
+.PHONY : src/algorithms/graph/floyd_warshall.c.i
+
+src/algorithms/graph/floyd_warshall.s: src/algorithms/graph/floyd_warshall.c.s
+.PHONY : src/algorithms/graph/floyd_warshall.s
+
+# target to generate assembly for a file
+src/algorithms/graph/floyd_warshall.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/graph/floyd_warshall.c.s
+.PHONY : src/algorithms/graph/floyd_warshall.c.s
 
 src/algorithms/graph/kruskal.obj: src/algorithms/graph/kruskal.c.obj
 .PHONY : src/algorithms/graph/kruskal.obj
@@ -392,6 +608,78 @@ src/algorithms/greedy/interval_partitioning.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/greedy/interval_partitioning.c.s
 .PHONY : src/algorithms/greedy/interval_partitioning.c.s
 
+src/algorithms/network_flow/bipartite_matching.obj: src/algorithms/network_flow/bipartite_matching.c.obj
+.PHONY : src/algorithms/network_flow/bipartite_matching.obj
+
+# target to build an object file
+src/algorithms/network_flow/bipartite_matching.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/network_flow/bipartite_matching.c.obj
+.PHONY : src/algorithms/network_flow/bipartite_matching.c.obj
+
+src/algorithms/network_flow/bipartite_matching.i: src/algorithms/network_flow/bipartite_matching.c.i
+.PHONY : src/algorithms/network_flow/bipartite_matching.i
+
+# target to preprocess a source file
+src/algorithms/network_flow/bipartite_matching.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/network_flow/bipartite_matching.c.i
+.PHONY : src/algorithms/network_flow/bipartite_matching.c.i
+
+src/algorithms/network_flow/bipartite_matching.s: src/algorithms/network_flow/bipartite_matching.c.s
+.PHONY : src/algorithms/network_flow/bipartite_matching.s
+
+# target to generate assembly for a file
+src/algorithms/network_flow/bipartite_matching.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/network_flow/bipartite_matching.c.s
+.PHONY : src/algorithms/network_flow/bipartite_matching.c.s
+
+src/algorithms/network_flow/ford_fulkerson.obj: src/algorithms/network_flow/ford_fulkerson.c.obj
+.PHONY : src/algorithms/network_flow/ford_fulkerson.obj
+
+# target to build an object file
+src/algorithms/network_flow/ford_fulkerson.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/network_flow/ford_fulkerson.c.obj
+.PHONY : src/algorithms/network_flow/ford_fulkerson.c.obj
+
+src/algorithms/network_flow/ford_fulkerson.i: src/algorithms/network_flow/ford_fulkerson.c.i
+.PHONY : src/algorithms/network_flow/ford_fulkerson.i
+
+# target to preprocess a source file
+src/algorithms/network_flow/ford_fulkerson.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/network_flow/ford_fulkerson.c.i
+.PHONY : src/algorithms/network_flow/ford_fulkerson.c.i
+
+src/algorithms/network_flow/ford_fulkerson.s: src/algorithms/network_flow/ford_fulkerson.c.s
+.PHONY : src/algorithms/network_flow/ford_fulkerson.s
+
+# target to generate assembly for a file
+src/algorithms/network_flow/ford_fulkerson.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/network_flow/ford_fulkerson.c.s
+.PHONY : src/algorithms/network_flow/ford_fulkerson.c.s
+
+src/algorithms/number_theory/crt.obj: src/algorithms/number_theory/crt.c.obj
+.PHONY : src/algorithms/number_theory/crt.obj
+
+# target to build an object file
+src/algorithms/number_theory/crt.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/number_theory/crt.c.obj
+.PHONY : src/algorithms/number_theory/crt.c.obj
+
+src/algorithms/number_theory/crt.i: src/algorithms/number_theory/crt.c.i
+.PHONY : src/algorithms/number_theory/crt.i
+
+# target to preprocess a source file
+src/algorithms/number_theory/crt.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/number_theory/crt.c.i
+.PHONY : src/algorithms/number_theory/crt.c.i
+
+src/algorithms/number_theory/crt.s: src/algorithms/number_theory/crt.c.s
+.PHONY : src/algorithms/number_theory/crt.s
+
+# target to generate assembly for a file
+src/algorithms/number_theory/crt.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/number_theory/crt.c.s
+.PHONY : src/algorithms/number_theory/crt.c.s
+
 src/algorithms/searching/binary_search.obj: src/algorithms/searching/binary_search.c.obj
 .PHONY : src/algorithms/searching/binary_search.obj
 
@@ -463,6 +751,126 @@ src/algorithms/sorting/quick_sort.s: src/algorithms/sorting/quick_sort.c.s
 src/algorithms/sorting/quick_sort.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/sorting/quick_sort.c.s
 .PHONY : src/algorithms/sorting/quick_sort.c.s
+
+src/algorithms/string_matching/finite_automaton.obj: src/algorithms/string_matching/finite_automaton.c.obj
+.PHONY : src/algorithms/string_matching/finite_automaton.obj
+
+# target to build an object file
+src/algorithms/string_matching/finite_automaton.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/finite_automaton.c.obj
+.PHONY : src/algorithms/string_matching/finite_automaton.c.obj
+
+src/algorithms/string_matching/finite_automaton.i: src/algorithms/string_matching/finite_automaton.c.i
+.PHONY : src/algorithms/string_matching/finite_automaton.i
+
+# target to preprocess a source file
+src/algorithms/string_matching/finite_automaton.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/finite_automaton.c.i
+.PHONY : src/algorithms/string_matching/finite_automaton.c.i
+
+src/algorithms/string_matching/finite_automaton.s: src/algorithms/string_matching/finite_automaton.c.s
+.PHONY : src/algorithms/string_matching/finite_automaton.s
+
+# target to generate assembly for a file
+src/algorithms/string_matching/finite_automaton.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/finite_automaton.c.s
+.PHONY : src/algorithms/string_matching/finite_automaton.c.s
+
+src/algorithms/string_matching/kmp.obj: src/algorithms/string_matching/kmp.c.obj
+.PHONY : src/algorithms/string_matching/kmp.obj
+
+# target to build an object file
+src/algorithms/string_matching/kmp.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/kmp.c.obj
+.PHONY : src/algorithms/string_matching/kmp.c.obj
+
+src/algorithms/string_matching/kmp.i: src/algorithms/string_matching/kmp.c.i
+.PHONY : src/algorithms/string_matching/kmp.i
+
+# target to preprocess a source file
+src/algorithms/string_matching/kmp.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/kmp.c.i
+.PHONY : src/algorithms/string_matching/kmp.c.i
+
+src/algorithms/string_matching/kmp.s: src/algorithms/string_matching/kmp.c.s
+.PHONY : src/algorithms/string_matching/kmp.s
+
+# target to generate assembly for a file
+src/algorithms/string_matching/kmp.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/kmp.c.s
+.PHONY : src/algorithms/string_matching/kmp.c.s
+
+src/algorithms/string_matching/naive.obj: src/algorithms/string_matching/naive.c.obj
+.PHONY : src/algorithms/string_matching/naive.obj
+
+# target to build an object file
+src/algorithms/string_matching/naive.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/naive.c.obj
+.PHONY : src/algorithms/string_matching/naive.c.obj
+
+src/algorithms/string_matching/naive.i: src/algorithms/string_matching/naive.c.i
+.PHONY : src/algorithms/string_matching/naive.i
+
+# target to preprocess a source file
+src/algorithms/string_matching/naive.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/naive.c.i
+.PHONY : src/algorithms/string_matching/naive.c.i
+
+src/algorithms/string_matching/naive.s: src/algorithms/string_matching/naive.c.s
+.PHONY : src/algorithms/string_matching/naive.s
+
+# target to generate assembly for a file
+src/algorithms/string_matching/naive.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/naive.c.s
+.PHONY : src/algorithms/string_matching/naive.c.s
+
+src/algorithms/string_matching/rabin_karp.obj: src/algorithms/string_matching/rabin_karp.c.obj
+.PHONY : src/algorithms/string_matching/rabin_karp.obj
+
+# target to build an object file
+src/algorithms/string_matching/rabin_karp.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/rabin_karp.c.obj
+.PHONY : src/algorithms/string_matching/rabin_karp.c.obj
+
+src/algorithms/string_matching/rabin_karp.i: src/algorithms/string_matching/rabin_karp.c.i
+.PHONY : src/algorithms/string_matching/rabin_karp.i
+
+# target to preprocess a source file
+src/algorithms/string_matching/rabin_karp.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/rabin_karp.c.i
+.PHONY : src/algorithms/string_matching/rabin_karp.c.i
+
+src/algorithms/string_matching/rabin_karp.s: src/algorithms/string_matching/rabin_karp.c.s
+.PHONY : src/algorithms/string_matching/rabin_karp.s
+
+# target to generate assembly for a file
+src/algorithms/string_matching/rabin_karp.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/string_matching/rabin_karp.c.s
+.PHONY : src/algorithms/string_matching/rabin_karp.c.s
+
+src/benchmark/benchmark.obj: src/benchmark/benchmark.c.obj
+.PHONY : src/benchmark/benchmark.obj
+
+# target to build an object file
+src/benchmark/benchmark.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/benchmark/benchmark.c.obj
+.PHONY : src/benchmark/benchmark.c.obj
+
+src/benchmark/benchmark.i: src/benchmark/benchmark.c.i
+.PHONY : src/benchmark/benchmark.i
+
+# target to preprocess a source file
+src/benchmark/benchmark.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/benchmark/benchmark.c.i
+.PHONY : src/benchmark/benchmark.c.i
+
+src/benchmark/benchmark.s: src/benchmark/benchmark.c.s
+.PHONY : src/benchmark/benchmark.s
+
+# target to generate assembly for a file
+src/benchmark/benchmark.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/benchmark/benchmark.c.s
+.PHONY : src/benchmark/benchmark.c.s
 
 src/cli/cli.obj: src/cli/cli.c.obj
 .PHONY : src/cli/cli.obj
@@ -593,6 +1001,15 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... fraud_workbench
+	@echo ... src/algorithms/backtracking/n_queens.obj
+	@echo ... src/algorithms/backtracking/n_queens.i
+	@echo ... src/algorithms/backtracking/n_queens.s
+	@echo ... src/algorithms/backtracking/subset_sum.obj
+	@echo ... src/algorithms/backtracking/subset_sum.i
+	@echo ... src/algorithms/backtracking/subset_sum.s
+	@echo ... src/algorithms/branch_bound/branch_bound.obj
+	@echo ... src/algorithms/branch_bound/branch_bound.i
+	@echo ... src/algorithms/branch_bound/branch_bound.s
 	@echo ... src/algorithms/divide_conquer/celebrity.obj
 	@echo ... src/algorithms/divide_conquer/celebrity.i
 	@echo ... src/algorithms/divide_conquer/celebrity.s
@@ -608,9 +1025,27 @@ help:
 	@echo ... src/algorithms/dynamic_programming/knapsack.obj
 	@echo ... src/algorithms/dynamic_programming/knapsack.i
 	@echo ... src/algorithms/dynamic_programming/knapsack.s
+	@echo ... src/algorithms/dynamic_programming/lcs.obj
+	@echo ... src/algorithms/dynamic_programming/lcs.i
+	@echo ... src/algorithms/dynamic_programming/lcs.s
+	@echo ... src/algorithms/dynamic_programming/matrix_chain.obj
+	@echo ... src/algorithms/dynamic_programming/matrix_chain.i
+	@echo ... src/algorithms/dynamic_programming/matrix_chain.s
+	@echo ... src/algorithms/dynamic_programming/optimal_bst.obj
+	@echo ... src/algorithms/dynamic_programming/optimal_bst.i
+	@echo ... src/algorithms/dynamic_programming/optimal_bst.s
+	@echo ... src/algorithms/dynamic_programming/tsp.obj
+	@echo ... src/algorithms/dynamic_programming/tsp.i
+	@echo ... src/algorithms/dynamic_programming/tsp.s
+	@echo ... src/algorithms/graph/bellman_ford.obj
+	@echo ... src/algorithms/graph/bellman_ford.i
+	@echo ... src/algorithms/graph/bellman_ford.s
 	@echo ... src/algorithms/graph/dijkstra.obj
 	@echo ... src/algorithms/graph/dijkstra.i
 	@echo ... src/algorithms/graph/dijkstra.s
+	@echo ... src/algorithms/graph/floyd_warshall.obj
+	@echo ... src/algorithms/graph/floyd_warshall.i
+	@echo ... src/algorithms/graph/floyd_warshall.s
 	@echo ... src/algorithms/graph/kruskal.obj
 	@echo ... src/algorithms/graph/kruskal.i
 	@echo ... src/algorithms/graph/kruskal.s
@@ -626,6 +1061,15 @@ help:
 	@echo ... src/algorithms/greedy/interval_partitioning.obj
 	@echo ... src/algorithms/greedy/interval_partitioning.i
 	@echo ... src/algorithms/greedy/interval_partitioning.s
+	@echo ... src/algorithms/network_flow/bipartite_matching.obj
+	@echo ... src/algorithms/network_flow/bipartite_matching.i
+	@echo ... src/algorithms/network_flow/bipartite_matching.s
+	@echo ... src/algorithms/network_flow/ford_fulkerson.obj
+	@echo ... src/algorithms/network_flow/ford_fulkerson.i
+	@echo ... src/algorithms/network_flow/ford_fulkerson.s
+	@echo ... src/algorithms/number_theory/crt.obj
+	@echo ... src/algorithms/number_theory/crt.i
+	@echo ... src/algorithms/number_theory/crt.s
 	@echo ... src/algorithms/searching/binary_search.obj
 	@echo ... src/algorithms/searching/binary_search.i
 	@echo ... src/algorithms/searching/binary_search.s
@@ -635,6 +1079,21 @@ help:
 	@echo ... src/algorithms/sorting/quick_sort.obj
 	@echo ... src/algorithms/sorting/quick_sort.i
 	@echo ... src/algorithms/sorting/quick_sort.s
+	@echo ... src/algorithms/string_matching/finite_automaton.obj
+	@echo ... src/algorithms/string_matching/finite_automaton.i
+	@echo ... src/algorithms/string_matching/finite_automaton.s
+	@echo ... src/algorithms/string_matching/kmp.obj
+	@echo ... src/algorithms/string_matching/kmp.i
+	@echo ... src/algorithms/string_matching/kmp.s
+	@echo ... src/algorithms/string_matching/naive.obj
+	@echo ... src/algorithms/string_matching/naive.i
+	@echo ... src/algorithms/string_matching/naive.s
+	@echo ... src/algorithms/string_matching/rabin_karp.obj
+	@echo ... src/algorithms/string_matching/rabin_karp.i
+	@echo ... src/algorithms/string_matching/rabin_karp.s
+	@echo ... src/benchmark/benchmark.obj
+	@echo ... src/benchmark/benchmark.i
+	@echo ... src/benchmark/benchmark.s
 	@echo ... src/cli/cli.obj
 	@echo ... src/cli/cli.i
 	@echo ... src/cli/cli.s

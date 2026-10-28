@@ -68,5 +68,20 @@ int kruskal_mst(
     const WeightedGraph *graph,
     GraphEdge result[]
 );
+/* Bellman-Ford */
+int bellman_ford(
+    const WeightedGraph *graph,
+    int source,
+    int distances[],
+    int previous[]
+);
 
+
+/* Floyd-Warshall */
+void floyd_warshall(
+    const WeightedGraph *graph,
+    int distances
+        [GRAPH_MAX_VERTICES]
+        [GRAPH_MAX_VERTICES]
+);
 #endif
