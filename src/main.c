@@ -8,6 +8,7 @@
 #include "sorting.h"
 #include "searching.h"
 #include "divide_conquer.h"
+#include "matrix_algorithms.h"
 
 int main(void)
 {
@@ -46,7 +47,12 @@ int main(void)
 
         switch (choice)
         {
+            /*
+             * OPTION 1
+             * Load banking transaction dataset
+             */
             case 1:
+            {
                 transaction_count = load_transactions_csv(
                     "data/small/transactions_small.csv",
                     transactions,
@@ -64,274 +70,605 @@ int main(void)
                 }
 
                 break;
+            }
 
+            /*
+             * OPTION 2
+             * View loaded transactions
+             */
             case 2:
+            {
                 print_all_transactions(
                     transactions,
                     transaction_count
                 );
+
                 break;
+            }
 
+            /*
+             * OPTION 3
+             * Fraud investigation
+             */
             case 3:
-    analyze_fraud(
-        transactions,
-        transaction_count
-    );
-    break;
-    case 4:
-{
-    int operation_choice;
+            {
+                analyze_fraud(
+                    transactions,
+                    transaction_count
+                );
 
-    if (transaction_count <= 0)
-    {
-        printf("No dataset is currently loaded.\n");
-        printf("Please load a dataset first.\n");
-        break;
-    }
+                break;
+            }
 
-    printf("\n============================================\n");
-    printf("       TRANSACTION SEARCH AND SORT\n");
-    printf("============================================\n");
-    printf("1. Merge Sort by Amount\n");
-    printf("2. Quick Sort by Amount\n");
-    printf("3. Iterative Binary Search by Transaction ID\n");
-    printf("4. Recursive Binary Search by Transaction ID\n");
-    printf("0. Back\n");
-    printf("============================================\n");
-    printf("Select operation: ");
+            /*
+             * OPTION 4
+             * Sorting and searching
+             */
+            case 4:
+            {
+                int operation_choice;
 
-    if (scanf("%d", &operation_choice) != 1)
-    {
-        printf("Invalid input.\n");
+                if (transaction_count <= 0)
+                {
+                    printf("No dataset is currently loaded.\n");
+                    printf("Please load a dataset first.\n");
+                    break;
+                }
 
-        while (getchar() != '\n')
-        {
-        }
+                printf("\n");
+                printf("============================================================\n");
+                printf("              TRANSACTION SEARCH AND SORT\n");
+                printf("============================================================\n");
+                printf("1. Merge Sort by Amount\n");
+                printf("2. Quick Sort by Amount\n");
+                printf("3. Iterative Binary Search by Transaction ID\n");
+                printf("4. Recursive Binary Search by Transaction ID\n");
+                printf("0. Back\n");
+                printf("============================================================\n");
+                printf("Select operation: ");
 
-        break;
-    }
+                if (scanf("%d", &operation_choice) != 1)
+                {
+                    printf("Invalid input.\n");
 
-    if (operation_choice == 1)
-    {
-        merge_sort_transactions(
-            transactions,
-            transaction_count
-        );
+                    while (getchar() != '\n')
+                    {
+                        /* Clear invalid input */
+                    }
 
-        printf("\nTransactions sorted using Merge Sort.\n");
+                    break;
+                }
 
-        print_all_transactions(
-            transactions,
-            transaction_count
-        );
-    }
-    else if (operation_choice == 2)
-    {
-        quick_sort_transactions(
-            transactions,
-            transaction_count
-        );
+                /*
+                 * Merge Sort
+                 */
+                if (operation_choice == 1)
+                {
+                    merge_sort_transactions(
+                        transactions,
+                        transaction_count
+                    );
 
-        printf("\nTransactions sorted using Quick Sort.\n");
+                    printf(
+                        "\nTransactions sorted using Merge Sort.\n"
+                    );
 
-        print_all_transactions(
-            transactions,
-            transaction_count
-        );
-    }
-    else if (
-        operation_choice == 3 ||
-        operation_choice == 4
-    )
-    {
-        char search_id[ID_LENGTH];
-        int result;
+                    print_all_transactions(
+                        transactions,
+                        transaction_count
+                    );
+                }
 
-        printf("Enter Transaction ID: ");
-        scanf("%19s", search_id);
+                /*
+                 * Quick Sort
+                 */
+                else if (operation_choice == 2)
+                {
+                    quick_sort_transactions(
+                        transactions,
+                        transaction_count
+                    );
 
-        /*
-         * Binary search requires sorted input.
-         */
-        sort_transactions_by_id(
-            transactions,
-            transaction_count
-        );
+                    printf(
+                        "\nTransactions sorted using Quick Sort.\n"
+                    );
 
-        if (operation_choice == 3)
-        {
-            result = binary_search_iterative(
-                transactions,
-                transaction_count,
-                search_id
-            );
+                    print_all_transactions(
+                        transactions,
+                        transaction_count
+                    );
+                }
 
-            printf("\nAlgorithm: Iterative Binary Search\n");
-        }
-        else
-        {
-            result = binary_search_recursive(
-                transactions,
-                transaction_count,
-                search_id
-            );
+                /*
+                 * Binary Search
+                 */
+                else if (
+                    operation_choice == 3 ||
+                    operation_choice == 4
+                )
+                {
+                    char search_id[ID_LENGTH];
+                    int result;
 
-            printf("\nAlgorithm: Recursive Binary Search\n");
-        }
+                    printf("Enter Transaction ID: ");
 
-        if (result >= 0)
-        {
-            printf("Transaction found at index %d.\n", result);
+                    if (scanf("%19s", search_id) != 1)
+                    {
+                        printf("Invalid Transaction ID.\n");
+                        break;
+                    }
 
-            print_transaction(
-                &transactions[result]
-            );
-        }
-        else
-        {
-            printf("Transaction '%s' was not found.\n", search_id);
-        }
-    }
-    else if (operation_choice != 0)
-    {
-        printf("Invalid operation.\n");
-    }
+                    /*
+                     * Binary search requires sorted data.
+                     */
+                    sort_transactions_by_id(
+                        transactions,
+                        transaction_count
+                    );
 
-    break;
-}     
-    case 5:
+                    /*
+                     * Iterative Binary Search
+                     */
+                    if (operation_choice == 3)
+                    {
+                        result = binary_search_iterative(
+                            transactions,
+                            transaction_count,
+                            search_id
+                        );
+
+                        printf(
+                            "\nAlgorithm: "
+                            "Iterative Binary Search\n"
+                        );
+                    }
+
+                    /*
+                     * Recursive Binary Search
+                     */
+                    else
+                    {
+                        result = binary_search_recursive(
+                            transactions,
+                            transaction_count,
+                            search_id
+                        );
+
+                        printf(
+                            "\nAlgorithm: "
+                            "Recursive Binary Search\n"
+                        );
+                    }
+
+                    if (result >= 0)
+                    {
+                        printf(
+                            "Transaction found at index %d.\n",
+                            result
+                        );
+
+                        print_transaction(
+                            &transactions[result]
+                        );
+                    }
+                    else
+                    {
+                        printf(
+                            "Transaction '%s' was not found.\n",
+                            search_id
+                        );
+                    }
+                }
+
+                else if (operation_choice != 0)
+                {
+                    printf("Invalid operation.\n");
+                }
+
+                break;
+            }
+
+            /*
+             * OPTION 5
+             * Pattern matching module
+             */
+            case 5:
+            {
                 printf("Pattern Search - Coming Soon\n");
                 break;
+            }
 
+            /*
+             * OPTION 6
+             * Graph algorithms
+             */
             case 6:
-                printf("Fraud Network Analysis - Coming Soon\n");
-                break;
+            {
+                printf(
+                    "Fraud Network Analysis - Coming Soon\n"
+                );
 
+                break;
+            }
+
+            /*
+             * OPTION 7
+             * Optimization and investigation planning
+             */
             case 7:
-                printf("Investigation Planning - Coming Soon\n");
-                break;
+            {
+                printf(
+                    "Investigation Planning - Coming Soon\n"
+                );
 
+                break;
+            }
+
+            /*
+             * OPTION 8
+             * DAA Algorithm Laboratory
+             */
             case 8:
+            {
+                int algorithm_choice;
+
+                printf("\n");
+                printf("============================================================\n");
+                printf("                DAA ALGORITHM LABORATORY\n");
+                printf("============================================================\n");
+                printf("1. Maximum Subarray\n");
+                printf("2. Fast Power\n");
+                printf("3. Celebrity Problem\n");
+                printf(
+                    "4. Classical vs Strassen "
+                    "Matrix Multiplication\n"
+                );
+                printf("0. Back\n");
+                printf("============================================================\n");
+                printf("Select algorithm: ");
+
+                if (scanf("%d", &algorithm_choice) != 1)
+                {
+                    printf("Invalid input.\n");
+
+                    while (getchar() != '\n')
+                    {
+                        /* Clear invalid input */
+                    }
+
+                    break;
+                }
+
+                /*
+                 * Maximum Subarray
+                 */
+                if (algorithm_choice == 1)
+                {
+                    double values[] = {
+                        -2.0,
+                        5.0,
+                        -1.0,
+                        8.0,
+                        12.0,
+                        -3.0,
+                        4.0
+                    };
+
+                    int count =
+                        sizeof(values) /
+                        sizeof(values[0]);
+
+                    MaxSubarrayResult result =
+                        maximum_subarray(
+                            values,
+                            count
+                        );
+
+                    printf("\nMaximum Subarray Result\n");
+                    printf(
+                        "Start index : %d\n",
+                        result.left
+                    );
+                    printf(
+                        "End index   : %d\n",
+                        result.right
+                    );
+                    printf(
+                        "Maximum sum : %.2f\n",
+                        result.sum
+                    );
+                }
+
+                /*
+                 * Fast Power
+                 */
+                else if (algorithm_choice == 2)
+                {
+                    long long base;
+                    unsigned int exponent;
+
+                    printf("Enter base: ");
+
+                    if (scanf("%lld", &base) != 1)
+                    {
+                        printf("Invalid base.\n");
+                        break;
+                    }
+
+                    printf("Enter exponent: ");
+
+                    if (scanf("%u", &exponent) != 1)
+                    {
+                        printf("Invalid exponent.\n");
+                        break;
+                    }
+
+                    printf(
+                        "\nResult: %lld\n",
+                        fast_power(
+                            base,
+                            exponent
+                        )
+                    );
+                }
+
+                /*
+                 * Celebrity Problem
+                 */
+                else if (algorithm_choice == 3)
+                {
+                    int relationships[10][10] = {0};
+                    int people = 4;
+
+                    /*
+                     * Person 2 is deliberately
+                     * configured as the celebrity.
+                     */
+                    relationships[0][2] = 1;
+                    relationships[1][2] = 1;
+                    relationships[3][2] = 1;
+
+                    relationships[0][1] = 1;
+                    relationships[1][3] = 1;
+
+                    int celebrity =
+                        find_celebrity(
+                            relationships,
+                            people
+                        );
+
+                    if (celebrity >= 0)
+                    {
+                        printf(
+                            "\nCelebrity found: "
+                            "Person %d\n",
+                            celebrity
+                        );
+                    }
+                    else
+                    {
+                        printf(
+                            "\nNo celebrity found.\n"
+                        );
+                    }
+                }
+
+                /*
+                 * Classical vs Strassen
+                 * Matrix Multiplication
+                 */
+                else if (algorithm_choice == 4)
 {
-    int algorithm_choice;
+    int A[MATRIX_MAX_SIZE][MATRIX_MAX_SIZE] = {0};
+    int B[MATRIX_MAX_SIZE][MATRIX_MAX_SIZE] = {0};
+
+    int classical_result
+        [MATRIX_MAX_SIZE][MATRIX_MAX_SIZE] = {0};
+
+    int strassen_result
+        [MATRIX_MAX_SIZE][MATRIX_MAX_SIZE] = {0};
+
+    int size = 2;
+    int i;
+    int j;
 
     printf("\n============================================\n");
-    printf("          DAA ALGORITHM LABORATORY\n");
+    printf("       MATRIX MULTIPLICATION COMPARISON\n");
     printf("============================================\n");
-    printf("1. Maximum Subarray\n");
-    printf("2. Fast Power\n");
-    printf("3. Celebrity Problem\n");
-    printf("0. Back\n");
-    printf("============================================\n");
-    printf("Select algorithm: ");
 
-    if (scanf("%d", &algorithm_choice) != 1)
+    printf("\nEnter values for Matrix A (2 x 2):\n");
+
+    for (i = 0; i < size; i++)
     {
-        printf("Invalid input.\n");
-
-        while (getchar() != '\n')
+        for (j = 0; j < size; j++)
         {
+            printf("A[%d][%d] = ", i, j);
+
+            if (scanf("%d", &A[i][j]) != 1)
+            {
+                printf("Invalid matrix value.\n");
+
+                while (getchar() != '\n')
+                {
+                    /* Clear invalid input */
+                }
+
+                break;
+            }
         }
-
-        break;
     }
 
-    if (algorithm_choice == 1)
+    printf("\nEnter values for Matrix B (2 x 2):\n");
+
+    for (i = 0; i < size; i++)
     {
-        double values[] = {
-            -2.0, 5.0, -1.0, 8.0,
-            12.0, -3.0, 4.0
-        };
+        for (j = 0; j < size; j++)
+        {
+            printf("B[%d][%d] = ", i, j);
 
-        int count =
-            sizeof(values) / sizeof(values[0]);
+            if (scanf("%d", &B[i][j]) != 1)
+            {
+                printf("Invalid matrix value.\n");
 
-        MaxSubarrayResult result =
-            maximum_subarray(values, count);
+                while (getchar() != '\n')
+                {
+                    /* Clear invalid input */
+                }
 
-        printf("\nMaximum Subarray Result\n");
-        printf("Start index : %d\n", result.left);
-        printf("End index   : %d\n", result.right);
-        printf("Maximum sum : %.2f\n", result.sum);
+                break;
+            }
+        }
     }
-    else if (algorithm_choice == 2)
+
+    classical_matrix_multiply(
+        size,
+        A,
+        B,
+        classical_result
+    );
+
+    strassen_matrix_multiply(
+        size,
+        A,
+        B,
+        strassen_result
+    );
+
+    printf("\nMatrix A:\n");
+    print_matrix(size, A);
+
+    printf("\nMatrix B:\n");
+    print_matrix(size, B);
+
+    printf("\nClassical Multiplication Result:\n");
+    print_matrix(
+        size,
+        classical_result
+    );
+
+    printf("\nStrassen Multiplication Result:\n");
+    print_matrix(
+        size,
+        strassen_result
+    );
+
+    /*
+     * Verify that both algorithms produced
+     * exactly the same matrix.
+     */
+    int results_match = 1;
+
+    for (i = 0; i < size; i++)
     {
-        long long base;
-        unsigned int exponent;
+        for (j = 0; j < size; j++)
+        {
+            if (classical_result[i][j] !=
+                strassen_result[i][j])
+            {
+                results_match = 0;
+            }
+        }
+    }
 
-        printf("Enter base: ");
-        scanf("%lld", &base);
+    printf("\nCorrectness Check: ");
 
-        printf("Enter exponent: ");
-        scanf("%u", &exponent);
-
+    if (results_match)
+    {
+        printf("PASS\n");
         printf(
-            "\nResult: %lld\n",
-            fast_power(base, exponent)
+            "Both algorithms produced "
+            "the same result.\n"
         );
     }
-    else if (algorithm_choice == 3)
+    else
     {
-        int relationships[10][10] = {0};
-
-        int people = 4;
-
-        /*
-         * Person 2 is the celebrity.
-         */
-
-        relationships[0][2] = 1;
-        relationships[1][2] = 1;
-        relationships[3][2] = 1;
-
-        relationships[0][1] = 1;
-        relationships[1][3] = 1;
-
-        int celebrity =
-            find_celebrity(relationships, people);
-
-        if (celebrity >= 0)
-        {
-            printf(
-                "\nCelebrity found: Person %d\n",
-                celebrity
-            );
-        }
-        else
-        {
-            printf("\nNo celebrity found.\n");
-        }
+        printf("FAIL\n");
+        printf(
+            "The algorithms produced "
+            "different results.\n"
+        );
     }
-    else if (algorithm_choice != 0)
-    {
-        printf("Invalid algorithm choice.\n");
-    }
+} 
 
-    break;
-}
+                /*
+                 * 0 simply returns to main menu.
+                 */
+                else if (algorithm_choice != 0)
+                {
+                    printf(
+                        "Invalid algorithm choice.\n"
+                    );
+                }
 
-            case 9:
-                printf("Benchmark Runner - Coming Soon\n");
                 break;
+            }
 
+            /*
+             * OPTION 9
+             * Benchmark runner
+             */
+            case 9:
+            {
+                printf(
+                    "Benchmark Runner - Coming Soon\n"
+                );
+
+                break;
+            }
+
+            /*
+             * OPTION 10
+             * Test suite
+             */
             case 10:
+            {
                 printf("Test Suite - Coming Soon\n");
                 break;
+            }
 
+            /*
+             * OPTION 11
+             * Export results
+             */
             case 11:
-                printf("Export Results - Coming Soon\n");
-                break;
+            {
+                printf(
+                    "Export Results - Coming Soon\n"
+                );
 
-            case 0:
-                printf("Exiting Fraud Investigation Workbench...\n");
                 break;
+            }
+
+            /*
+             * EXIT
+             */
+            case 0:
+            {
+                printf(
+                    "Exiting Fraud Investigation "
+                    "Workbench...\n"
+                );
+
+                break;
+            }
 
             default:
-                printf("Invalid choice. Please select 0 to 11.\n");
+            {
+                printf(
+                    "Invalid choice. "
+                    "Please select 0 to 11.\n"
+                );
+
+                break;
+            }
         }
 
     } while (choice != 0);
 
+    /*
+     * Release dynamically allocated
+     * transaction memory.
+     */
     free(transactions);
 
     return 0;

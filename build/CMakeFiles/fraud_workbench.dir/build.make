@@ -236,6 +236,21 @@ CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/celebrity.c.s: cmak
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/celebrity.c.s"
 	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\divide_conquer\celebrity.c" -o CMakeFiles\fraud_workbench.dir\src\algorithms\divide_conquer\celebrity.c.s
 
+CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/matrix_multiplication.c.obj: CMakeFiles/fraud_workbench.dir/flags.make
+CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/matrix_multiplication.c.obj: CMakeFiles/fraud_workbench.dir/includes_C.rsp
+CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/matrix_multiplication.c.obj: C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/divide_conquer/matrix_multiplication.c
+CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/matrix_multiplication.c.obj: CMakeFiles/fraud_workbench.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/matrix_multiplication.c.obj"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/matrix_multiplication.c.obj -MF CMakeFiles\fraud_workbench.dir\src\algorithms\divide_conquer\matrix_multiplication.c.obj.d -o CMakeFiles\fraud_workbench.dir\src\algorithms\divide_conquer\matrix_multiplication.c.obj -c "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\divide_conquer\matrix_multiplication.c"
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/matrix_multiplication.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/matrix_multiplication.c.i"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\divide_conquer\matrix_multiplication.c" > CMakeFiles\fraud_workbench.dir\src\algorithms\divide_conquer\matrix_multiplication.c.i
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/matrix_multiplication.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/matrix_multiplication.c.s"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\src\algorithms\divide_conquer\matrix_multiplication.c" -o CMakeFiles\fraud_workbench.dir\src\algorithms\divide_conquer\matrix_multiplication.c.s
+
 # Object files for target fraud_workbench
 fraud_workbench_OBJECTS = \
 "CMakeFiles/fraud_workbench.dir/src/main.c.obj" \
@@ -248,7 +263,8 @@ fraud_workbench_OBJECTS = \
 "CMakeFiles/fraud_workbench.dir/src/algorithms/searching/binary_search.c.obj" \
 "CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/maximum_subarray.c.obj" \
 "CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/fast_power.c.obj" \
-"CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/celebrity.c.obj"
+"CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/celebrity.c.obj" \
+"CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/matrix_multiplication.c.obj"
 
 # External object files for target fraud_workbench
 fraud_workbench_EXTERNAL_OBJECTS =
@@ -264,11 +280,12 @@ fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/src/algorithms/searching/bin
 fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/maximum_subarray.c.obj
 fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/fast_power.c.obj
 fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/celebrity.c.obj
+fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/matrix_multiplication.c.obj
 fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/build.make
 fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/linkLibs.rsp
 fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/objects1.rsp
 fraud_workbench.exe: CMakeFiles/fraud_workbench.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Linking C executable fraud_workbench.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\Users\Ekta Bhardwaj\banking-fraud-investigation-workbench\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Linking C executable fraud_workbench.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\fraud_workbench.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

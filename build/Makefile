@@ -176,6 +176,30 @@ src/algorithms/divide_conquer/fast_power.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/fast_power.c.s
 .PHONY : src/algorithms/divide_conquer/fast_power.c.s
 
+src/algorithms/divide_conquer/matrix_multiplication.obj: src/algorithms/divide_conquer/matrix_multiplication.c.obj
+.PHONY : src/algorithms/divide_conquer/matrix_multiplication.obj
+
+# target to build an object file
+src/algorithms/divide_conquer/matrix_multiplication.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/matrix_multiplication.c.obj
+.PHONY : src/algorithms/divide_conquer/matrix_multiplication.c.obj
+
+src/algorithms/divide_conquer/matrix_multiplication.i: src/algorithms/divide_conquer/matrix_multiplication.c.i
+.PHONY : src/algorithms/divide_conquer/matrix_multiplication.i
+
+# target to preprocess a source file
+src/algorithms/divide_conquer/matrix_multiplication.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/matrix_multiplication.c.i
+.PHONY : src/algorithms/divide_conquer/matrix_multiplication.c.i
+
+src/algorithms/divide_conquer/matrix_multiplication.s: src/algorithms/divide_conquer/matrix_multiplication.c.s
+.PHONY : src/algorithms/divide_conquer/matrix_multiplication.s
+
+# target to generate assembly for a file
+src/algorithms/divide_conquer/matrix_multiplication.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/matrix_multiplication.c.s
+.PHONY : src/algorithms/divide_conquer/matrix_multiplication.c.s
+
 src/algorithms/divide_conquer/maximum_subarray.obj: src/algorithms/divide_conquer/maximum_subarray.c.obj
 .PHONY : src/algorithms/divide_conquer/maximum_subarray.obj
 
@@ -407,6 +431,9 @@ help:
 	@echo ... src/algorithms/divide_conquer/fast_power.obj
 	@echo ... src/algorithms/divide_conquer/fast_power.i
 	@echo ... src/algorithms/divide_conquer/fast_power.s
+	@echo ... src/algorithms/divide_conquer/matrix_multiplication.obj
+	@echo ... src/algorithms/divide_conquer/matrix_multiplication.i
+	@echo ... src/algorithms/divide_conquer/matrix_multiplication.s
 	@echo ... src/algorithms/divide_conquer/maximum_subarray.obj
 	@echo ... src/algorithms/divide_conquer/maximum_subarray.i
 	@echo ... src/algorithms/divide_conquer/maximum_subarray.s

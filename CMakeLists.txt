@@ -17,6 +17,7 @@ add_executable(fraud_workbench
     src/algorithms/divide_conquer/maximum_subarray.c
 src/algorithms/divide_conquer/fast_power.c
 src/algorithms/divide_conquer/celebrity.c
+src/algorithms/divide_conquer/matrix_multiplication.c
 )
 
 target_include_directories(fraud_workbench PRIVATE
