@@ -22,6 +22,37 @@ CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/matrix_multiplicati
 CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/maximum_subarray.c.obj: C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/divide_conquer/maximum_subarray.c \
   C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/include/divide_conquer.h
 
+CMakeFiles/fraud_workbench.dir/src/algorithms/greedy/activity_selection.c.obj: C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/greedy/activity_selection.c \
+  C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/include/greedy.h
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/greedy/huffman.c.obj: C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/greedy/huffman.c \
+  C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/include/greedy.h \
+  C:/msys64/ucrt64/include/_mingw.h \
+  C:/msys64/ucrt64/include/_mingw_mac.h \
+  C:/msys64/ucrt64/include/_mingw_off_t.h \
+  C:/msys64/ucrt64/include/_mingw_secapi.h \
+  C:/msys64/ucrt64/include/corecrt.h \
+  C:/msys64/ucrt64/include/corecrt_malloc.h \
+  C:/msys64/ucrt64/include/corecrt_memory.h \
+  C:/msys64/ucrt64/include/corecrt_stdio_config.h \
+  C:/msys64/ucrt64/include/corecrt_wstdio.h \
+  C:/msys64/ucrt64/include/corecrt_wstdlib.h \
+  C:/msys64/ucrt64/include/corecrt_wstring.h \
+  C:/msys64/ucrt64/include/crtdefs.h \
+  C:/msys64/ucrt64/include/errno.h \
+  C:/msys64/ucrt64/include/limits.h \
+  C:/msys64/ucrt64/include/malloc.h \
+  C:/msys64/ucrt64/include/stdio.h \
+  C:/msys64/ucrt64/include/stdlib.h \
+  C:/msys64/ucrt64/include/string.h \
+  C:/msys64/ucrt64/include/vadefs.h \
+  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/16.2.0/include/limits.h \
+  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/16.2.0/include/mm_malloc.h \
+  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/16.2.0/include/syslimits.h
+
+CMakeFiles/fraud_workbench.dir/src/algorithms/greedy/interval_partitioning.c.obj: C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/greedy/interval_partitioning.c \
+  C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/include/greedy.h
+
 CMakeFiles/fraud_workbench.dir/src/algorithms/searching/binary_search.c.obj: C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/searching/binary_search.c \
   C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/include/searching.h \
   C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/include/transaction.h \
@@ -127,6 +158,7 @@ CMakeFiles/fraud_workbench.dir/src/main.c.obj: C:/Users/Ekta\ Bhardwaj/banking-f
   C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/include/dataset.h \
   C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/include/divide_conquer.h \
   C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/include/fraud.h \
+  C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/include/greedy.h \
   C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/include/matrix_algorithms.h \
   C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/include/searching.h \
   C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/include/sorting.h \
@@ -152,13 +184,13 @@ CMakeFiles/fraud_workbench.dir/src/main.c.obj: C:/Users/Ekta\ Bhardwaj/banking-f
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/16.2.0/include/syslimits.h
 
 
-C:/msys64/ucrt64/include/stdlib.h:
-
-C:/msys64/ucrt64/include/corecrt_wstdlib.h:
-
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/16.2.0/include/stddef.h:
 
 C:/msys64/ucrt64/include/stddef.h:
+
+C:/msys64/ucrt64/include/stdlib.h:
+
+C:/msys64/ucrt64/include/corecrt_wstdlib.h:
 
 C:/msys64/ucrt64/include/_mingw_off_t.h:
 
@@ -184,9 +216,9 @@ C:/msys64/ucrt64/include/_mingw_mac.h:
 
 C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/cli/cli.c:
 
-C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/16.2.0/include/syslimits.h:
-
 C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/include/searching.h:
+
+C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/16.2.0/include/syslimits.h:
 
 C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/divide_conquer/matrix_multiplication.c:
 
@@ -208,17 +240,19 @@ C:/msys64/ucrt64/include/corecrt_wstdio.h:
 
 C:/msys64/ucrt64/include/vadefs.h:
 
-C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/include/transaction.h:
+C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/greedy/activity_selection.c:
+
+C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/16.2.0/include/mm_malloc.h:
+
+C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/include/greedy.h:
+
+C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/greedy/huffman.c:
+
+C:/msys64/ucrt64/include/corecrt_malloc.h:
 
 C:/msys64/ucrt64/include/corecrt_memory.h:
 
 C:/msys64/ucrt64/include/crtdefs.h:
-
-C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/sorting/merge_sort.c:
-
-C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/include/sorting.h:
-
-C:/msys64/ucrt64/include/corecrt_malloc.h:
 
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/16.2.0/include/limits.h:
 
@@ -226,7 +260,13 @@ C:/msys64/ucrt64/include/limits.h:
 
 C:/msys64/ucrt64/include/malloc.h:
 
-C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/16.2.0/include/mm_malloc.h:
+C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/greedy/interval_partitioning.c:
+
+C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/include/transaction.h:
+
+C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/sorting/merge_sort.c:
+
+C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/include/sorting.h:
 
 C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/sorting/quick_sort.c:
 

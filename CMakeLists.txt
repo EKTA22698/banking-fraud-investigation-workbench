@@ -18,6 +18,12 @@ add_executable(fraud_workbench
 src/algorithms/divide_conquer/fast_power.c
 src/algorithms/divide_conquer/celebrity.c
 src/algorithms/divide_conquer/matrix_multiplication.c
+src/algorithms/greedy/activity_selection.c
+src/algorithms/greedy/interval_partitioning.c
+src/algorithms/greedy/huffman.c
+src/algorithms/graph/dijkstra.c
+src/algorithms/graph/prim.c
+src/algorithms/graph/kruskal.c
 )
 
 target_include_directories(fraud_workbench PRIVATE

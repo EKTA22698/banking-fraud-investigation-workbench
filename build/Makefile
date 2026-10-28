@@ -224,6 +224,150 @@ src/algorithms/divide_conquer/maximum_subarray.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/maximum_subarray.c.s
 .PHONY : src/algorithms/divide_conquer/maximum_subarray.c.s
 
+src/algorithms/graph/dijkstra.obj: src/algorithms/graph/dijkstra.c.obj
+.PHONY : src/algorithms/graph/dijkstra.obj
+
+# target to build an object file
+src/algorithms/graph/dijkstra.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/graph/dijkstra.c.obj
+.PHONY : src/algorithms/graph/dijkstra.c.obj
+
+src/algorithms/graph/dijkstra.i: src/algorithms/graph/dijkstra.c.i
+.PHONY : src/algorithms/graph/dijkstra.i
+
+# target to preprocess a source file
+src/algorithms/graph/dijkstra.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/graph/dijkstra.c.i
+.PHONY : src/algorithms/graph/dijkstra.c.i
+
+src/algorithms/graph/dijkstra.s: src/algorithms/graph/dijkstra.c.s
+.PHONY : src/algorithms/graph/dijkstra.s
+
+# target to generate assembly for a file
+src/algorithms/graph/dijkstra.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/graph/dijkstra.c.s
+.PHONY : src/algorithms/graph/dijkstra.c.s
+
+src/algorithms/graph/kruskal.obj: src/algorithms/graph/kruskal.c.obj
+.PHONY : src/algorithms/graph/kruskal.obj
+
+# target to build an object file
+src/algorithms/graph/kruskal.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/graph/kruskal.c.obj
+.PHONY : src/algorithms/graph/kruskal.c.obj
+
+src/algorithms/graph/kruskal.i: src/algorithms/graph/kruskal.c.i
+.PHONY : src/algorithms/graph/kruskal.i
+
+# target to preprocess a source file
+src/algorithms/graph/kruskal.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/graph/kruskal.c.i
+.PHONY : src/algorithms/graph/kruskal.c.i
+
+src/algorithms/graph/kruskal.s: src/algorithms/graph/kruskal.c.s
+.PHONY : src/algorithms/graph/kruskal.s
+
+# target to generate assembly for a file
+src/algorithms/graph/kruskal.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/graph/kruskal.c.s
+.PHONY : src/algorithms/graph/kruskal.c.s
+
+src/algorithms/graph/prim.obj: src/algorithms/graph/prim.c.obj
+.PHONY : src/algorithms/graph/prim.obj
+
+# target to build an object file
+src/algorithms/graph/prim.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/graph/prim.c.obj
+.PHONY : src/algorithms/graph/prim.c.obj
+
+src/algorithms/graph/prim.i: src/algorithms/graph/prim.c.i
+.PHONY : src/algorithms/graph/prim.i
+
+# target to preprocess a source file
+src/algorithms/graph/prim.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/graph/prim.c.i
+.PHONY : src/algorithms/graph/prim.c.i
+
+src/algorithms/graph/prim.s: src/algorithms/graph/prim.c.s
+.PHONY : src/algorithms/graph/prim.s
+
+# target to generate assembly for a file
+src/algorithms/graph/prim.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/graph/prim.c.s
+.PHONY : src/algorithms/graph/prim.c.s
+
+src/algorithms/greedy/activity_selection.obj: src/algorithms/greedy/activity_selection.c.obj
+.PHONY : src/algorithms/greedy/activity_selection.obj
+
+# target to build an object file
+src/algorithms/greedy/activity_selection.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/greedy/activity_selection.c.obj
+.PHONY : src/algorithms/greedy/activity_selection.c.obj
+
+src/algorithms/greedy/activity_selection.i: src/algorithms/greedy/activity_selection.c.i
+.PHONY : src/algorithms/greedy/activity_selection.i
+
+# target to preprocess a source file
+src/algorithms/greedy/activity_selection.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/greedy/activity_selection.c.i
+.PHONY : src/algorithms/greedy/activity_selection.c.i
+
+src/algorithms/greedy/activity_selection.s: src/algorithms/greedy/activity_selection.c.s
+.PHONY : src/algorithms/greedy/activity_selection.s
+
+# target to generate assembly for a file
+src/algorithms/greedy/activity_selection.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/greedy/activity_selection.c.s
+.PHONY : src/algorithms/greedy/activity_selection.c.s
+
+src/algorithms/greedy/huffman.obj: src/algorithms/greedy/huffman.c.obj
+.PHONY : src/algorithms/greedy/huffman.obj
+
+# target to build an object file
+src/algorithms/greedy/huffman.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/greedy/huffman.c.obj
+.PHONY : src/algorithms/greedy/huffman.c.obj
+
+src/algorithms/greedy/huffman.i: src/algorithms/greedy/huffman.c.i
+.PHONY : src/algorithms/greedy/huffman.i
+
+# target to preprocess a source file
+src/algorithms/greedy/huffman.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/greedy/huffman.c.i
+.PHONY : src/algorithms/greedy/huffman.c.i
+
+src/algorithms/greedy/huffman.s: src/algorithms/greedy/huffman.c.s
+.PHONY : src/algorithms/greedy/huffman.s
+
+# target to generate assembly for a file
+src/algorithms/greedy/huffman.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/greedy/huffman.c.s
+.PHONY : src/algorithms/greedy/huffman.c.s
+
+src/algorithms/greedy/interval_partitioning.obj: src/algorithms/greedy/interval_partitioning.c.obj
+.PHONY : src/algorithms/greedy/interval_partitioning.obj
+
+# target to build an object file
+src/algorithms/greedy/interval_partitioning.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/greedy/interval_partitioning.c.obj
+.PHONY : src/algorithms/greedy/interval_partitioning.c.obj
+
+src/algorithms/greedy/interval_partitioning.i: src/algorithms/greedy/interval_partitioning.c.i
+.PHONY : src/algorithms/greedy/interval_partitioning.i
+
+# target to preprocess a source file
+src/algorithms/greedy/interval_partitioning.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/greedy/interval_partitioning.c.i
+.PHONY : src/algorithms/greedy/interval_partitioning.c.i
+
+src/algorithms/greedy/interval_partitioning.s: src/algorithms/greedy/interval_partitioning.c.s
+.PHONY : src/algorithms/greedy/interval_partitioning.s
+
+# target to generate assembly for a file
+src/algorithms/greedy/interval_partitioning.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/algorithms/greedy/interval_partitioning.c.s
+.PHONY : src/algorithms/greedy/interval_partitioning.c.s
+
 src/algorithms/searching/binary_search.obj: src/algorithms/searching/binary_search.c.obj
 .PHONY : src/algorithms/searching/binary_search.obj
 
@@ -437,6 +581,24 @@ help:
 	@echo ... src/algorithms/divide_conquer/maximum_subarray.obj
 	@echo ... src/algorithms/divide_conquer/maximum_subarray.i
 	@echo ... src/algorithms/divide_conquer/maximum_subarray.s
+	@echo ... src/algorithms/graph/dijkstra.obj
+	@echo ... src/algorithms/graph/dijkstra.i
+	@echo ... src/algorithms/graph/dijkstra.s
+	@echo ... src/algorithms/graph/kruskal.obj
+	@echo ... src/algorithms/graph/kruskal.i
+	@echo ... src/algorithms/graph/kruskal.s
+	@echo ... src/algorithms/graph/prim.obj
+	@echo ... src/algorithms/graph/prim.i
+	@echo ... src/algorithms/graph/prim.s
+	@echo ... src/algorithms/greedy/activity_selection.obj
+	@echo ... src/algorithms/greedy/activity_selection.i
+	@echo ... src/algorithms/greedy/activity_selection.s
+	@echo ... src/algorithms/greedy/huffman.obj
+	@echo ... src/algorithms/greedy/huffman.i
+	@echo ... src/algorithms/greedy/huffman.s
+	@echo ... src/algorithms/greedy/interval_partitioning.obj
+	@echo ... src/algorithms/greedy/interval_partitioning.i
+	@echo ... src/algorithms/greedy/interval_partitioning.s
 	@echo ... src/algorithms/searching/binary_search.obj
 	@echo ... src/algorithms/searching/binary_search.i
 	@echo ... src/algorithms/searching/binary_search.s

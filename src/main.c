@@ -9,6 +9,8 @@
 #include "searching.h"
 #include "divide_conquer.h"
 #include "matrix_algorithms.h"
+#include "greedy.h"
+#include "graph_algorithms.h"
 
 int main(void)
 {
@@ -283,13 +285,281 @@ int main(void)
              * Graph algorithms
              */
             case 6:
+{
+    int graph_choice;
+
+    WeightedGraph graph;
+
+    /*
+     * Demonstration fraud evidence graph:
+     *
+     * 0 = Account A501
+     * 1 = Device D099
+     * 2 = Account A502
+     * 3 = Merchant M080
+     * 4 = Account A503
+     * 5 = Merchant M081
+     */
+
+    const char *labels[] = {
+        "Account A501",
+        "Device D099",
+        "Account A502",
+        "Merchant M080",
+        "Account A503",
+        "Merchant M081"
+    };
+
+    initialize_graph(
+        &graph,
+        6
+    );
+
+    add_undirected_edge(&graph, 0, 1, 1);
+    add_undirected_edge(&graph, 1, 2, 1);
+    add_undirected_edge(&graph, 1, 4, 1);
+
+    add_undirected_edge(&graph, 0, 3, 4);
+    add_undirected_edge(&graph, 2, 3, 2);
+    add_undirected_edge(&graph, 4, 3, 3);
+
+    add_undirected_edge(&graph, 0, 5, 5);
+    add_undirected_edge(&graph, 3, 5, 2);
+
+    printf("\n");
+    printf("============================================================\n");
+    printf("               FRAUD NETWORK ANALYSIS\n");
+    printf("============================================================\n");
+
+    printf("Graph Entities:\n");
+
+    for (int i = 0; i < graph.vertices; i++)
+    {
+        printf(
+            "%d = %s\n",
+            i,
+            labels[i]
+        );
+    }
+
+    printf("\n1. Dijkstra Evidence Path\n");
+    printf("2. Prim Minimum Evidence Network\n");
+    printf("3. Kruskal Minimum Evidence Network\n");
+    printf("0. Back\n");
+
+    printf("Select graph algorithm: ");
+
+    if (scanf("%d", &graph_choice) != 1)
+    {
+        printf("Invalid input.\n");
+
+        while (getchar() != '\n')
+        {
+        }
+
+        break;
+    }
+
+
+    /*
+     * DIJKSTRA
+     */
+    if (graph_choice == 1)
+    {
+        int source;
+        int destination;
+
+        int distances[GRAPH_MAX_VERTICES];
+        int previous[GRAPH_MAX_VERTICES];
+
+        printf("Enter source vertex: ");
+        scanf("%d", &source);
+
+        printf("Enter destination vertex: ");
+        scanf("%d", &destination);
+
+        if (
+            source < 0 ||
+            source >= graph.vertices ||
+            destination < 0 ||
+            destination >= graph.vertices
+        )
+        {
+            printf("Invalid vertex.\n");
+            break;
+        }
+
+        dijkstra(
+            &graph,
+            source,
+            distances,
+            previous
+        );
+
+        if (
+            distances[destination] ==
+            GRAPH_INF
+        )
+        {
+            printf(
+                "No evidence path exists.\n"
+            );
+        }
+        else
+        {
+            printf(
+                "\nShortest evidence cost: %d\n",
+                distances[destination]
+            );
+
+            printf("Evidence path: ");
+
+            /*
+             * Display names rather than only
+             * numeric vertices.
+             */
+            int path[GRAPH_MAX_VERTICES];
+            int path_length = 0;
+
+            int current = destination;
+
+            while (current != -1)
+            {
+                path[path_length++] =
+                    current;
+
+                current =
+                    previous[current];
+            }
+
+            for (
+                int i = path_length - 1;
+                i >= 0;
+                i--
+            )
             {
                 printf(
-                    "Fraud Network Analysis - Coming Soon\n"
+                    "%s",
+                    labels[path[i]]
                 );
 
-                break;
+                if (i > 0)
+                {
+                    printf(" -> ");
+                }
             }
+
+            printf("\n");
+        }
+    }
+
+
+    /*
+     * PRIM
+     */
+    else if (graph_choice == 2)
+    {
+        GraphEdge mst[
+            GRAPH_MAX_VERTICES
+        ];
+
+        int edge_count =
+            prim_mst(
+                &graph,
+                mst
+            );
+
+        int total_cost = 0;
+
+        printf(
+            "\nPrim Minimum Evidence Network\n"
+        );
+
+        printf(
+            "------------------------------------------------------------\n"
+        );
+
+        for (int i = 0; i < edge_count; i++)
+        {
+            printf(
+                "%s -> %s  cost=%d\n",
+                labels[mst[i].source],
+                labels[mst[i].destination],
+                mst[i].weight
+            );
+
+            total_cost +=
+                mst[i].weight;
+        }
+
+        printf(
+            "------------------------------------------------------------\n"
+        );
+
+        printf(
+            "Total evidence network cost: %d\n",
+            total_cost
+        );
+    }
+
+
+    /*
+     * KRUSKAL
+     */
+    else if (graph_choice == 3)
+    {
+        GraphEdge mst[
+            GRAPH_MAX_VERTICES
+        ];
+
+        int edge_count =
+            kruskal_mst(
+                &graph,
+                mst
+            );
+
+        int total_cost = 0;
+
+        printf(
+            "\nKruskal Minimum Evidence Network\n"
+        );
+
+        printf(
+            "------------------------------------------------------------\n"
+        );
+
+        for (int i = 0; i < edge_count; i++)
+        {
+            printf(
+                "%s -> %s  cost=%d\n",
+                labels[mst[i].source],
+                labels[mst[i].destination],
+                mst[i].weight
+            );
+
+            total_cost +=
+                mst[i].weight;
+        }
+
+        printf(
+            "------------------------------------------------------------\n"
+        );
+
+        printf(
+            "Total evidence network cost: %d\n",
+            total_cost
+        );
+    }
+
+    else if (graph_choice != 0)
+    {
+        printf(
+            "Invalid graph algorithm.\n"
+        );
+    }
+
+    break;
+}
 
             /*
              * OPTION 7
@@ -319,10 +589,12 @@ int main(void)
                 printf("1. Maximum Subarray\n");
                 printf("2. Fast Power\n");
                 printf("3. Celebrity Problem\n");
-                printf(
-                    "4. Classical vs Strassen "
+                printf("4. Classical vs Strassen "
                     "Matrix Multiplication\n"
                 );
+                printf("5. Activity Selection\n");
+                printf("6. Interval Partitioning\n");
+                printf("7. Huffman Coding\n"); 
                 printf("0. Back\n");
                 printf("============================================================\n");
                 printf("Select algorithm: ");
@@ -701,6 +973,139 @@ int main(void)
     printf("----------------------------------------\n");
     printf("Classical : O(n^3)\n");
     printf("Strassen  : O(n^log2(7)) ~ O(n^2.807)\n");
+}
+else if (algorithm_choice == 5)
+{
+    Activity activities[] = {
+        {1, 9, 10},
+        {2, 9, 11},
+        {3, 10, 11},
+        {4, 10, 12},
+        {5, 11, 12},
+        {6, 12, 13}
+    };
+
+    int count =
+        sizeof(activities) /
+        sizeof(activities[0]);
+
+    Activity selected[MAX_ACTIVITIES];
+
+    int selected_count =
+        activity_selection(
+            activities,
+            count,
+            selected
+        );
+
+    printf("\nSelected Investigation Cases\n");
+    printf("----------------------------------------\n");
+    printf("Case     Start     Finish\n");
+    printf("----------------------------------------\n");
+
+    for (int i = 0; i < selected_count; i++)
+    {
+        printf(
+            "%-8d %-9d %d\n",
+            selected[i].id,
+            selected[i].start,
+            selected[i].finish
+        );
+    }
+
+    printf("----------------------------------------\n");
+
+    printf(
+        "Maximum non-overlapping cases: %d\n",
+        selected_count
+    );
+}
+else if (algorithm_choice == 6)
+{
+    Activity activities[] = {
+        {1, 9, 11},
+        {2, 9, 10},
+        {3, 10, 12},
+        {4, 11, 13},
+        {5, 12, 14}
+    };
+
+    int count =
+        sizeof(activities) /
+        sizeof(activities[0]);
+
+    IntervalAssignment assignments[
+        MAX_ACTIVITIES
+    ];
+
+    int investigators =
+        interval_partitioning(
+            activities,
+            count,
+            assignments
+        );
+
+    printf("\nInvestigation Assignment\n");
+    printf("----------------------------------------\n");
+    printf("Case       Investigator\n");
+    printf("----------------------------------------\n");
+
+    for (int i = 0; i < count; i++)
+    {
+        printf(
+            "%-10d %d\n",
+            assignments[i].activity_id,
+            assignments[i].resource_id
+        );
+    }
+
+    printf("----------------------------------------\n");
+
+    printf(
+        "Minimum investigators required: %d\n",
+        investigators
+    );
+}
+else if (algorithm_choice == 7)
+{
+    char text[256];
+
+    printf("\nEnter banking/fraud log text:\n");
+
+    /*
+     * Remove newline left by previous scanf.
+     */
+    int ch;
+
+    while (
+        (ch = getchar()) != '\n' &&
+        ch != EOF
+    )
+    {
+    }
+
+    if (
+        fgets(
+            text,
+            sizeof(text),
+            stdin
+        ) != NULL
+    )
+    {
+        /*
+         * Remove trailing newline.
+         */
+        for (int i = 0; text[i] != '\0'; i++)
+        {
+            if (text[i] == '\n')
+            {
+                text[i] = '\0';
+                break;
+            }
+        }
+
+        run_huffman_demo(text);
+    }
 }
                 else if (algorithm_choice != 0)
                 {
