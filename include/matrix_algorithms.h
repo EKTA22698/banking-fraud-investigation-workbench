@@ -22,4 +22,10 @@ void print_matrix(
     const int matrix[MATRIX_MAX_SIZE][MATRIX_MAX_SIZE]
 );
 
+int matrices_equal(
+    int size,
+    const int A[MATRIX_MAX_SIZE][MATRIX_MAX_SIZE],
+    const int B[MATRIX_MAX_SIZE][MATRIX_MAX_SIZE]
+);
+
 #endif

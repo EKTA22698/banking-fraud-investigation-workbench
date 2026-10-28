@@ -468,58 +468,164 @@ int main(void)
     int strassen_result
         [MATRIX_MAX_SIZE][MATRIX_MAX_SIZE] = {0};
 
-    int size = 2;
+    int size_choice;
+    int size;
+    int input_choice;
+
     int i;
     int j;
 
-    printf("\n============================================\n");
-    printf("       MATRIX MULTIPLICATION COMPARISON\n");
-    printf("============================================\n");
+    printf("\n");
+    printf("============================================================\n");
+    printf("             MATRIX MULTIPLICATION LAB\n");
+    printf("============================================================\n");
 
-    printf("\nEnter values for Matrix A (2 x 2):\n");
+    printf("1. 2 x 2 Matrix\n");
+    printf("2. 4 x 4 Matrix\n");
+    printf("3. 8 x 8 Matrix\n");
+    printf("0. Back\n");
 
-    for (i = 0; i < size; i++)
+    printf("Select matrix size: ");
+
+    if (scanf("%d", &size_choice) != 1)
     {
-        for (j = 0; j < size; j++)
+        printf("Invalid input.\n");
+
+        while (getchar() != '\n')
         {
-            printf("A[%d][%d] = ", i, j);
+        }
 
-            if (scanf("%d", &A[i][j]) != 1)
+        break;
+    }
+
+    if (size_choice == 0)
+    {
+        break;
+    }
+
+    if (size_choice == 1)
+    {
+        size = 2;
+    }
+    else if (size_choice == 2)
+    {
+        size = 4;
+    }
+    else if (size_choice == 3)
+    {
+        size = 8;
+    }
+    else
+    {
+        printf("Invalid matrix size.\n");
+        break;
+    }
+
+    printf("\nInput Method\n");
+    printf("1. Enter matrix values manually\n");
+    printf("2. Generate test matrices automatically\n");
+    printf("Select input method: ");
+
+    if (scanf("%d", &input_choice) != 1)
+    {
+        printf("Invalid input.\n");
+
+        while (getchar() != '\n')
+        {
+        }
+
+        break;
+    }
+
+
+    /*
+     * Manual input
+     */
+    if (input_choice == 1)
+    {
+        printf(
+            "\nEnter values for Matrix A (%d x %d):\n",
+            size,
+            size
+        );
+
+        for (i = 0; i < size; i++)
+        {
+            for (j = 0; j < size; j++)
             {
-                printf("Invalid matrix value.\n");
+                printf(
+                    "A[%d][%d] = ",
+                    i,
+                    j
+                );
 
-                while (getchar() != '\n')
-                {
-                    /* Clear invalid input */
-                }
+                scanf(
+                    "%d",
+                    &A[i][j]
+                );
+            }
+        }
 
-                break;
+        printf(
+            "\nEnter values for Matrix B (%d x %d):\n",
+            size,
+            size
+        );
+
+        for (i = 0; i < size; i++)
+        {
+            for (j = 0; j < size; j++)
+            {
+                printf(
+                    "B[%d][%d] = ",
+                    i,
+                    j
+                );
+
+                scanf(
+                    "%d",
+                    &B[i][j]
+                );
             }
         }
     }
 
-    printf("\nEnter values for Matrix B (2 x 2):\n");
-
-    for (i = 0; i < size; i++)
+    /*
+     * Automatic deterministic test data.
+     *
+     * Deterministic values are useful because
+     * the same input is supplied to both
+     * algorithms.
+     */
+    else if (input_choice == 2)
     {
-        for (j = 0; j < size; j++)
+        for (i = 0; i < size; i++)
         {
-            printf("B[%d][%d] = ", i, j);
-
-            if (scanf("%d", &B[i][j]) != 1)
+            for (j = 0; j < size; j++)
             {
-                printf("Invalid matrix value.\n");
+                A[i][j] =
+                    (i * size + j + 1) % 10;
 
-                while (getchar() != '\n')
-                {
-                    /* Clear invalid input */
-                }
-
-                break;
+                B[i][j] =
+                    ((i + j + 2) * 2) % 10;
             }
         }
+
+        printf(
+            "\nTest matrices generated successfully.\n"
+        );
+    }
+    else
+    {
+        printf("Invalid input method.\n");
+        break;
     }
 
+
+    /*
+     * Run both algorithms on exactly
+     * the same matrices.
+     */
     classical_matrix_multiply(
         size,
         A,
@@ -534,65 +640,68 @@ int main(void)
         strassen_result
     );
 
+
     printf("\nMatrix A:\n");
-    print_matrix(size, A);
+    print_matrix(
+        size,
+        A
+    );
 
     printf("\nMatrix B:\n");
-    print_matrix(size, B);
+    print_matrix(
+        size,
+        B
+    );
 
-    printf("\nClassical Multiplication Result:\n");
+    printf(
+        "\nClassical Multiplication Result:\n"
+    );
+
     print_matrix(
         size,
         classical_result
     );
 
-    printf("\nStrassen Multiplication Result:\n");
+    printf(
+        "\nRecursive Strassen Result:\n"
+    );
+
     print_matrix(
         size,
         strassen_result
     );
 
-    /*
-     * Verify that both algorithms produced
-     * exactly the same matrix.
-     */
-    int results_match = 1;
-
-    for (i = 0; i < size; i++)
-    {
-        for (j = 0; j < size; j++)
-        {
-            if (classical_result[i][j] !=
-                strassen_result[i][j])
-            {
-                results_match = 0;
-            }
-        }
-    }
 
     printf("\nCorrectness Check: ");
 
-    if (results_match)
+    if (
+        matrices_equal(
+            size,
+            classical_result,
+            strassen_result
+        )
+    )
     {
         printf("PASS\n");
         printf(
             "Both algorithms produced "
-            "the same result.\n"
+            "identical matrices.\n"
         );
     }
     else
     {
         printf("FAIL\n");
         printf(
-            "The algorithms produced "
-            "different results.\n"
+            "Results do not match.\n"
         );
     }
-} 
 
-                /*
-                 * 0 simply returns to main menu.
-                 */
+
+    printf("\nComplexity Comparison\n");
+    printf("----------------------------------------\n");
+    printf("Classical : O(n^3)\n");
+    printf("Strassen  : O(n^log2(7)) ~ O(n^2.807)\n");
+}
                 else if (algorithm_choice != 0)
                 {
                     printf(

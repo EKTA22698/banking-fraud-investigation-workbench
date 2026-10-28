@@ -14,13 +14,9 @@ CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/matrix_multiplicati
   C:/msys64/ucrt64/include/_mingw_off_t.h \
   C:/msys64/ucrt64/include/_mingw_secapi.h \
   C:/msys64/ucrt64/include/corecrt.h \
-  C:/msys64/ucrt64/include/corecrt_memory.h \
   C:/msys64/ucrt64/include/corecrt_stdio_config.h \
   C:/msys64/ucrt64/include/corecrt_wstdio.h \
-  C:/msys64/ucrt64/include/corecrt_wstring.h \
-  C:/msys64/ucrt64/include/crtdefs.h \
   C:/msys64/ucrt64/include/stdio.h \
-  C:/msys64/ucrt64/include/string.h \
   C:/msys64/ucrt64/include/vadefs.h
 
 CMakeFiles/fraud_workbench.dir/src/algorithms/divide_conquer/maximum_subarray.c.obj: C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/divide_conquer/maximum_subarray.c \
@@ -202,8 +198,6 @@ C:/msys64/ucrt64/include/_mingw_secapi.h:
 
 C:/msys64/ucrt64/include/corecrt.h:
 
-C:/msys64/ucrt64/include/corecrt_memory.h:
-
 C:/msys64/ucrt64/include/corecrt_stdio_config.h:
 
 C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/include/dataset.h:
@@ -212,11 +206,13 @@ C:/msys64/ucrt64/include/stdio.h:
 
 C:/msys64/ucrt64/include/corecrt_wstdio.h:
 
-C:/msys64/ucrt64/include/crtdefs.h:
-
 C:/msys64/ucrt64/include/vadefs.h:
 
 C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/include/transaction.h:
+
+C:/msys64/ucrt64/include/corecrt_memory.h:
+
+C:/msys64/ucrt64/include/crtdefs.h:
 
 C:/Users/Ekta\ Bhardwaj/banking-fraud-investigation-workbench/src/algorithms/sorting/merge_sort.c:
 
