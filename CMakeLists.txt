@@ -42,6 +42,15 @@ src/algorithms/string_matching/rabin_karp.c
 src/algorithms/string_matching/finite_automaton.c
 src/algorithms/string_matching/kmp.c
 src/benchmark/benchmark.c
+src/benchmark/string_benchmark.c
+src/benchmark/matrix_benchmark.c
+src/benchmark/graph_benchmark.c
+src/tests/test_suite.c
+src/export/export.c
+src/core/paysim_loader.c
+src/core/paysim_dynamic_loader.c
+src/core/fraud_evaluation.c
+src/core/fraud_graph.c
 )
 
 target_include_directories(fraud_workbench PRIVATE

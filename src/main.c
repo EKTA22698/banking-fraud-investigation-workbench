@@ -18,6 +18,9 @@
 #include "number_theory.h"
 #include "string_matching.h"
 #include "benchmark.h"
+#include "test_suite.h"
+#include "export.h"
+#include "fraud_graph.h"
 
 
 static void print_bb_result(
@@ -84,6 +87,11 @@ int main(void)
     int transaction_count = 0;
     int choice;
 
+    TransactionDataset paysim_dataset = {0};
+    int using_dynamic_dataset = 0;
+    Transaction *active_transactions = transactions;
+size_t active_count = 0;
+
     do
     {
         display_main_menu();
@@ -111,53 +119,548 @@ int main(void)
              * Load banking transaction dataset
              */
             case 1:
-            {
-                transaction_count = load_transactions_csv(
-                    "data/small/transactions_small.csv",
-                    transactions,
-                    MAX_TRANSACTIONS
-                );
+{
+    int dataset_choice;
 
-                if (transaction_count >= 0)
-                {
-                    printf("\nDataset loaded successfully.\n");
+    const char *filename = NULL;
+    const char *dataset_name = NULL;
 
-                    print_dataset_summary(
-                        transactions,
-                        transaction_count
-                    );
-                }
+    printf("\n");
+    printf("============================================================\n");
+    printf("                     DATASET LOADER\n");
+    printf("============================================================\n");
 
-                break;
-            }
+    printf("1. Small Dataset       (10 transactions)\n");
+    printf("2. Medium Dataset      (1,000 transactions)\n");
+    printf("3. Capacity Shock      (1,000 transactions)\n");
+    printf("4. Large Dataset       (10,000 transactions)\n");
+    printf("5. Adversarial Dataset (10,000 transactions)\n");
+    printf("6. PaySim Public Fraud Dataset (Full)\n");
+    printf("0. Back\n");
 
+    printf("============================================================\n");
+    printf("Select dataset: ");
+
+    if (scanf("%d", &dataset_choice) != 1)
+    {
+        printf("Invalid input.\n");
+
+        while (getchar() != '\n')
+        {
+            /* Clear invalid input */
+        }
+
+        break;
+    }
+
+    /*
+     * Return to main menu.
+     */
+    if (dataset_choice == 0)
+    {
+        break;
+    }
+
+    /*
+     * Select dataset.
+     */
+    if (dataset_choice == 1)
+    {
+        filename =
+            "data/small/transactions_small.csv";
+
+        dataset_name =
+            "Small / Normal Operation";
+    }
+
+    else if (dataset_choice == 2)
+    {
+        filename =
+            "data/medium/transactions_medium.csv";
+
+        dataset_name =
+            "Medium";
+    }
+
+    else if (dataset_choice == 3)
+    {
+        filename =
+            "data/medium/transactions_shock.csv";
+
+        dataset_name =
+            "Capacity / Constraint Shock";
+    }
+
+    else if (dataset_choice == 4)
+    {
+        filename =
+            "data/large/transactions_large.csv";
+
+        dataset_name =
+            "Large Data Stress";
+    }
+
+    else if (dataset_choice == 5)
+    {
+        filename =
+            "data/adversarial/transactions_adversarial.csv";
+
+        dataset_name =
+            "Adversarial";
+    }
+
+    else if (dataset_choice == 6)
+    {
+        filename =
+            "data/raw/PS_20174392719_1491204439457_log.csv";
+
+        dataset_name =
+            "PaySim Public Fraud Dataset";
+    }
+
+    else
+    {
+        printf(
+            "Invalid dataset selection.\n"
+        );
+
+        break;
+    }
+
+    /*
+     * PAYSim uses a different schema and
+     * may contain millions of transactions.
+     *
+     * Therefore it uses dynamic storage.
+     */
+    if (dataset_choice == 6)
+    {
+        /*
+         * If PaySim was previously loaded,
+         * release it before loading again.
+         */
+        if (using_dynamic_dataset)
+        {
+            free_transaction_dataset(
+                &paysim_dataset
+            );
+
+            using_dynamic_dataset = 0;
+        }
+
+        printf(
+            "\nLoading full PaySim dataset dynamically...\n"
+        );
+
+        if (
+            load_paysim_dynamic(
+                filename,
+                &paysim_dataset
+            )
+        )
+        {
+            using_dynamic_dataset = 1;
+            active_transactions = paysim_dataset.items;
+active_count = paysim_dataset.count;
+
+            printf(
+                "\nFull PaySim dataset loaded successfully.\n"
+            );
+
+            printf(
+                "Scenario: %s\n",
+                dataset_name
+            );
+
+            printf(
+                "Source  : %s\n",
+                filename
+            );
+
+            printf(
+                "Transactions loaded: %zu\n",
+                paysim_dataset.count
+            );
+
+            printf(
+                "Allocated capacity : %zu\n",
+                paysim_dataset.capacity
+            );
+        }
+        else
+        {
+            printf(
+                "\nERROR: PaySim dynamic loading failed.\n"
+            );
+        }
+
+        /*
+         * IMPORTANT:
+         *
+         * At this stage PaySim remains inside
+         * paysim_dataset.items.
+         *
+         * Existing menu options still use the
+         * original transactions pointer.
+         *
+         * We will connect them through an active
+         * dataset abstraction next.
+         */
+        break;
+    }
+
+    /*
+     * Normal workbench CSV datasets use
+     * the existing fixed-buffer loader.
+     */
+    transaction_count =
+        load_transactions_csv(
+            filename,
+            transactions,
+            MAX_TRANSACTIONS
+        );
+
+    if (transaction_count >= 0)
+    {
+        active_transactions = transactions;
+active_count = (size_t)transaction_count;
+        printf(
+            "\nDataset loaded successfully.\n"
+        );
+
+        printf(
+            "Scenario: %s\n",
+            dataset_name
+        );
+
+        printf(
+            "Source  : %s\n",
+            filename
+        );
+
+        print_dataset_summary(
+            transactions,
+            transaction_count
+        );
+    }
+
+    break;
+}
             /*
              * OPTION 2
              * View loaded transactions
              */
             case 2:
-            {
-                print_all_transactions(
-                    transactions,
-                    transaction_count
-                );
+{
+    if (
+        active_transactions == NULL ||
+        active_count == 0
+    )
+    {
+        printf(
+            "No dataset is currently loaded.\n"
+        );
 
-                break;
+        printf(
+            "Please load a dataset first.\n"
+        );
+
+        break;
+    }
+
+    const size_t page_size = 25;
+    size_t page = 0;
+
+    char command = '\0';
+
+    do
+    {
+        size_t start =
+            page * page_size;
+
+        /*
+         * Safety check.
+         */
+        if (start >= active_count)
+        {
+            page = 0;
+            start = 0;
+        }
+
+        size_t end =
+            start + page_size;
+
+        if (end > active_count)
+        {
+            end = active_count;
+        }
+
+
+        printf("\n");
+        printf(
+            "============================================================\n"
+        );
+
+        printf(
+            "          TRANSACTIONS %zu - %zu OF %zu\n",
+            start + 1,
+            end,
+            active_count
+        );
+
+        printf(
+            "============================================================\n"
+        );
+
+
+        for (
+            size_t i = start;
+            i < end;
+            i++
+        )
+        {
+            printf(
+                "\nTransaction #%zu\n",
+                i + 1
+            );
+
+            printf(
+                "------------------------------------------------------------\n"
+            );
+
+            print_transaction(
+                &active_transactions[i]
+            );
+        }
+
+
+        printf("\n");
+        printf(
+            "============================================================\n"
+        );
+
+        printf("[N] Next Page\n");
+        printf("[P] Previous Page\n");
+        printf("[Q] Back to Main Menu\n");
+
+        printf(
+            "============================================================\n"
+        );
+
+        printf("Choice: ");
+
+
+        if (
+            scanf(
+                " %c",
+                &command
+            ) != 1
+        )
+        {
+            printf(
+                "Invalid input.\n"
+            );
+
+            while (getchar() != '\n')
+            {
             }
+
+            command = 'Q';
+
+            continue;
+        }
+
+
+        /*
+         * NEXT PAGE
+         */
+        if (
+            command == 'N' ||
+            command == 'n'
+        )
+        {
+            if (
+                (page + 1) *
+                page_size <
+                active_count
+            )
+            {
+                page++;
+            }
+            else
+            {
+                printf(
+                    "\nAlready at the last page.\n"
+                );
+            }
+        }
+
+
+        /*
+         * PREVIOUS PAGE
+         */
+        else if (
+            command == 'P' ||
+            command == 'p'
+        )
+        {
+            if (page > 0)
+            {
+                page--;
+            }
+            else
+            {
+                printf(
+                    "\nAlready at the first page.\n"
+                );
+            }
+        }
+
+
+        /*
+         * QUIT VIEWER
+         */
+        else if (
+            command == 'Q' ||
+            command == 'q'
+        )
+        {
+            /* Exit loop */
+        }
+
+
+        else
+        {
+            printf(
+                "\nInvalid command. "
+                "Use N, P or Q.\n"
+            );
+        }
+
+    } while (
+        command != 'Q' &&
+        command != 'q'
+    );
+
+    break;
+}
 
             /*
              * OPTION 3
              * Fraud investigation
              */
             case 3:
-            {
-                analyze_fraud(
-                    transactions,
-                    transaction_count
-                );
+{
+    if (
+        active_transactions == NULL ||
+        active_count == 0
+    )
+    {
+        printf(
+            "No dataset is currently loaded.\n"
+        );
 
-                break;
+        printf(
+            "Please load a dataset first.\n"
+        );
+
+        break;
+    }
+
+
+    /*
+     * Full PaySim dataset:
+     * evaluate silently over all transactions
+     * rather than printing millions of rows.
+     */
+    if (using_dynamic_dataset)
+    {
+        int threshold;
+
+        printf("\n");
+        printf("============================================================\n");
+        printf("             PAYSIM FRAUD INVESTIGATION\n");
+        printf("============================================================\n");
+
+        printf(
+            "Transactions: %zu\n",
+            active_count
+        );
+
+        printf(
+            "Enter risk threshold (0-100) "
+            "[recommended: 50]: "
+        );
+
+
+        if (
+            scanf(
+                "%d",
+                &threshold
+            ) != 1
+        )
+        {
+            printf(
+                "Invalid threshold.\n"
+            );
+
+            while (getchar() != '\n')
+            {
             }
+
+            break;
+        }
+
+
+        if (
+            threshold < 0 ||
+            threshold > 100
+        )
+        {
+            printf(
+                "Risk threshold must be "
+                "between 0 and 100.\n"
+            );
+
+            break;
+        }
+
+
+        printf(
+            "\nAnalyzing %zu transactions...\n",
+            active_count
+        );
+
+
+        FraudEvaluation evaluation =
+            evaluate_paysim_fraud(
+                active_transactions,
+                active_count,
+                threshold
+            );
+
+
+        print_fraud_evaluation(
+            &evaluation,
+            threshold
+        );
+    }
+
+    /*
+     * Original/synthetic datasets retain
+     * the existing fraud-analysis module.
+     */
+    else
+    {
+        analyze_fraud(
+            active_transactions,
+            (int)active_count
+        );
+    }
+
+
+    break;
+}
 
             /*
              * OPTION 4
@@ -167,7 +670,10 @@ int main(void)
             {
                 int operation_choice;
 
-                if (transaction_count <= 0)
+            if (
+    active_transactions == NULL ||
+    active_count == 0
+)
                 {
                     printf("No dataset is currently loaded.\n");
                     printf("Please load a dataset first.\n");
@@ -212,12 +718,20 @@ int main(void)
                         "\nTransactions sorted using Merge Sort.\n"
                     );
 
-                    print_all_transactions(
-                        transactions,
-                        transaction_count
-                    );
-                }
+                    merge_sort_transactions(
+    active_transactions,
+    (int)active_count
+);
 
+printf(
+    "\nMerge Sort completed successfully.\n"
+);
+
+printf(
+    "Transactions sorted: %zu\n",
+    active_count
+);
+                }
                 /*
                  * Quick Sort
                  */
@@ -232,12 +746,20 @@ int main(void)
                         "\nTransactions sorted using Quick Sort.\n"
                     );
 
-                    print_all_transactions(
-                        transactions,
-                        transaction_count
-                    );
-                }
+                   quick_sort_transactions(
+    active_transactions,
+    (int)active_count
+);
 
+printf(
+    "\nQuick Sort completed successfully.\n"
+);
+
+printf(
+    "Transactions sorted: %zu\n",
+    active_count
+); 
+                }
                 /*
                  * Binary Search
                  */
@@ -251,7 +773,7 @@ int main(void)
 
                     printf("Enter Transaction ID: ");
 
-                    if (scanf("%19s", search_id) != 1)
+                    if (scanf("%31s", search_id) != 1)
                     {
                         printf("Invalid Transaction ID.\n");
                         break;
@@ -261,9 +783,9 @@ int main(void)
                      * Binary search requires sorted data.
                      */
                     sort_transactions_by_id(
-                        transactions,
-                        transaction_count
-                    );
+    active_transactions,
+    (int)active_count
+);
 
                     /*
                      * Iterative Binary Search
@@ -271,10 +793,10 @@ int main(void)
                     if (operation_choice == 3)
                     {
                         result = binary_search_iterative(
-                            transactions,
-                            transaction_count,
-                            search_id
-                        );
+    active_transactions,
+    (int)active_count,
+    search_id
+);
 
                         printf(
                             "\nAlgorithm: "
@@ -288,10 +810,10 @@ int main(void)
                     else
                     {
                         result = binary_search_recursive(
-                            transactions,
-                            transaction_count,
-                            search_id
-                        );
+    active_transactions,
+    (int)active_count,
+    search_id
+);
 
                         printf(
                             "\nAlgorithm: "
@@ -307,7 +829,7 @@ int main(void)
                         );
 
                         print_transaction(
-                            &transactions[result]
+                            &active_transactions[result]
                         );
                     }
                     else
@@ -702,6 +1224,750 @@ int main(void)
              */
             case 6:
 {
+        /*
+     * Real PaySim investigation graph.
+     */
+    if (using_dynamic_dataset)
+    {
+        int threshold;
+
+        printf("\n");
+        printf("============================================================\n");
+        printf("           PAYSIM FRAUD NETWORK ANALYSIS\n");
+        printf("============================================================\n");
+
+        printf(
+            "Enter risk threshold (0-100): "
+        );
+
+        if (
+            scanf(
+                "%d",
+                &threshold
+            ) != 1
+        )
+        {
+            printf("Invalid threshold.\n");
+
+            while (getchar() != '\n')
+            {
+            }
+
+            break;
+        }
+
+        if (
+            threshold < 0 ||
+            threshold > 100
+        )
+        {
+            printf(
+                "Threshold must be between "
+                "0 and 100.\n"
+            );
+
+            break;
+        }
+
+
+        /*
+         * Risk scores must exist before
+         * constructing the suspicious graph.
+         */
+        FraudEvaluation evaluation =
+            evaluate_paysim_fraud(
+                active_transactions,
+                active_count,
+                threshold
+            );
+
+        FraudInvestigationGraph fraud_graph;
+
+        if (
+            !build_paysim_investigation_graph(
+                active_transactions,
+                active_count,
+                threshold,
+                &fraud_graph
+            )
+        )
+        {
+            printf(
+                "Unable to build investigation graph.\n"
+            );
+
+            break;
+        }
+
+
+        printf("\n");
+        printf(
+            "Investigation graph created.\n"
+        );
+        printf(
+    "Source Dataset     : PaySim\n"
+);
+
+printf(
+    "Dataset Records    : %zu\n",
+    active_count
+);
+
+printf(
+    "Risk Threshold     : %d\n",
+    threshold
+);
+
+        printf(
+            "Vertices          : %d\n",
+            fraud_graph.graph.vertices
+        );
+
+        printf(
+            "Suspicious links : %d\n",
+            fraud_graph.transaction_edges
+        );
+
+        printf(
+            "Actual fraud in full dataset: %zu\n",
+            evaluation.actual_fraud
+        );
+
+
+        printf("\nGraph Entities\n");
+        printf(
+            "------------------------------------------------------------\n"
+        );
+
+        for (
+            int i = 0;
+            i < fraud_graph.graph.vertices;
+            i++
+        )
+        {
+            printf(
+                "%2d = %s\n",
+                i,
+                fraud_graph.labels[i]
+            );
+        }
+
+
+        printf("\n");
+        printf("1. Dijkstra Evidence Path\n");
+        printf("2. Prim Minimum Evidence Network\n");
+        printf("3. Kruskal Minimum Evidence Network\n");
+        printf("4. Bellman-Ford Evidence Path\n");
+        printf("5. Floyd-Warshall All-Pairs Analysis\n");
+        printf("0. Back\n");
+
+        printf(
+            "Select graph algorithm: "
+        );
+
+        int paysim_graph_choice;
+
+        if (
+            scanf(
+                "%d",
+                &paysim_graph_choice
+            ) != 1
+        )
+        {
+            printf("Invalid input.\n");
+
+            while (getchar() != '\n')
+            {
+            }
+
+            break;
+        }
+
+
+        /*
+         * Start with Dijkstra.
+         * Other algorithms are wired below.
+         */
+        if (paysim_graph_choice == 1)
+        {
+            int source;
+            int destination;
+
+            printf(
+                "Enter source vertex: "
+            );
+
+            scanf(
+                "%d",
+                &source
+            );
+
+            printf(
+                "Enter destination vertex: "
+            );
+
+            scanf(
+                "%d",
+                &destination
+            );
+
+
+            if (
+                source < 0 ||
+                source >=
+                    fraud_graph.graph.vertices ||
+                destination < 0 ||
+                destination >=
+                    fraud_graph.graph.vertices
+            )
+            {
+                printf(
+                    "Invalid vertex.\n"
+                );
+
+                break;
+            }
+
+
+            int distances[
+                GRAPH_MAX_VERTICES
+            ];
+
+            int previous[
+                GRAPH_MAX_VERTICES
+            ];
+
+
+            dijkstra(
+                &fraud_graph.graph,
+                source,
+                distances,
+                previous
+            );
+
+
+            if (
+                distances[destination] ==
+                GRAPH_INF
+            )
+            {
+                printf(
+                    "\nNo evidence path exists "
+                    "between these accounts.\n"
+                );
+            }
+            else
+            {
+                printf(
+                    "\nEvidence cost: %d\n",
+                    distances[destination]
+                );
+
+
+                int path[
+                    GRAPH_MAX_VERTICES
+                ];
+
+                int path_length = 0;
+
+                int current =
+                    destination;
+
+
+                while (
+                    current != -1 &&
+                    path_length <
+                    GRAPH_MAX_VERTICES
+                )
+                {
+                    path[path_length++] =
+                        current;
+
+                    current =
+                        previous[current];
+                }
+
+
+                printf(
+                    "Evidence path: "
+                );
+
+                for (
+                    int i =
+                        path_length - 1;
+                    i >= 0;
+                    i--
+                )
+                {
+                    printf(
+                        "%s",
+                        fraud_graph
+                            .labels[path[i]]
+                    );
+
+                    if (i > 0)
+                    {
+                        printf(" -> ");
+                    }
+                }
+
+                printf("\n");
+            }
+        }
+
+        /*
+ * PRIM
+ */
+else if (paysim_graph_choice == 2)
+{
+    GraphEdge mst[
+        GRAPH_MAX_VERTICES
+    ];
+
+    int edge_count =
+        prim_mst(
+            &fraud_graph.graph,
+            mst
+        );
+
+    int total_cost = 0;
+
+    printf("\n");
+    printf("============================================================\n");
+    printf("        PRIM MINIMUM EVIDENCE NETWORK\n");
+    printf("============================================================\n");
+
+    if (
+        edge_count !=
+        fraud_graph.graph.vertices - 1
+    )
+    {
+        printf(
+            "WARNING: Investigation graph is disconnected.\n"
+        );
+
+        printf(
+            "A complete spanning tree could not be created.\n\n"
+        );
+    }
+
+    for (int i = 0; i < edge_count; i++)
+    {
+        printf(
+            "%s -> %s | Evidence Cost = %d\n",
+            fraud_graph.labels[
+                mst[i].source
+            ],
+            fraud_graph.labels[
+                mst[i].destination
+            ],
+            mst[i].weight
+        );
+
+        total_cost +=
+            mst[i].weight;
+    }
+
+    printf(
+        "------------------------------------------------------------\n"
+    );
+
+    printf(
+        "Edges selected : %d\n",
+        edge_count
+    );
+
+    printf(
+        "Total evidence network cost: %d\n",
+        total_cost
+    );
+}
+
+
+/*
+ * KRUSKAL
+ */
+else if (paysim_graph_choice == 3)
+{
+    GraphEdge mst[
+        GRAPH_MAX_VERTICES
+    ];
+
+    int edge_count =
+        kruskal_mst(
+            &fraud_graph.graph,
+            mst
+        );
+
+    int total_cost = 0;
+
+    printf("\n");
+    printf("============================================================\n");
+    printf("       KRUSKAL MINIMUM EVIDENCE NETWORK\n");
+    printf("============================================================\n");
+
+    if (
+        edge_count !=
+        fraud_graph.graph.vertices - 1
+    )
+    {
+        printf(
+            "WARNING: Investigation graph is disconnected.\n"
+        );
+
+        printf(
+            "A complete spanning tree could not be created.\n\n"
+        );
+    }
+
+    for (int i = 0; i < edge_count; i++)
+    {
+        printf(
+            "%s -> %s | Evidence Cost = %d\n",
+            fraud_graph.labels[
+                mst[i].source
+            ],
+            fraud_graph.labels[
+                mst[i].destination
+            ],
+            mst[i].weight
+        );
+
+        total_cost +=
+            mst[i].weight;
+    }
+
+    printf(
+        "------------------------------------------------------------\n"
+    );
+
+    printf(
+        "Edges selected : %d\n",
+        edge_count
+    );
+
+    printf(
+        "Total evidence network cost: %d\n",
+        total_cost
+    );
+}
+
+
+/*
+ * BELLMAN-FORD
+ */
+else if (paysim_graph_choice == 4)
+{
+    int source;
+    int destination;
+
+    printf(
+        "Enter source vertex: "
+    );
+
+    if (
+        scanf(
+            "%d",
+            &source
+        ) != 1
+    )
+    {
+        printf("Invalid source vertex.\n");
+
+        while (getchar() != '\n')
+        {
+        }
+
+        break;
+    }
+
+    printf(
+        "Enter destination vertex: "
+    );
+
+    if (
+        scanf(
+            "%d",
+            &destination
+        ) != 1
+    )
+    {
+        printf(
+            "Invalid destination vertex.\n"
+        );
+
+        while (getchar() != '\n')
+        {
+        }
+
+        break;
+    }
+
+    if (
+        source < 0 ||
+        source >= fraud_graph.graph.vertices ||
+        destination < 0 ||
+        destination >= fraud_graph.graph.vertices
+    )
+    {
+        printf(
+            "Invalid vertex selection.\n"
+        );
+
+        break;
+    }
+
+    int distances[
+        GRAPH_MAX_VERTICES
+    ];
+
+    int previous[
+        GRAPH_MAX_VERTICES
+    ];
+
+    int valid =
+        bellman_ford(
+            &fraud_graph.graph,
+            source,
+            distances,
+            previous
+        );
+
+    if (!valid)
+    {
+        printf(
+            "\nNegative-weight cycle detected.\n"
+        );
+    }
+
+    else if (
+        distances[destination] ==
+        GRAPH_INF
+    )
+    {
+        printf(
+            "\nNo evidence path exists between "
+            "these accounts.\n"
+        );
+    }
+
+    else
+    {
+        printf("\n");
+        printf(
+            "Bellman-Ford Evidence Cost: %d\n",
+            distances[destination]
+        );
+
+        int path[
+            GRAPH_MAX_VERTICES
+        ];
+
+        int path_length = 0;
+
+        int current =
+            destination;
+
+        while (
+            current != -1 &&
+            path_length <
+            GRAPH_MAX_VERTICES
+        )
+        {
+            path[path_length++] =
+                current;
+
+            current =
+                previous[current];
+        }
+
+        printf(
+            "Evidence Path: "
+        );
+
+        for (
+            int i = path_length - 1;
+            i >= 0;
+            i--
+        )
+        {
+            printf(
+                "%s",
+                fraud_graph.labels[
+                    path[i]
+                ]
+            );
+
+            if (i > 0)
+            {
+                printf(" -> ");
+            }
+        }
+
+        printf("\n");
+
+        /*
+         * Correctness comparison:
+         * PaySim graph contains only
+         * positive evidence costs.
+         */
+        int dijkstra_distances[
+            GRAPH_MAX_VERTICES
+        ];
+
+        int dijkstra_previous[
+            GRAPH_MAX_VERTICES
+        ];
+
+        dijkstra(
+            &fraud_graph.graph,
+            source,
+            dijkstra_distances,
+            dijkstra_previous
+        );
+
+        printf(
+            "Dijkstra Cost    : %d\n",
+            dijkstra_distances[
+                destination
+            ]
+        );
+
+        printf(
+            "Correctness Check: %s\n",
+            dijkstra_distances[
+                destination
+            ] ==
+            distances[
+                destination
+            ]
+                ? "PASS"
+                : "FAIL"
+        );
+    }
+}
+
+
+/*
+ * FLOYD-WARSHALL
+ */
+else if (paysim_graph_choice == 5)
+{
+    int distances
+        [GRAPH_MAX_VERTICES]
+        [GRAPH_MAX_VERTICES];
+
+    floyd_warshall(
+        &fraud_graph.graph,
+        distances
+    );
+
+    printf("\n");
+    printf("============================================================\n");
+    printf("       ALL-PAIRS PAYSIM EVIDENCE DISTANCES\n");
+    printf("============================================================\n");
+
+    /*
+     * Numeric vertex IDs are used as column
+     * headings because PaySim account IDs are
+     * too long for a compact matrix.
+     */
+    printf("%8s", "");
+
+    for (
+        int j = 0;
+        j < fraud_graph.graph.vertices;
+        j++
+    )
+    {
+        printf(
+            "%7d",
+            j
+        );
+    }
+
+    printf("\n");
+
+    for (
+        int i = 0;
+        i < fraud_graph.graph.vertices;
+        i++
+    )
+    {
+        printf(
+            "%-7d",
+            i
+        );
+
+        for (
+            int j = 0;
+            j < fraud_graph.graph.vertices;
+            j++
+        )
+        {
+            if (
+                distances[i][j] ==
+                GRAPH_INF
+            )
+            {
+                printf(
+                    "%7s",
+                    "INF"
+                );
+            }
+            else
+            {
+                printf(
+                    "%7d",
+                    distances[i][j]
+                );
+            }
+        }
+
+        printf("\n");
+    }
+
+    printf(
+        "============================================================\n"
+    );
+
+    printf("\nVertex Legend\n");
+    printf(
+        "------------------------------------------------------------\n"
+    );
+
+    for (
+        int i = 0;
+        i < fraud_graph.graph.vertices;
+        i++
+    )
+    {
+        printf(
+            "%2d = %s\n",
+            i,
+            fraud_graph.labels[i]
+        );
+    }
+}
+
+
+/*
+ * BACK
+ */
+else if (paysim_graph_choice == 0)
+{
+    /* Return to main menu. */
+}
+
+
+else
+{
+    printf(
+        "Invalid graph algorithm.\n"
+    );
+}
+    break;
+    }
     int graph_choice;
 
     WeightedGraph graph;
@@ -1131,6 +2397,7 @@ else if (graph_choice == 5)
 
     break;
 }
+        
 
             /*
              * OPTION 7
@@ -2694,7 +3961,71 @@ else if (algorithm_choice != 0)
              */
             case 9:
 {
-    run_sorting_benchmark();
+    int benchmark_choice;
+
+    printf("\n");
+    printf("============================================================\n");
+    printf("                    BENCHMARK RUNNER\n");
+    printf("============================================================\n");
+    printf("1. Sorting Algorithms\n");
+    printf("2. String Matching Algorithms\n");
+    printf("3. Matrix Multiplication\n");
+    printf("4. Graph Algorithms\n");
+    printf("5. Run Complete Benchmark Suite\n");
+    printf("0. Back\n");
+    printf("============================================================\n");
+    printf("Select benchmark: ");
+
+    if (
+        scanf(
+            "%d",
+            &benchmark_choice
+        ) != 1
+    )
+    {
+        printf("Invalid input.\n");
+
+        while (getchar() != '\n')
+        {
+        }
+
+        break;
+    }
+
+
+    if (benchmark_choice == 1)
+    {
+        run_sorting_benchmark();
+    }
+
+    else if (benchmark_choice == 2)
+    {
+        run_string_matching_benchmark();
+    }
+else if (benchmark_choice == 3)
+{
+    run_matrix_benchmark();
+}
+
+    else if (benchmark_choice == 4)
+{
+    run_graph_benchmark();
+}
+
+    else if (benchmark_choice == 5)
+    {
+        printf(
+            "Complete benchmark suite - Coming Soon\n"
+        );
+    }
+
+    else if (benchmark_choice != 0)
+    {
+        printf(
+            "Invalid benchmark choice.\n"
+        );
+    }
+
     break;
 }
 
@@ -2703,26 +4034,269 @@ else if (algorithm_choice != 0)
              * Test suite
              */
             case 10:
-            {
-                printf("Test Suite - Coming Soon\n");
-                break;
-            }
+{
+    run_test_suite();
+    break;
+}
 
             /*
              * OPTION 11
              * Export results
              */
             case 11:
-            {
-                printf(
-                    "Export Results - Coming Soon\n"
-                );
+{
+    if (
+        active_transactions == NULL ||
+        active_count == 0
+    )
+    {
+        printf(
+            "No dataset is currently loaded.\n"
+        );
 
-                break;
+        break;
+    }
+
+    int export_choice;
+
+    printf("\n");
+    printf("============================================================\n");
+    printf("                     EXPORT RESULTS\n");
+    printf("============================================================\n");
+
+    printf("1. Export Sample (first 1,000) as CSV\n");
+    printf("2. Export Sample (first 1,000) as JSON\n");
+    printf("3. Export Suspicious Transactions as CSV\n");
+
+    if (using_dynamic_dataset)
+    {
+        printf(
+            "4. Export Actual PaySim Fraud as CSV\n"
+        );
+    }
+
+    printf("5. Export Full Dataset as CSV\n");
+    printf("0. Back\n");
+
+    printf("============================================================\n");
+    printf("Select export: ");
+
+    if (
+        scanf(
+            "%d",
+            &export_choice
+        ) != 1
+    )
+    {
+        printf("Invalid input.\n");
+
+        while (getchar() != '\n')
+        {
+        }
+
+        break;
+    }
+
+
+    size_t sample_count =
+        active_count < 1000 ?
+        active_count :
+        1000;
+
+
+    if (export_choice == 1)
+    {
+        if (
+            export_transactions_csv(
+                "results/transactions_sample.csv",
+                active_transactions,
+                sample_count
+            )
+        )
+        {
+            printf(
+                "\nExported %zu transactions to:\n"
+                "results/transactions_sample.csv\n",
+                sample_count
+            );
+        }
+        else
+        {
+            printf(
+                "\nERROR: CSV export failed.\n"
+            );
+        }
+    }
+
+
+    else if (export_choice == 2)
+    {
+        if (
+            export_transactions_json(
+                "results/transactions_sample.json",
+                active_transactions,
+                sample_count
+            )
+        )
+        {
+            printf(
+                "\nExported %zu transactions to:\n"
+                "results/transactions_sample.json\n",
+                sample_count
+            );
+        }
+        else
+        {
+            printf(
+                "\nERROR: JSON export failed.\n"
+            );
+        }
+    }
+
+
+    else if (export_choice == 3)
+    {
+        int threshold;
+
+        printf(
+            "Enter risk threshold: "
+        );
+
+        if (
+            scanf(
+                "%d",
+                &threshold
+            ) != 1 ||
+            threshold < 0 ||
+            threshold > 100
+        )
+        {
+            printf(
+                "Invalid risk threshold.\n"
+            );
+
+            while (getchar() != '\n')
+            {
             }
 
-            /*
-             * EXIT
+            break;
+        }
+
+        if (
+            export_suspicious_csv(
+                "results/suspicious_transactions.csv",
+                active_transactions,
+                active_count,
+                threshold
+            )
+        )
+        {
+            printf(
+                "\nSuspicious transactions exported to:\n"
+                "results/suspicious_transactions.csv\n"
+            );
+        }
+        else
+        {
+            printf(
+                "\nERROR: Export failed.\n"
+            );
+        }
+    }
+
+
+    else if (
+        export_choice == 4 &&
+        using_dynamic_dataset
+    )
+    {
+        if (
+            export_actual_fraud_csv(
+                "results/paysim_actual_fraud.csv",
+                active_transactions,
+                active_count
+            )
+        )
+        {
+            printf(
+                "\nPaySim ground-truth fraud exported to:\n"
+                "results/paysim_actual_fraud.csv\n"
+            );
+        }
+        else
+        {
+            printf(
+                "\nERROR: Export failed.\n"
+            );
+        }
+    }
+
+
+    else if (export_choice == 5)
+    {
+        printf(
+            "\nWARNING: Full export contains %zu transactions.\n",
+            active_count
+        );
+
+        printf(
+            "This may create a very large file.\n"
+        );
+
+        printf(
+            "Continue? (Y/N): "
+        );
+
+        char confirm;
+
+        scanf(
+            " %c",
+            &confirm
+        );
+
+        if (
+            confirm != 'Y' &&
+            confirm != 'y'
+        )
+        {
+            printf(
+                "Full export cancelled.\n"
+            );
+
+            break;
+        }
+
+        if (
+            export_transactions_csv(
+                "results/transactions_full.csv",
+                active_transactions,
+                active_count
+            )
+        )
+        {
+            printf(
+                "\nFull dataset exported successfully.\n"
+            );
+        }
+        else
+        {
+            printf(
+                "\nERROR: Full export failed.\n"
+            );
+        }
+    }
+
+
+    else if (export_choice != 0)
+    {
+        printf(
+            "Invalid export choice.\n"
+        );
+    }
+
+    break;
+}
+             /* EXIT
              */
             case 0:
             {
@@ -2746,12 +4320,14 @@ else if (algorithm_choice != 0)
         }
 
     } while (choice != 0);
-
-    /*
-     * Release dynamically allocated
-     * transaction memory.
-     */
+    if (using_dynamic_dataset)
+{
+    free_transaction_dataset(
+        &paysim_dataset
+    );
+}
     free(transactions);
 
     return 0;
 }
+

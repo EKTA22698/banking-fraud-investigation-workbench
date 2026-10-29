@@ -872,6 +872,78 @@ src/benchmark/benchmark.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/benchmark/benchmark.c.s
 .PHONY : src/benchmark/benchmark.c.s
 
+src/benchmark/graph_benchmark.obj: src/benchmark/graph_benchmark.c.obj
+.PHONY : src/benchmark/graph_benchmark.obj
+
+# target to build an object file
+src/benchmark/graph_benchmark.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/benchmark/graph_benchmark.c.obj
+.PHONY : src/benchmark/graph_benchmark.c.obj
+
+src/benchmark/graph_benchmark.i: src/benchmark/graph_benchmark.c.i
+.PHONY : src/benchmark/graph_benchmark.i
+
+# target to preprocess a source file
+src/benchmark/graph_benchmark.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/benchmark/graph_benchmark.c.i
+.PHONY : src/benchmark/graph_benchmark.c.i
+
+src/benchmark/graph_benchmark.s: src/benchmark/graph_benchmark.c.s
+.PHONY : src/benchmark/graph_benchmark.s
+
+# target to generate assembly for a file
+src/benchmark/graph_benchmark.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/benchmark/graph_benchmark.c.s
+.PHONY : src/benchmark/graph_benchmark.c.s
+
+src/benchmark/matrix_benchmark.obj: src/benchmark/matrix_benchmark.c.obj
+.PHONY : src/benchmark/matrix_benchmark.obj
+
+# target to build an object file
+src/benchmark/matrix_benchmark.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/benchmark/matrix_benchmark.c.obj
+.PHONY : src/benchmark/matrix_benchmark.c.obj
+
+src/benchmark/matrix_benchmark.i: src/benchmark/matrix_benchmark.c.i
+.PHONY : src/benchmark/matrix_benchmark.i
+
+# target to preprocess a source file
+src/benchmark/matrix_benchmark.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/benchmark/matrix_benchmark.c.i
+.PHONY : src/benchmark/matrix_benchmark.c.i
+
+src/benchmark/matrix_benchmark.s: src/benchmark/matrix_benchmark.c.s
+.PHONY : src/benchmark/matrix_benchmark.s
+
+# target to generate assembly for a file
+src/benchmark/matrix_benchmark.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/benchmark/matrix_benchmark.c.s
+.PHONY : src/benchmark/matrix_benchmark.c.s
+
+src/benchmark/string_benchmark.obj: src/benchmark/string_benchmark.c.obj
+.PHONY : src/benchmark/string_benchmark.obj
+
+# target to build an object file
+src/benchmark/string_benchmark.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/benchmark/string_benchmark.c.obj
+.PHONY : src/benchmark/string_benchmark.c.obj
+
+src/benchmark/string_benchmark.i: src/benchmark/string_benchmark.c.i
+.PHONY : src/benchmark/string_benchmark.i
+
+# target to preprocess a source file
+src/benchmark/string_benchmark.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/benchmark/string_benchmark.c.i
+.PHONY : src/benchmark/string_benchmark.c.i
+
+src/benchmark/string_benchmark.s: src/benchmark/string_benchmark.c.s
+.PHONY : src/benchmark/string_benchmark.s
+
+# target to generate assembly for a file
+src/benchmark/string_benchmark.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/benchmark/string_benchmark.c.s
+.PHONY : src/benchmark/string_benchmark.c.s
+
 src/cli/cli.obj: src/cli/cli.c.obj
 .PHONY : src/cli/cli.obj
 
@@ -944,6 +1016,102 @@ src/core/fraud.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/core/fraud.c.s
 .PHONY : src/core/fraud.c.s
 
+src/core/fraud_evaluation.obj: src/core/fraud_evaluation.c.obj
+.PHONY : src/core/fraud_evaluation.obj
+
+# target to build an object file
+src/core/fraud_evaluation.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/core/fraud_evaluation.c.obj
+.PHONY : src/core/fraud_evaluation.c.obj
+
+src/core/fraud_evaluation.i: src/core/fraud_evaluation.c.i
+.PHONY : src/core/fraud_evaluation.i
+
+# target to preprocess a source file
+src/core/fraud_evaluation.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/core/fraud_evaluation.c.i
+.PHONY : src/core/fraud_evaluation.c.i
+
+src/core/fraud_evaluation.s: src/core/fraud_evaluation.c.s
+.PHONY : src/core/fraud_evaluation.s
+
+# target to generate assembly for a file
+src/core/fraud_evaluation.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/core/fraud_evaluation.c.s
+.PHONY : src/core/fraud_evaluation.c.s
+
+src/core/fraud_graph.obj: src/core/fraud_graph.c.obj
+.PHONY : src/core/fraud_graph.obj
+
+# target to build an object file
+src/core/fraud_graph.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/core/fraud_graph.c.obj
+.PHONY : src/core/fraud_graph.c.obj
+
+src/core/fraud_graph.i: src/core/fraud_graph.c.i
+.PHONY : src/core/fraud_graph.i
+
+# target to preprocess a source file
+src/core/fraud_graph.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/core/fraud_graph.c.i
+.PHONY : src/core/fraud_graph.c.i
+
+src/core/fraud_graph.s: src/core/fraud_graph.c.s
+.PHONY : src/core/fraud_graph.s
+
+# target to generate assembly for a file
+src/core/fraud_graph.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/core/fraud_graph.c.s
+.PHONY : src/core/fraud_graph.c.s
+
+src/core/paysim_dynamic_loader.obj: src/core/paysim_dynamic_loader.c.obj
+.PHONY : src/core/paysim_dynamic_loader.obj
+
+# target to build an object file
+src/core/paysim_dynamic_loader.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/core/paysim_dynamic_loader.c.obj
+.PHONY : src/core/paysim_dynamic_loader.c.obj
+
+src/core/paysim_dynamic_loader.i: src/core/paysim_dynamic_loader.c.i
+.PHONY : src/core/paysim_dynamic_loader.i
+
+# target to preprocess a source file
+src/core/paysim_dynamic_loader.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/core/paysim_dynamic_loader.c.i
+.PHONY : src/core/paysim_dynamic_loader.c.i
+
+src/core/paysim_dynamic_loader.s: src/core/paysim_dynamic_loader.c.s
+.PHONY : src/core/paysim_dynamic_loader.s
+
+# target to generate assembly for a file
+src/core/paysim_dynamic_loader.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/core/paysim_dynamic_loader.c.s
+.PHONY : src/core/paysim_dynamic_loader.c.s
+
+src/core/paysim_loader.obj: src/core/paysim_loader.c.obj
+.PHONY : src/core/paysim_loader.obj
+
+# target to build an object file
+src/core/paysim_loader.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/core/paysim_loader.c.obj
+.PHONY : src/core/paysim_loader.c.obj
+
+src/core/paysim_loader.i: src/core/paysim_loader.c.i
+.PHONY : src/core/paysim_loader.i
+
+# target to preprocess a source file
+src/core/paysim_loader.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/core/paysim_loader.c.i
+.PHONY : src/core/paysim_loader.c.i
+
+src/core/paysim_loader.s: src/core/paysim_loader.c.s
+.PHONY : src/core/paysim_loader.s
+
+# target to generate assembly for a file
+src/core/paysim_loader.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/core/paysim_loader.c.s
+.PHONY : src/core/paysim_loader.c.s
+
 src/core/transaction.obj: src/core/transaction.c.obj
 .PHONY : src/core/transaction.obj
 
@@ -968,6 +1136,30 @@ src/core/transaction.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/core/transaction.c.s
 .PHONY : src/core/transaction.c.s
 
+src/export/export.obj: src/export/export.c.obj
+.PHONY : src/export/export.obj
+
+# target to build an object file
+src/export/export.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/export/export.c.obj
+.PHONY : src/export/export.c.obj
+
+src/export/export.i: src/export/export.c.i
+.PHONY : src/export/export.i
+
+# target to preprocess a source file
+src/export/export.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/export/export.c.i
+.PHONY : src/export/export.c.i
+
+src/export/export.s: src/export/export.c.s
+.PHONY : src/export/export.s
+
+# target to generate assembly for a file
+src/export/export.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/export/export.c.s
+.PHONY : src/export/export.c.s
+
 src/main.obj: src/main.c.obj
 .PHONY : src/main.obj
 
@@ -991,6 +1183,30 @@ src/main.s: src/main.c.s
 src/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/main.c.s
 .PHONY : src/main.c.s
+
+src/tests/test_suite.obj: src/tests/test_suite.c.obj
+.PHONY : src/tests/test_suite.obj
+
+# target to build an object file
+src/tests/test_suite.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/tests/test_suite.c.obj
+.PHONY : src/tests/test_suite.c.obj
+
+src/tests/test_suite.i: src/tests/test_suite.c.i
+.PHONY : src/tests/test_suite.i
+
+# target to preprocess a source file
+src/tests/test_suite.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/tests/test_suite.c.i
+.PHONY : src/tests/test_suite.c.i
+
+src/tests/test_suite.s: src/tests/test_suite.c.s
+.PHONY : src/tests/test_suite.s
+
+# target to generate assembly for a file
+src/tests/test_suite.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fraud_workbench.dir\build.make CMakeFiles/fraud_workbench.dir/src/tests/test_suite.c.s
+.PHONY : src/tests/test_suite.c.s
 
 # Help Target
 help:
@@ -1094,6 +1310,15 @@ help:
 	@echo ... src/benchmark/benchmark.obj
 	@echo ... src/benchmark/benchmark.i
 	@echo ... src/benchmark/benchmark.s
+	@echo ... src/benchmark/graph_benchmark.obj
+	@echo ... src/benchmark/graph_benchmark.i
+	@echo ... src/benchmark/graph_benchmark.s
+	@echo ... src/benchmark/matrix_benchmark.obj
+	@echo ... src/benchmark/matrix_benchmark.i
+	@echo ... src/benchmark/matrix_benchmark.s
+	@echo ... src/benchmark/string_benchmark.obj
+	@echo ... src/benchmark/string_benchmark.i
+	@echo ... src/benchmark/string_benchmark.s
 	@echo ... src/cli/cli.obj
 	@echo ... src/cli/cli.i
 	@echo ... src/cli/cli.s
@@ -1103,12 +1328,30 @@ help:
 	@echo ... src/core/fraud.obj
 	@echo ... src/core/fraud.i
 	@echo ... src/core/fraud.s
+	@echo ... src/core/fraud_evaluation.obj
+	@echo ... src/core/fraud_evaluation.i
+	@echo ... src/core/fraud_evaluation.s
+	@echo ... src/core/fraud_graph.obj
+	@echo ... src/core/fraud_graph.i
+	@echo ... src/core/fraud_graph.s
+	@echo ... src/core/paysim_dynamic_loader.obj
+	@echo ... src/core/paysim_dynamic_loader.i
+	@echo ... src/core/paysim_dynamic_loader.s
+	@echo ... src/core/paysim_loader.obj
+	@echo ... src/core/paysim_loader.i
+	@echo ... src/core/paysim_loader.s
 	@echo ... src/core/transaction.obj
 	@echo ... src/core/transaction.i
 	@echo ... src/core/transaction.s
+	@echo ... src/export/export.obj
+	@echo ... src/export/export.i
+	@echo ... src/export/export.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
+	@echo ... src/tests/test_suite.obj
+	@echo ... src/tests/test_suite.i
+	@echo ... src/tests/test_suite.s
 .PHONY : help
 
 

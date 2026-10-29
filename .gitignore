@@ -53,3 +53,8 @@ dkms.conf
 
 # debug information files
 *.dwo
+
+
+# Large raw PaySim dataset
+data/raw/*.csv
+data/raw/*.zip

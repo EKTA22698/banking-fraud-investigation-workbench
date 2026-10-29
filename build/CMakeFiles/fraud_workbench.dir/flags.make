@@ -6,5 +6,5 @@ C_DEFINES =
 
 C_INCLUDES = @CMakeFiles\fraud_workbench.dir\includes_C.rsp
 
-C_FLAGS = -std=gnu11
+C_FLAGS = -O3 -DNDEBUG -std=gnu11
 

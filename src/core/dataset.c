@@ -49,10 +49,28 @@ if (file == NULL)
         );
 
         if (fields_read == 8)
-        {
-            transaction->risk_score = 0;
-            count++;
-        }
+{
+    /*
+     * Initialize fields that only exist
+     * for PaySim transactions.
+     */
+    transaction->step = 0;
+
+    transaction->destination_id[0] = '\0';
+
+    transaction->old_balance_origin = 0.0;
+    transaction->new_balance_origin = 0.0;
+
+    transaction->old_balance_destination = 0.0;
+    transaction->new_balance_destination = 0.0;
+
+    transaction->actual_fraud = 0;
+    transaction->flagged_fraud = 0;
+
+    transaction->risk_score = 0;
+
+    count++;
+}
         else
         {
             invalid_count++;
