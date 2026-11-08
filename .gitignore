@@ -58,3 +58,29 @@ dkms.conf
 # Large raw PaySim dataset
 data/raw/*.csv
 data/raw/*.zip
+
+
+# Build artifacts
+build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+compile_commands.json
+
+# Executables / object files
+*.exe
+*.o
+*.obj
+
+# Generated results
+results/*.csv
+results/*.json
+
+# Large/raw datasets
+data/raw/
+
+# Editor / OS
+.vscode/
+.DS_Store
+Thumbs.db
