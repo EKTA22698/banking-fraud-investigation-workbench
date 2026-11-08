@@ -11,6 +11,19 @@ add_executable(fraud_workbench
     src/core/dataset.c
     src/core/fraud.c
     src/cli/cli.c
+    src/cli/benchmark_menu.c
+    src/cli/export_menu.c
+    src/cli/pattern_menu.c
+    src/cli/transaction_viewer.c
+    src/cli/fraud_menu.c
+    src/cli/search_sort_menu.c
+    src/core/app_state.c
+    src/cli/dataset_menu.c
+    src/cli/graph_menu.c
+    src/tests/test_suite.c
+src/cli/test_menu.c
+src/cli/planning_menu.c
+src/cli/algorithm_lab_menu.c
     src/algorithms/sorting/merge_sort.c
     src/algorithms/sorting/quick_sort.c
     src/algorithms/searching/binary_search.c
@@ -51,6 +64,8 @@ src/core/paysim_loader.c
 src/core/paysim_dynamic_loader.c
 src/core/fraud_evaluation.c
 src/core/fraud_graph.c
+src/benchmark/complete_benchmark.c
+src/benchmark/paysim_benchmark.c
 )
 
 target_include_directories(fraud_workbench PRIVATE

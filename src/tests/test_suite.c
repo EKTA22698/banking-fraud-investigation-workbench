@@ -16,6 +16,7 @@
 #include "greedy.h"
 #include "branch_bound.h"
 #include "network_flow.h"
+#include "test_suite.h"
 
 
 static int tests_run = 0;
