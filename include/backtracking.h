@@ -3,6 +3,7 @@
 
 #define NQUEENS_MAX_SIZE 12
 #define SUBSET_MAX_SIZE 30
+#define BACKTRACK_KNAPSACK_MAX_ITEMS 30
 
 typedef struct
 {
@@ -36,5 +37,30 @@ SubsetResult solve_subset_sum(
     int count,
     int target
 );
+typedef struct
+{
+    int id;
+    int risk_value;
+    int investigation_time;
+} BacktrackingKnapsackItem;
 
+
+typedef struct
+{
+    int maximum_risk;
+    int total_time;
+
+    int selected_ids[
+        BACKTRACK_KNAPSACK_MAX_ITEMS
+    ];
+
+    int selected_count;
+} BacktrackingKnapsackResult;
+/* 0/1 Knapsack using Backtracking */
+BacktrackingKnapsackResult
+solve_knapsack_backtracking(
+    const BacktrackingKnapsackItem items[],
+    int count,
+    int capacity
+);
 #endif

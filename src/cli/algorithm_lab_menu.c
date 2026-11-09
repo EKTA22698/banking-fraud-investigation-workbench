@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <stddef.h>
 #include "algorithm_lab_menu.h"
 
 #include "divide_conquer.h"
@@ -88,7 +88,9 @@ printf("17. Compare All Branch and Bound Strategies\n");
 printf("18. Ford-Fulkerson Maximum Flow\n");
 printf("19. Maximum Bipartite Matching\n");
 printf("20. Chinese Remainder Theorem\n");
-                printf("0. Back\n");
+printf("21. Fractional Knapsack - Investigation Allocation\n");
+printf("22. 0/1 Knapsack - Backtracking\n");
+printf("0. Back\n");
                 printf("============================================================\n");
                 printf("Select algorithm: ");
 
@@ -1443,6 +1445,346 @@ else if (algorithm_choice == 20)
             "pairwise coprime moduli.\n"
         );
     }
+}
+else if (algorithm_choice == 21)
+{
+    FractionalItem cases[] = {
+        {1, 95.0, 4.0},
+        {2, 60.0, 2.0},
+        {3, 80.0, 3.0},
+        {4, 30.0, 1.0},
+        {5, 90.0, 5.0}
+    };
+
+    int case_count =
+        sizeof(cases) /
+        sizeof(cases[0]);
+
+    double available_hours;
+
+
+    printf("\n");
+    printf("============================================================\n");
+    printf("       FRACTIONAL INVESTIGATION RESOURCE ALLOCATION\n");
+    printf("============================================================\n");
+
+    printf(
+        "%-8s %-12s %-12s %-12s\n",
+        "CASE",
+        "RISK",
+        "HOURS",
+        "RISK/HOUR"
+    );
+
+    printf(
+        "------------------------------------------------------------\n"
+    );
+
+
+    for (int i = 0; i < case_count; i++)
+    {
+        printf(
+            "F%-7d %-12.2f %-12.2f %-12.2f\n",
+            cases[i].id,
+            cases[i].risk_value,
+            cases[i].investigation_time,
+            cases[i].risk_value /
+                cases[i].investigation_time
+        );
+    }
+
+
+    printf(
+        "------------------------------------------------------------\n"
+    );
+
+    printf(
+        "Enter available analyst hours: "
+    );
+
+
+    if (
+        scanf(
+            "%lf",
+            &available_hours
+        ) != 1
+    )
+    {
+        printf(
+            "Invalid investigation capacity.\n"
+        );
+
+        while (getchar() != '\n')
+        {
+        }
+
+        return;
+    }
+
+
+    if (available_hours <= 0.0)
+    {
+        printf(
+            "Available hours must be positive.\n"
+        );
+
+        return;
+    }
+
+
+    FractionalKnapsackResult result =
+        fractional_knapsack(
+            cases,
+            case_count,
+            available_hours
+        );
+
+
+    printf("\n");
+    printf("============================================================\n");
+    printf("              GREEDY ALLOCATION RESULT\n");
+    printf("============================================================\n");
+
+    printf(
+        "%-8s %-12s %-15s %-15s\n",
+        "CASE",
+        "FRACTION",
+        "HOURS USED",
+        "RISK COVERED"
+    );
+
+
+    for (
+        int i = 0;
+        i < result.selected_count;
+        i++
+    )
+    {
+        printf(
+            "F%-7d %-12.2f %-15.2f %-15.2f\n",
+            result.selected[i].id,
+            result.selected[i].fraction,
+            result.selected[i].time_used,
+            result.selected[i].risk_obtained
+        );
+    }
+
+
+    printf(
+        "------------------------------------------------------------\n"
+    );
+
+    printf(
+        "Available Hours       : %.2f\n",
+        available_hours
+    );
+
+    printf(
+        "Hours Allocated       : %.2f\n",
+        result.total_time
+    );
+
+    printf(
+        "Maximum Risk Coverage : %.2f\n",
+        result.maximum_risk
+    );
+
+
+    printf("\nGreedy Strategy\n");
+
+    printf(
+        "Cases are prioritized by decreasing "
+        "risk-per-investigation-hour ratio.\n"
+    );
+
+    printf(
+        "Partial allocation of the final case "
+        "is permitted.\n"
+    );
+
+    printf("\nComplexity\n");
+
+    printf(
+        "Ranking in this implementation : O(n^2)\n"
+    );
+
+    printf(
+        "Greedy allocation              : O(n)\n"
+    );
+
+    printf(
+        "Auxiliary space                : O(n)\n"
+    );
+}
+else if (algorithm_choice == 22)
+{
+    BacktrackingKnapsackItem items[] = {
+        {1, 95, 4},
+        {2, 60, 2},
+        {3, 80, 3},
+        {4, 30, 1},
+        {5, 90, 5}
+    };
+
+
+    int item_count =
+        sizeof(items) /
+        sizeof(items[0]);
+
+
+    int capacity;
+
+
+    printf("\n");
+    printf("============================================================\n");
+    printf("          0/1 KNAPSACK USING BACKTRACKING\n");
+    printf("============================================================\n");
+
+    printf(
+        "%-8s %-12s %-12s\n",
+        "CASE",
+        "RISK",
+        "HOURS"
+    );
+
+    printf(
+        "----------------------------------------\n"
+    );
+
+
+    for (
+        int i = 0;
+        i < item_count;
+        i++
+    )
+    {
+        printf(
+            "F%-7d %-12d %-12d\n",
+            items[i].id,
+            items[i].risk_value,
+            items[i].investigation_time
+        );
+    }
+
+
+    printf(
+        "----------------------------------------\n"
+    );
+
+    printf(
+        "Enter available investigation hours: "
+    );
+
+
+    if (
+        scanf(
+            "%d",
+            &capacity
+        ) != 1
+    )
+    {
+        printf(
+            "Invalid investigation capacity.\n"
+        );
+
+        while (getchar() != '\n')
+        {
+        }
+
+        return;
+    }
+
+
+    if (capacity <= 0)
+    {
+        printf(
+            "Available hours must be positive.\n"
+        );
+
+        return;
+    }
+
+
+    BacktrackingKnapsackResult result =
+        solve_knapsack_backtracking(
+            items,
+            item_count,
+            capacity
+        );
+
+
+    printf("\n");
+    printf("============================================================\n");
+    printf("            BACKTRACKING OPTIMAL PLAN\n");
+    printf("============================================================\n");
+
+    printf(
+        "Selected Cases : "
+    );
+
+
+    if (result.selected_count == 0)
+    {
+        printf("None");
+    }
+    else
+    {
+        for (
+            int i = 0;
+            i < result.selected_count;
+            i++
+        )
+        {
+            printf(
+                "F%d",
+                result.selected_ids[i]
+            );
+
+            if (
+                i <
+                result.selected_count - 1
+            )
+            {
+                printf(", ");
+            }
+        }
+    }
+
+
+    printf("\n");
+
+    printf(
+        "Hours Used     : %d\n",
+        result.total_time
+    );
+
+    printf(
+        "Maximum Risk   : %d\n",
+        result.maximum_risk
+    );
+
+
+    printf("\nMethod\n");
+
+    printf(
+        "Each case creates two recursive choices: "
+        "include or exclude.\n"
+    );
+
+    printf(
+        "Branches exceeding the available "
+        "investigation time are pruned.\n"
+    );
+
+
+    printf("\nComplexity\n");
+    printf(
+        "Worst-case time : O(2^n)\n"
+    );
+
+    printf(
+        "Recursion space : O(n)\n"
+    );
 }
 else if (algorithm_choice != 0)
 {

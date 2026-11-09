@@ -130,7 +130,82 @@ static void test_sorting(void)
     );
 }
 
+static int test_fractional_knapsack(void)
+{
+    FractionalItem items[] = {
+        {1, 95.0, 4.0},
+        {2, 60.0, 2.0},
+        {3, 80.0, 3.0},
+        {4, 30.0, 1.0},
+        {5, 90.0, 5.0}
+    };
 
+    int count =
+        sizeof(items) /
+        sizeof(items[0]);
+
+
+    FractionalKnapsackResult result =
+        fractional_knapsack(
+            items,
+            count,
+            5.0
+        );
+
+
+    double expected_risk =
+        143.3333333333;
+
+    double difference =
+        result.maximum_risk -
+        expected_risk;
+
+    if (difference < 0.0)
+    {
+        difference =
+            -difference;
+    }
+
+
+    if (
+        result.selected_count != 3 ||
+        result.total_time < 4.999 ||
+        result.total_time > 5.001 ||
+        difference > 0.01
+    )
+    {
+        return 0;
+    }
+
+
+    /*
+     * Expected greedy order:
+     *
+     * F2 = full
+     * F4 = full
+     * F3 = 2/3
+     */
+    if (
+        result.selected[0].id != 2 ||
+        result.selected[1].id != 4 ||
+        result.selected[2].id != 3
+    )
+    {
+        return 0;
+    }
+
+
+    if (
+        result.selected[2].fraction < 0.666 ||
+        result.selected[2].fraction > 0.667
+    )
+    {
+        return 0;
+    }
+
+
+    return 1;
+}
 static void test_binary_search(void)
 {
     Transaction data[5] = {0};
@@ -432,6 +507,78 @@ static void test_backtracking(void)
         "Subset Sum rejects impossible target 30",
         !missing.found
     );
+    /*
+ * 0/1 Knapsack using Backtracking
+ *
+ * Same investigation cases and capacity
+ * used by the Dynamic Programming test.
+ */
+BacktrackingKnapsackItem knapsack_items[] = {
+    {1, 95, 4},
+    {2, 60, 2},
+    {3, 80, 3},
+    {4, 30, 1},
+    {5, 90, 5}
+};
+
+int knapsack_item_count =
+    sizeof(knapsack_items) /
+    sizeof(knapsack_items[0]);
+
+
+BacktrackingKnapsackResult backtracking_knapsack =
+    solve_knapsack_backtracking(
+        knapsack_items,
+        knapsack_item_count,
+        8
+    );
+
+
+record_test(
+    "0/1 Knapsack Backtracking optimum = 205",
+    backtracking_knapsack.maximum_risk == 205
+);
+InvestigationCase dp_cases[] = {
+    {1, 95, 4},
+    {2, 60, 2},
+    {3, 80, 3},
+    {4, 30, 1},
+    {5, 90, 5}
+};
+
+
+KnapsackResult dp_knapsack =
+    solve_zero_one_knapsack(
+        dp_cases,
+        5,
+        8
+    );
+
+
+record_test(
+    "DP and Backtracking Knapsack agree",
+    dp_knapsack.maximum_risk ==
+        backtracking_knapsack.maximum_risk
+);
+BacktrackingKnapsackItem backtracking_items[] = {
+    {1, 95, 4},
+    {2, 60, 2}
+};
+
+
+BacktrackingKnapsackResult invalid_backtracking =
+    solve_knapsack_backtracking(
+        backtracking_items,
+        2,
+        0
+    );
+
+
+record_test(
+    "Backtracking Knapsack rejects zero capacity",
+    invalid_backtracking.maximum_risk == 0 &&
+    invalid_backtracking.selected_count == 0
+);
 }
 
 
@@ -736,6 +883,58 @@ static void test_greedy(void)
         "Interval Partitioning minimum resources = 2",
         investigators == 2
     );
+    /*
+ * Fractional Knapsack
+ */
+{
+    FractionalItem items[] = {
+        {1, 95.0, 4.0},
+        {2, 60.0, 2.0},
+        {3, 80.0, 3.0},
+        {4, 30.0, 1.0},
+        {5, 90.0, 5.0}
+    };
+
+    int count =
+        sizeof(items) /
+        sizeof(items[0]);
+
+    FractionalKnapsackResult result =
+        fractional_knapsack(
+            items,
+            count,
+            5.0
+        );
+
+    double expected_risk =
+        143.3333333333;
+
+    double difference =
+        result.maximum_risk -
+        expected_risk;
+
+    if (difference < 0.0)
+    {
+        difference =
+            -difference;
+    }
+
+    int correct =
+        result.selected_count == 3 &&
+        result.total_time >= 4.999 &&
+        result.total_time <= 5.001 &&
+        difference <= 0.01 &&
+        result.selected[0].id == 2 &&
+        result.selected[1].id == 4 &&
+        result.selected[2].id == 3 &&
+        result.selected[2].fraction >= 0.666 &&
+        result.selected[2].fraction <= 0.667;
+
+    record_test(
+        "Fractional Knapsack",
+        correct
+    );
+}
 }
 static void test_tsp(void)
 {

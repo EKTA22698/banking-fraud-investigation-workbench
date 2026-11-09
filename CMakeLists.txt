@@ -54,6 +54,10 @@ src/algorithms/string_matching/naive.c
 src/algorithms/string_matching/rabin_karp.c
 src/algorithms/string_matching/finite_automaton.c
 src/algorithms/string_matching/kmp.c
+src/algorithms/greedy/activity_selection.c
+src/algorithms/greedy/huffman.c
+src/algorithms/greedy/interval_partitioning.c
+src/algorithms/greedy/fractional_knapsack.c
 src/benchmark/benchmark.c
 src/benchmark/string_benchmark.c
 src/benchmark/matrix_benchmark.c
@@ -66,6 +70,9 @@ src/core/fraud_evaluation.c
 src/core/fraud_graph.c
 src/benchmark/complete_benchmark.c
 src/benchmark/paysim_benchmark.c
+src/algorithms/backtracking/n_queens.c
+src/algorithms/backtracking/subset_sum.c
+src/algorithms/backtracking/knapsack_backtracking.c
 )
 
 target_include_directories(fraud_workbench PRIVATE
