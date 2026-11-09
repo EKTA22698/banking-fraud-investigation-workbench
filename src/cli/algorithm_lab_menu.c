@@ -1399,8 +1399,14 @@ else if (algorithm_choice == 20)
 
     printf("\n");
     printf("============================================================\n");
-    printf("          CHINESE REMAINDER THEOREM\n");
-    printf("============================================================\n");
+    printf("       DISTRIBUTED TRANSACTION ID RECONSTRUCTION\n");
+printf("============================================================\n");
+
+printf(
+    "Reconstructing a transaction batch identifier\n"
+    "from residues stored by independent banking nodes.\n\n"
+);
+printf("Node residues:\n");
 
     for (int i = 0; i < count; i++)
     {
@@ -1432,6 +1438,25 @@ else if (algorithm_choice == 20)
             result.solution,
             result.modulus_product
         );
+         printf("\nInterpretation:\n");
+
+    printf(
+        "Transaction batch ID %lld satisfies "
+        "all banking-node residues.\n",
+        result.solution
+    );
+
+    printf(
+        "The reconstructed identifier is unique "
+        "modulo %lld.\n",
+        result.modulus_product
+    );
+
+    printf(
+        "This demonstrates modular identifier "
+        "reconstruction across distributed "
+        "financial-processing nodes.\n"
+    );
     }
     else
     {
